@@ -1,7 +1,7 @@
 {
  "edition": "1",
  "pdf": {
-  "bytes": 3493820,
+  "bytes": 3494990,
   "file": "pdf/statistical_methods_genetics.pdf",
   "pages": 489,
   "parts": [
@@ -97,7 +97,7 @@
     "title": "Chapter 12. Open Problems and the Future"
    }
   ],
-  "sha256": "9626da9e9c9ad3d04ba2634a5129fedd81bb928df00257e743505b35a150a1bd"
+  "sha256": "67061de4721190d352d021cf9e84af41af1cd6d682592db092de5b9b8d0e1d5f"
  },
  "results": {
   "a_bottleneck_that_attains_the_bayes_risk_is_sufficient": {
@@ -743,6 +743,13 @@
  "zenodo": {
   "concept_doi": "10.5281/zenodo.23509612",
   "doi": "10.5281/zenodo.23509613",
+  "draft": {
+   "doi": "10.5281/zenodo.23509850",
+   "html": "https://zenodo.org/deposit/23509850",
+   "id": 23509850,
+   "reserved_on": "2026-10-20",
+   "version": "1.0.1"
+  },
   "html": "https://zenodo.org/records/23509613",
   "latest_id": 23509613,
   "tag": "v1.0.0",

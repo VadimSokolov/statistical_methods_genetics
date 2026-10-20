@@ -15,10 +15,10 @@
  "credit_names": "Polson",
  "year": "2026",
  "edition": "1",
- "version": "1.0.0",
+ "version": "1.0.1",
  "date_released": "2026-10-20",
  "publisher": "Independently published",
- "doi": "10.5281/zenodo.23509613",
+ "doi": "10.5281/zenodo.23509850",
  "concept_doi": "10.5281/zenodo.23509612",
  "language": "en",
  "keywords": [
@@ -46,36 +46,34 @@
   "url": "https://opensource.org/license/mit"
  },
  "release": {
-  "tag": "v1.0.0",
-  "url": "https://github.com/VadimSokolov/statistical_methods_genetics/releases/tag/v1.0.0"
+  "tag": "v1.0.1",
+  "url": "https://github.com/VadimSokolov/statistical_methods_genetics/releases/tag/v1.0.1"
  },
  "links": {
   "page": "https://vsokolov.org/books/statistical_methods_genetics/",
   "page_markdown": "https://vsokolov.org/books/statistical_methods_genetics/index.html.md",
   "results": "https://vsokolov.org/books/statistical_methods_genetics/results.html",
   "results_markdown": "https://vsokolov.org/books/statistical_methods_genetics/results.html.md",
-  "pdf": "https://github.com/VadimSokolov/statistical_methods_genetics/releases/download/v1.0.0/statistical_methods_genetics.pdf",
+  "pdf": "https://github.com/VadimSokolov/statistical_methods_genetics/releases/download/v1.0.1/statistical_methods_genetics.pdf",
   "repository": "https://github.com/VadimSokolov/statistical_methods_genetics",
-  "source": "https://github.com/VadimSokolov/statistical_methods_genetics/tree/v1.0.0",
-  "doi": "https://doi.org/10.5281/zenodo.23509613",
+  "source": "https://github.com/VadimSokolov/statistical_methods_genetics/tree/v1.0.1",
+  "doi": "https://doi.org/10.5281/zenodo.23509850",
   "concept_doi": "https://doi.org/10.5281/zenodo.23509612",
-  "zenodo": "https://zenodo.org/records/23509613",
-  "doi_badge": "https://zenodo.org/badge/DOI/10.5281/zenodo.23509613.svg",
   "icon_pdf": "https://vsokolov.org/books/icon-pdf.svg",
   "icon_github": "https://vsokolov.org/books/icon-github.svg",
   "cover": "https://vsokolov.org/books/statistical_methods_genetics/cover.jpg"
  },
  "citation": {
-  "text": "Polson (2026), On Statistical Methods for Genetics: Fisher, Ewens and the Bayesian Programme, edition 1, https://doi.org/10.5281/zenodo.23509613.",
-  "bibtex": "@book{polson2026statistical_methods_genetics,\n  author = {Polson, Nicholas G.},\n  title = {{On Statistical Methods for Genetics: Fisher, Ewens and the Bayesian Programme}},\n  year = {2026},\n  publisher = {Independently published},\n  doi = {10.5281/zenodo.23509613},\n  url = {https://vsokolov.org/books/statistical_methods_genetics/}\n}",
+  "text": "Polson (2026), On Statistical Methods for Genetics: Fisher, Ewens and the Bayesian Programme, edition 1, https://doi.org/10.5281/zenodo.23509850.",
+  "bibtex": "@book{polson2026statistical_methods_genetics,\n  author = {Polson, Nicholas G.},\n  title = {{On Statistical Methods for Genetics: Fisher, Ewens and the Bayesian Programme}},\n  year = {2026},\n  publisher = {Independently published},\n  doi = {10.5281/zenodo.23509850},\n  url = {https://vsokolov.org/books/statistical_methods_genetics/}\n}",
   "bibkey": "polson2026statistical_methods_genetics",
   "example": "Polson (2026), Theorem 3.5"
  },
  "pdf": {
   "file": "statistical_methods_genetics.pdf",
   "pages": 489,
-  "bytes": 3493820,
-  "sha256": "9626da9e9c9ad3d04ba2634a5129fedd81bb928df00257e743505b35a150a1bd"
+  "bytes": 3494990,
+  "sha256": "67061de4721190d352d021cf9e84af41af1cd6d682592db092de5b9b8d0e1d5f"
  },
  "bundle": {
   "page": "site/index.md",
@@ -87,7 +85,7 @@
  "serve": [
   {
    "path": "cover.jpg",
-   "url": "https://raw.githubusercontent.com/VadimSokolov/statistical_methods_genetics/v1.0.0/pdf/cover.jpg"
+   "url": "https://raw.githubusercontent.com/VadimSokolov/statistical_methods_genetics/v1.0.1/pdf/cover.jpg"
   }
  ],
  "chapters": [
@@ -241,7 +239,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#moving_projection_lemma",
    "source": "chapters/ftns.tex",
    "label": "ftns:lem:moving",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/ftns.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/ftns.tex"
   },
   {
    "id": "whole_genome",
@@ -259,7 +257,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#whole_genome",
    "source": "chapters/ftns.tex",
    "label": "ftns:thm:whole",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/ftns.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/ftns.tex"
   },
   {
    "id": "exponential_family_factorization",
@@ -277,7 +275,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#exponential_family_factorization",
    "source": "chapters/ftns.tex",
    "label": "ftns:thm:expfam",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/ftns.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/ftns.tex"
   },
   {
    "id": "remainder_in_lindley_coordinates",
@@ -295,7 +293,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#remainder_in_lindley_coordinates",
    "source": "chapters/ftns.tex",
    "label": "ftns:thm:lindley",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/ftns.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/ftns.tex"
   },
   {
    "id": "the_residual_in_closed_form",
@@ -313,7 +311,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#the_residual_in_closed_form",
    "source": "chapters/ftns.tex",
    "label": "ftns:prop:resid",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/ftns.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/ftns.tex"
   },
   {
    "id": "two_locus_residual",
@@ -331,7 +329,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#two_locus_residual",
    "source": "chapters/ftns.tex",
    "label": "ftns:prop:twolocus",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/ftns.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/ftns.tex"
   },
   {
    "id": "exact_remainder_one_locus_alleles",
@@ -349,7 +347,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#exact_remainder_one_locus_alleles",
    "source": "chapters/ftns.tex",
    "label": "ftns:thm:main",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/ftns.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/ftns.tex"
   },
   {
    "id": "exact_relative_error_two_alleles",
@@ -367,7 +365,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#exact_relative_error_two_alleles",
    "source": "chapters/ftns.tex",
    "label": "ftns:cor:relerr",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/ftns.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/ftns.tex"
   },
   {
    "id": "bias_of_the_plug_in",
@@ -385,7 +383,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#bias_of_the_plug_in",
    "source": "chapters/hs.tex",
    "label": "hs:prop:bias",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/hs.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/hs.tex"
   },
   {
    "id": "shrinkage_is_conservative",
@@ -403,7 +401,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#shrinkage_is_conservative",
    "source": "chapters/hs.tex",
    "label": "hs:prop:conservative",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/hs.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/hs.tex"
   },
   {
    "id": "oracle_shrinkage_understates_the_additive_variance",
@@ -421,7 +419,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#oracle_shrinkage_understates_the_additive_variance",
    "source": "chapters/hs.tex",
    "label": "hs:prop:oracle",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/hs.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/hs.tex"
   },
   {
    "id": "the_coherent_estimator",
@@ -439,7 +437,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#the_coherent_estimator",
    "source": "chapters/hs.tex",
    "label": "hs:prop:posterior",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/hs.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/hs.tex"
   },
   {
    "id": "inflation_of_fishers_fitted_projection",
@@ -457,7 +455,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#inflation_of_fishers_fitted_projection",
    "source": "chapters/mp.tex",
    "label": "mp:prop:optimism",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/mp.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/mp.tex"
   },
   {
    "id": "saturation_of_the_optimism",
@@ -475,7 +473,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#saturation_of_the_optimism",
    "source": "chapters/mp.tex",
    "label": "mp:cor:saturate",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/mp.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/mp.tex"
   },
   {
    "id": "shrinkage_weights_are_stick_breaking_weights",
@@ -493,7 +491,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#shrinkage_weights_are_stick_breaking_weights",
    "source": "chapters/mp.tex",
    "label": "mp:thm:main",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/mp.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/mp.tex"
   },
   {
    "id": "spectrum_and_shrinkage_profile",
@@ -511,7 +509,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#spectrum_and_shrinkage_profile",
    "source": "chapters/mp.tex",
    "label": "mp:thm:spectrum",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/mp.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/mp.tex"
   },
   {
    "id": "discovery_rates_of_shrinkage_priors",
@@ -529,7 +527,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#discovery_rates_of_shrinkage_priors",
    "source": "chapters/mp.tex",
    "label": "mp:cor:growth",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/mp.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/mp.tex"
   },
   {
    "id": "effective_model_size",
@@ -547,7 +545,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#effective_model_size",
    "source": "chapters/mp.tex",
    "label": "mp:thm:effsize",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/mp.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/mp.tex"
   },
   {
    "id": "the_rates_agree_and_the_constants_nearly_do",
@@ -565,7 +563,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#the_rates_agree_and_the_constants_nearly_do",
    "source": "chapters/mp.tex",
    "label": "mp:cor:agree",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/mp.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/mp.tex"
   },
   {
    "id": "the_two_constructions_fluctuate_differently",
@@ -583,7 +581,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#the_two_constructions_fluctuate_differently",
    "source": "chapters/mp.tex",
    "label": "mp:prop:fluct",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/mp.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/mp.tex"
   },
   {
    "id": "the_weights_are_forced",
@@ -601,7 +599,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#the_weights_are_forced",
    "source": "chapters/esf.tex",
    "label": "esf:prop:weights",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/esf.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/esf.tex"
   },
   {
    "id": "exact_finite_variance_and_a_moment_estimator",
@@ -619,7 +617,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#exact_finite_variance_and_a_moment_estimator",
    "source": "chapters/esf.tex",
    "label": "esf:prop:exactvar",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/esf.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/esf.tex"
   },
   {
    "id": "the_de_finetti_architecture_is_invariant",
@@ -637,7 +635,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#the_de_finetti_architecture_is_invariant",
    "source": "chapters/esf.tex",
    "label": "esf:prop:invariant",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/esf.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/esf.tex"
   },
   {
    "id": "the_negative_branch_is_not_a_weighted_paintbox",
@@ -655,7 +653,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#the_negative_branch_is_not_a_weighted_paintbox",
    "source": "chapters/esf.tex",
    "label": "esf:prop:notweighted",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/esf.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/esf.tex"
   },
   {
    "id": "py_thm_pitman",
@@ -673,7 +671,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#py_thm_pitman",
    "source": "chapters/py.tex",
    "label": "py:thm:pitman",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "py_thm_rigid",
@@ -691,7 +689,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#py_thm_rigid",
    "source": "chapters/py.tex",
    "label": "py:thm:rigid",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "py_prop_nocoal",
@@ -709,7 +707,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#py_prop_nocoal",
    "source": "chapters/py.tex",
    "label": "py:prop:nocoal",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "exponent_map_under_power_sampling",
@@ -727,7 +725,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#exponent_map_under_power_sampling",
    "source": "chapters/py.tex",
    "label": "py:prop:pyimage",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "sigma_diversity_is_a_power_of_the_stick_envelope",
@@ -745,7 +743,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#sigma_diversity_is_a_power_of_the_stick_envelope",
    "source": "chapters/py.tex",
    "label": "py:lem:MS",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "diversity_is_a_power_of_the_unweighted_diversity",
@@ -763,7 +761,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#diversity_is_a_power_of_the_unweighted_diversity",
    "source": "chapters/py.tex",
    "label": "py:prop:power",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "constant_in_the_diversity_power_law",
@@ -781,7 +779,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#constant_in_the_diversity_power_law",
    "source": "chapters/py.tex",
    "label": "py:prop:constant",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "py_prop_rate",
@@ -799,7 +797,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#py_prop_rate",
    "source": "chapters/py.tex",
    "label": "py:prop:rate",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "py_thm_regimes",
@@ -817,7 +815,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#py_thm_regimes",
    "source": "chapters/py.tex",
    "label": "py:thm:regimes",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/py.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/py.tex"
   },
   {
    "id": "inverse_gamma_series_for_pig0",
@@ -835,7 +833,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#inverse_gamma_series_for_pig0",
    "source": "chapters/pig.tex",
    "label": "pig:prop:pig0",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/pig.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/pig.tex"
   },
   {
    "id": "goods_rule_is_the_ewens_predictive",
@@ -853,7 +851,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#goods_rule_is_the_ewens_predictive",
    "source": "chapters/pig.tex",
    "label": "pig:prop:good",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/pig.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/pig.tex"
   },
   {
    "id": "predictive_law_of_new_species",
@@ -871,7 +869,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#predictive_law_of_new_species",
    "source": "chapters/pig.tex",
    "label": "pig:prop:newspecies",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/pig.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/pig.tex"
   },
   {
    "id": "asymptotic_redundancy",
@@ -889,7 +887,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#asymptotic_redundancy",
    "source": "chapters/pig.tex",
    "label": "pig:prop:bvm",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/pig.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/pig.tex"
   },
   {
    "id": "tail_of_the_concentration_posterior",
@@ -907,7 +905,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#tail_of_the_concentration_posterior",
    "source": "chapters/pig.tex",
    "label": "pig:prop:tail",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/pig.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/pig.tex"
   },
   {
    "id": "normalizing_constant",
@@ -925,7 +923,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#normalizing_constant",
    "source": "chapters/rc.tex",
    "label": "rc:thm:residue",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "mellin_transform",
@@ -943,7 +941,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#mellin_transform",
    "source": "chapters/rc.tex",
    "label": "rc:thm:mellin",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "shrinkage_rate_corrected",
@@ -962,7 +960,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#shrinkage_rate_corrected",
    "source": "chapters/rc.tex",
    "label": "rc:cor:rate",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "exact_tail_index_of_the_pochhammer_law",
@@ -980,7 +978,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#exact_tail_index_of_the_pochhammer_law",
    "source": "chapters/rc.tex",
    "label": "rc:cor:tail",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "conditional_exponentiality",
@@ -998,7 +996,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#conditional_exponentiality",
    "source": "chapters/rc.tex",
    "label": "rc:thm:cm",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "tilted_normalizer",
@@ -1016,7 +1014,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#tilted_normalizer",
    "source": "chapters/rc.tex",
    "label": "rc:thm:tilt",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "exact_dispersion_block",
@@ -1034,7 +1032,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#exact_dispersion_block",
    "source": "chapters/rc.tex",
    "label": "rc:prop:dispersion",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "zipf_tails",
@@ -1052,7 +1050,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#zipf_tails",
    "source": "chapters/rc.tex",
    "label": "rc:thm:zipf",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "boundary_zipf_law",
@@ -1070,7 +1068,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#boundary_zipf_law",
    "source": "chapters/rc.tex",
    "label": "rc:prop:boundaryzipf",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/rc.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/rc.tex"
   },
   {
    "id": "the_check_loss_identifies_the_posterior",
@@ -1088,7 +1086,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#the_check_loss_identifies_the_posterior",
    "source": "chapters/suff.tex",
    "label": "suff:thm:check",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/suff.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/suff.tex"
   },
   {
    "id": "a_bottleneck_that_attains_the_bayes_risk_is_sufficient",
@@ -1106,7 +1104,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#a_bottleneck_that_attains_the_bayes_risk_is_sufficient",
    "source": "chapters/suff.tex",
    "label": "suff:thm:suff",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/suff.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/suff.tex"
   },
   {
    "id": "excess_risk_is_a_posterior_distance",
@@ -1124,7 +1122,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#excess_risk_is_a_posterior_distance",
    "source": "chapters/suff.tex",
    "label": "suff:thm:quant",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/suff.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/suff.tex"
   },
   {
    "id": "converse",
@@ -1142,7 +1140,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#converse",
    "source": "chapters/suff.tex",
    "label": "suff:prop:converse",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/suff.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/suff.tex"
   },
   {
    "id": "suff_prop_notsuff",
@@ -1160,7 +1158,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#suff_prop_notsuff",
    "source": "chapters/suff.tex",
    "label": "suff:prop:notsuff",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/suff.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/suff.tex"
   },
   {
    "id": "bernoulli_geometric_duality",
@@ -1178,7 +1176,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#bernoulli_geometric_duality",
    "source": "chapters/coal.tex",
    "label": "coal:cor:duality",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/coal.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/coal.tex"
   },
   {
    "id": "is_not_sufficient_for",
@@ -1196,7 +1194,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#is_not_sufficient_for",
    "source": "chapters/coal.tex",
    "label": "coal:prop:notsuff",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/coal.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/coal.tex"
   },
   {
    "id": "deepsets_encoders_factor_through_the_spectrum",
@@ -1214,7 +1212,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#deepsets_encoders_factor_through_the_spectrum",
    "source": "chapters/coal.tex",
    "label": "coal:thm:deepsets",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/coal.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/coal.tex"
   },
   {
    "id": "spectrum_is_a_strict_coarsening",
@@ -1232,7 +1230,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#spectrum_is_a_strict_coarsening",
    "source": "chapters/coal.tex",
    "label": "coal:cor:coarse",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/coal.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/coal.tex"
   },
   {
    "id": "haplotype_count_escapes_the_spectrum",
@@ -1250,7 +1248,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#haplotype_count_escapes_the_spectrum",
    "source": "chapters/coal.tex",
    "label": "coal:prop:hap",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/coal.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/coal.tex"
   },
   {
    "id": "future_conj_rigid",
@@ -1268,7 +1266,7 @@
    "url": "https://vsokolov.org/books/statistical_methods_genetics/results.html#future_conj_rigid",
    "source": "chapters/future.tex",
    "label": "future:conj:rigid",
-   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.0/chapters/future.tex"
+   "source_url": "https://github.com/VadimSokolov/statistical_methods_genetics/blob/v1.0.1/chapters/future.tex"
   }
  ]
 }

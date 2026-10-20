@@ -5,8 +5,8 @@ title: 'On Statistical Methods for Genetics: Fisher, Ewens and the Bayesian Prog
 authors:
 - family-names: Polson
   given-names: Nicholas G.
-version: 1.0.0
-doi: 10.5281/zenodo.23509613
+version: 1.0.1
+doi: 10.5281/zenodo.23509850
 date-released: '2026-10-20'
 license: CC-BY-4.0
 repository-code: https://github.com/VadimSokolov/statistical_methods_genetics
@@ -36,7 +36,7 @@ preferred-citation:
   - family-names: Polson
     given-names: Nicholas G.
   year: 2026
-  doi: 10.5281/zenodo.23509613
+  doi: 10.5281/zenodo.23509850
   url: https://vsokolov.org/books/statistical_methods_genetics/
   publisher:
     name: Independently published
