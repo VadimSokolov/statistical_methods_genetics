@@ -19,6 +19,7 @@
  "date_released": "2026-10-20",
  "publisher": "Independently published",
  "doi": "10.5281/zenodo.23509613",
+ "concept_doi": "10.5281/zenodo.23509612",
  "language": "en",
  "keywords": [
   "population genetics",
@@ -57,6 +58,9 @@
   "repository": "https://github.com/VadimSokolov/statistical_methods_genetics",
   "source": "https://github.com/VadimSokolov/statistical_methods_genetics/tree/v1.0.0",
   "doi": "https://doi.org/10.5281/zenodo.23509613",
+  "concept_doi": "https://doi.org/10.5281/zenodo.23509612",
+  "zenodo": "https://zenodo.org/records/23509613",
+  "doi_badge": "https://zenodo.org/badge/DOI/10.5281/zenodo.23509613.svg",
   "icon_pdf": "https://vsokolov.org/books/icon-pdf.svg",
   "icon_github": "https://vsokolov.org/books/icon-github.svg"
  },
