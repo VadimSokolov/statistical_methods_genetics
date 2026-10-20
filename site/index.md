@@ -2,7 +2,7 @@
 
 By Nicholas G. Polson.
 
-[![PDF](https://vsokolov.org/books/icon-pdf.svg)](https://github.com/VadimSokolov/statistical_methods_genetics/releases/download/v1.0.1/statistical_methods_genetics.pdf "PDF") [![Source on GitHub](https://vsokolov.org/books/icon-github.svg)](https://github.com/VadimSokolov/statistical_methods_genetics/tree/v1.0.1 "Source on GitHub")
+[![PDF](https://vsokolov.org/books/icon-pdf.svg)](https://github.com/VadimSokolov/statistical_methods_genetics/releases/download/v1.0.1/statistical_methods_genetics.pdf "PDF") [![Source on GitHub](https://vsokolov.org/books/icon-github.svg)](https://github.com/VadimSokolov/statistical_methods_genetics/tree/v1.0.1 "Source on GitHub") [![DOI 10.5281/zenodo.23509850](https://zenodo.org/badge/DOI/10.5281/zenodo.23509850.svg)](https://doi.org/10.5281/zenodo.23509850)
 
 ## Description
 

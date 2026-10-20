@@ -59,6 +59,8 @@
   "source": "https://github.com/VadimSokolov/statistical_methods_genetics/tree/v1.0.1",
   "doi": "https://doi.org/10.5281/zenodo.23509850",
   "concept_doi": "https://doi.org/10.5281/zenodo.23509612",
+  "zenodo": "https://zenodo.org/records/23509850",
+  "doi_badge": "https://zenodo.org/badge/DOI/10.5281/zenodo.23509850.svg",
   "icon_pdf": "https://vsokolov.org/books/icon-pdf.svg",
   "icon_github": "https://vsokolov.org/books/icon-github.svg",
   "cover": "https://vsokolov.org/books/statistical_methods_genetics/cover.jpg"
