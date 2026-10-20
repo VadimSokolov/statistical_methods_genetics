@@ -62,7 +62,8 @@
   "zenodo": "https://zenodo.org/records/23509613",
   "doi_badge": "https://zenodo.org/badge/DOI/10.5281/zenodo.23509613.svg",
   "icon_pdf": "https://vsokolov.org/books/icon-pdf.svg",
-  "icon_github": "https://vsokolov.org/books/icon-github.svg"
+  "icon_github": "https://vsokolov.org/books/icon-github.svg",
+  "cover": "https://vsokolov.org/books/statistical_methods_genetics/cover.jpg"
  },
  "citation": {
   "text": "Polson (2026), On Statistical Methods for Genetics: Fisher, Ewens and the Bayesian Programme, edition 1, https://doi.org/10.5281/zenodo.23509613.",
@@ -83,6 +84,12 @@
   "results": "site/results.md",
   "results_head": "site/results-head.html"
  },
+ "serve": [
+  {
+   "path": "cover.jpg",
+   "url": "https://raw.githubusercontent.com/VadimSokolov/statistical_methods_genetics/v1.0.0/pdf/cover.jpg"
+  }
+ ],
  "chapters": [
   {
    "key": "1",
