@@ -1,0 +1,3 @@
+wrote figures/rc_nbreg.pdf
+ins_alg2 ESS over 20000 retained draws: 5
+ins_meanpar ESS over 20000 retained draws: 16669

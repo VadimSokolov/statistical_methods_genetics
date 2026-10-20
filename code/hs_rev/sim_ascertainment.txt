@@ -1,0 +1,19 @@
+Ascertainment: n = 400, L = 400, keep y > median (200 survivors); ratios to true sigma^2_A
+
+all 60 replicates (seeds 1 to 60)
+  full  mean 1.0308  se 0.0130  min 0.761  max 1.245
+  surv  mean 0.2698  se 0.0241  min 0.024  max 1.145
+  resc  mean 0.2764  se 0.0246  min 0.024  max 1.183
+  survq mean 0.2231  se 0.0145  min 0.023  max 0.560
+  R2    mean 0.6210  se 0.0129  min 0.334  max 0.793
+  full/surv (mean of ratios) 5.88;  ratio of means 3.82
+  large sample limits at mean R2 0.621 (Proposition hs:prop:trunc): survivors, full form 0.218; population covariance 0.361
+
+first 12 replicates (seeds 1 to 12)
+  full  mean 1.0720  se 0.0232  min 0.945  max 1.245
+  surv  mean 0.2835  se 0.0472  min 0.087  max 0.693
+  resc  mean 0.2979  se 0.0493  min 0.091  max 0.726
+  survq mean 0.2357  se 0.0306  min 0.081  max 0.434
+  R2    mean 0.6189  se 0.0206  min 0.519  max 0.742
+  full/surv (mean of ratios) 5.16;  ratio of means 3.78
+  large sample limits at mean R2 0.619 (Proposition hs:prop:trunc): survivors, full form 0.218; population covariance 0.360

@@ -1,0 +1,106 @@
+# book.yaml: the facts about the book, kept in one place.
+# bookrepo.py generates RESULTS.md, CITATION.cff, the README block and the summary blocks from this file and results.yaml.
+# The books website reads it too. Guide: references/repository.md of the book-writing skill.
+
+slug: statistical_methods_genetics                     # lowercase letters, digits and underscores; also the name of the book's page on the site
+title: "On Statistical Methods for Genetics"
+subtitle: "Fisher, Ewens and the Bayesian Programme"
+authors:
+  - given: "Nicholas G."
+    family: "Polson"
+    orcid: ""                    # 0000-0000-0000-0000; optional, leave it empty when the author has none (nobody is asked for one)
+    affiliation: ""
+credit_names: ""                 # how a citation names the authors, e.g. "Polson and Sokolov"; empty: built from the family names
+year: 2026
+edition: "1"
+version: "1.0.0"                 # the release tag is v<version>
+date_released: "2026-10-20"                # YYYY-MM-DD, set at release
+publisher: "Independently published"                    # "Independently published" (the imprint KDP shows for a free KDP ISBN)
+# no isbn: a free KDP ISBN may be used only on KDP, so it goes on the ISBN line of kdp.md (private) and is not printed in
+# the PDF unless kdp.md says "ISBN on the copyright page: yes" (kdp.py interior); this file is published (references/publishing.md)
+doi: "10.5281/zenodo.23509613" # this edition's DOI; zenodo.py reserve writes it before the final build
+license_text: CC-BY-4.0          # text, figures and PDF
+license_code: MIT
+repository: https://github.com/VadimSokolov/statistical_methods_genetics   # the public repository; its name is the slug
+site_page: https://vsokolov.org/books/statistical_methods_genetics/    # the book page on the website; its PDF link is the GitHub release asset
+language: en
+print_url: ""                    # where to buy the printed book (optional)
+html_url: ""                     # Quarto books only: where the HTML edition (the book as a website) is served, https://vsokolov.org/<repository>/
+cover_image: ""                  # front cover image (PNG or JPEG, about 1600 px tall) in the repository, e.g. pdf/cover.png
+pdf: pdf/statistical_methods_genetics.pdf              # the released PDF; bookrepo.py pdf copies the build here
+keywords:
+  - population genetics
+  - Fundamental Theorem of Natural Selection
+  - Ewens sampling formula
+  - Pitman Yor process
+  - Poisson Dirichlet distribution
+  - horseshoe prior
+  - Pochhammer priors
+  - Kingman coalescent
+  - approximate Bayesian computation
+  - sufficiency without a likelihood
+short_description: "Statistical theory of population genetics: an exact form of Fisher's Fundamental Theorem, shrinkage estimates of the rate of adaptation, the Ewens sampling formula and its rigidity, rational conjugacy, and sufficiency for learned coalescent inference."
+description: |
+  This book treats the mathematical theory of population genetics as a problem in statistical inference, from Fisher's Fundamental Theorem of Natural Selection to learned inference for the coalescent.
+
+  It shows that Fisher's decomposition of the rate of change of mean fitness holds for arbitrary genotype frequencies, with an exact remainder computed for one and two loci. It shows that the usual plug in estimate of the additive genetic variance is inflated by a term that grows with the number of loci, and that shrinkage under a horseshoe prior gives a conservative correction. It derives the Ewens sampling formula from de Finetti's theorem, proves that among sampling weights only power weights preserve the residual allocation structure of Poisson Dirichlet subdivisions, and leaves the case of general weights as a stated conjecture. It develops rational conjugacy for Pochhammer priors on concentration parameters, with exact residue formulas for normalizing constants and Zipf tails for the counts they generate. For inference without a likelihood it proves that a learned quantile map that attains the Bayes risk is sufficient, that the number of segregating sites is not sufficient for the mutation rate, and that DeepSets encoders see only the site frequency spectrum.
+
+  The book is written for statisticians and mathematical biologists with graduate level probability. Numerical results are labelled as computations where they rest on simulation.
+source:
+  format: latex
+  dir: .
+  main: book.tex
+  aux: book.aux        # written by the build
+  toc: book.toc
+  pdf: book.pdf        # the built PDF; bookrepo.py pdf copies it to pdf above
+  meta: bookmeta.tex   # generated: \BookDOI, \BookVersion ... for the copyright page (\BookISBN only in the print build); \input it in the preamble
+macros: book.tex                       # the file that defines the book's macros, e.g. source/book.tex
+code_dir: code             # empty if the book has no code
+environments: {}                 # printed names that \newtheorem does not declare, e.g. {thm: Theorem}
+related_papers:
+  - key: wang2024
+    citation: "Wang and Polson (2024), Pochhammer priors for sparse count models, arXiv:2402.09583"
+    url: https://arxiv.org/abs/2402.09583
+chapters:
+  - key: "1"
+    title: "A Short History of Population Genetics"
+    stem: 01_a_short_history_of_population_genetics
+  - key: "2"
+    title: "A Mathematical Toolkit"
+    stem: 02_a_mathematical_toolkit
+  - key: "3"
+    title: "The Fundamental Theorem of Natural Selection: From Deterministic to Stochastic, Fisher to Bayes"
+    stem: 03_the_fundamental_theorem_of_natural_selection
+  - key: "4"
+    title: "The Horseshoe and the Fundamental Theorem of Natural Selection"
+    stem: 04_the_horseshoe_and_the_fundamental_theorem_of_natural
+  - key: "5"
+    title: "Many Parameter Models in Population Genetics"
+    stem: 05_many_parameter_models_in_population_genetics
+  - key: "6"
+    title: "The Ewens Sampling Formula by de Finetti's Theorem"
+    stem: 06_the_ewens_sampling_formula_by_de_finettis_theorem
+  - key: "7"
+    title: "Ascertainment and the Two Parameter Poisson Dirichlet Family"
+    stem: 07_ascertainment_and_the_two_parameter_poisson_dirichlet_family
+  - key: "8"
+    title: "Pólya Inverse Gamma Posteriors, Fisher's Species Model, and Good's Predictive Rule for the Ewens Sampling Problem"
+    stem: 08_polya_inverse_gamma_posteriors_fishers_species_model
+  - key: "9"
+    title: "Rational Conjugacy: Pochhammer Priors and Gamma Ratios"
+    stem: 09_rational_conjugacy_pochhammer_priors_and_gamma_ratios
+  - key: "10"
+    title: "Sufficiency Without a Likelihood in Population Genetics"
+    stem: 10_sufficiency_without_a_likelihood_in_population_genetics
+  - key: "11"
+    title: "Learning to Coalesce"
+    stem: 11_learning_to_coalesce
+  - key: "12"
+    title: "Open Problems and the Future"
+    stem: 12_open_problems_and_the_future                     # bookrepo.py scan prints this list from the build; a key of capital letters is an appendix (appendix: true or false overrides)
+style:
+  forbid: ["—", "–"]             # characters that may not appear in published text
+  no_hyphenated_words: true
+  allow_hyphenated: []           # words that keep their hyphen, e.g. names
+
+# Chapter keys follow the build: 1 is the history chapter. The preface is unnumbered and has no summary.

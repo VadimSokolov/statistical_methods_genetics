@@ -1,0 +1,3 @@
+hs: means [9.77, 16.52, 30.32, 52.98, 95.5, 165.75]  loglog slope 0.498  slope in log n 25.883  exact E K at 3e4 195.44  exact at 1e6 1128.4
+sb: means [5.03, 6.03, 7.38, 8.55, 9.75, 10.63]  loglog slope 0.133  slope in log n 1.005  exact E K at 3e4 10.89  exact at 1e6 14.4
+r3: means [11.05, 13.7, 17.35, 20.65, 23.78, 27.1]  loglog slope 0.157  slope in log n 2.835  exact E K at 3e4 28.16  exact at 1e6 38.7

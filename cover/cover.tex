@@ -1,0 +1,97 @@
+%% Wraparound paperback cover for KDP
+%% Trim 7 x 10 in, 0.125 in bleed on all sides, spine width from page count (white paper).
+\documentclass{article}
+\input{spine}  % defines \spinewidth (in inches, a number)
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usetikzlibrary{calc}
+
+\newlength{\bleed}\setlength{\bleed}{0.125in}
+\newlength{\trimw}\setlength{\trimw}{7in}
+\newlength{\trimh}\setlength{\trimh}{10in}
+\newlength{\spine}\setlength{\spine}{\spinewidth in}
+\newlength{\coverw}\setlength{\coverw}{\dimexpr 2\bleed + 2\trimw + \spine\relax}
+\newlength{\coverh}\setlength{\coverh}{\dimexpr 2\bleed + \trimh\relax}
+\usepackage[paperwidth=\coverw,paperheight=\coverh,margin=0pt]{geometry}
+
+\definecolor{navy}{HTML}{13233A}
+\definecolor{navyb}{HTML}{1B3050}
+\definecolor{gold}{HTML}{D9A441}
+\definecolor{cream}{HTML}{F3EBDD}
+\definecolor{rust}{HTML}{B5543A}
+\definecolor{sage}{HTML}{8FA88A}
+\definecolor{teal}{HTML}{3E7C87}
+\tikzset{treeline/.style={draw=gold!85!cream, line width=0.7pt, line cap=round, line join=round}}
+
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\begin{document}
+\noindent
+\begin{tikzpicture}[x=1in,y=1in]
+  % geometry helpers (origin at lower left of the bleed box)
+  \pgfmathsetmacro{\B}{0.125}
+  \pgfmathsetmacro{\S}{\spinewidth}
+  \pgfmathsetmacro{\W}{\B+7+\S+7+\B}
+  \pgfmathsetmacro{\Hh}{10.25}
+  \pgfmathsetmacro{\fx}{\B+7+\S}   % left edge of front cover
+  \pgfmathsetmacro{\sx}{\B+7}      % left edge of spine
+  \useasboundingbox (0,0) rectangle (\W,\Hh);
+  \fill[navy] (0,0) rectangle (\W,\Hh);
+  \fill[navyb] (\sx,0) rectangle (\sx+\S,\Hh);
+
+  %% ---------------- front cover
+  % coalescent tree, root at top
+  \begin{scope}[shift={(\fx+0.70,6.45)}, yscale=-1]
+    \input{tree}
+  \end{scope}
+  % paintbox strip under the tree
+  \begin{scope}[shift={(\fx+0.70,6.15)}]
+    \input{strip}
+  \end{scope}
+  \node[anchor=north west, text=cream, align=left, font=\fontsize{40}{46}\selectfont]
+     at (\fx+0.66,5.55) {On Statistical\\Methods for\\Genetics};
+  \draw[gold, line width=0.6pt] (\fx+0.72,2.95) -- (\fx+3.4,2.95);
+  \node[anchor=north west, text=cream!85, align=left, font=\fontsize{15}{19}\selectfont\itshape]
+     at (\fx+0.70,2.78) {Fisher, Ewens and\\the Bayesian Programme};
+  \node[anchor=south west, text=gold, font=\fontsize{20}{24}\selectfont\scshape]
+     at (\fx+0.70,0.75) {Nicholas G.\ Polson};
+
+  %% ---------------- spine (text reads top to bottom)
+  \node[rotate=-90, text=cream, font=\fontsize{13}{15}\selectfont]
+     at (\sx+0.5*\S,6.3) {On Statistical Methods for Genetics};
+  \node[rotate=-90, text=gold, font=\fontsize{11}{13}\selectfont\scshape]
+     at (\sx+0.5*\S,1.75) {Polson};
+
+  %% ---------------- back cover
+  \fill[gold] (\B+0.75,9.05) rectangle (\B+2.35,9.11);
+  \node[anchor=north west, text width=5.4in, text=cream, align=left,
+        font=\fontsize{11.5}{16}\selectfont] at (\B+0.75,8.75) {%
+  Population genetics is among the oldest mathematical theories in biology, and its questions have always
+  been statistical ones. This book brings modern Bayesian methods to three classical problems of
+  the subject: Fisher's Fundamental Theorem of Natural Selection, the Ewens sampling formula, and
+  inference for the coalescent.\par\medskip
+  Part I shows that Fisher's average effects are a projection in a moving metric, that the additive
+  genetic variance is a many parameter functional inflated by overfitting, and that the horseshoe
+  prior and the two parameter Poisson Dirichlet family are linked by an exact identity of marginal
+  laws, with the sparsity level playing the role of Pitman's $\alpha$. Part II derives the Ewens sampling formula from de Finetti's theorem, studies
+  ascertainment through Kingman's paintbox, and gives exact Bayesian inference for concentration
+  parameters by P\'olya inverse gamma augmentation and rational conjugacy. Part III replaces
+  approximate Bayesian computation by learned transport maps, and shows that sufficiency itself
+  can be tested by fitting.\par\medskip
+  A historical introduction traces the subject from Mendel and Galton to the biobank era, a
+  mathematical toolkit chapter prepares the ground, and a closing chapter sets out the open
+  problems that remain. Every chapter is built around worked examples on real and simulated
+  data, and ends with exercises.};
+  \node[anchor=north west, text width=5.4in, text=cream!80, align=left,
+        font=\fontsize{10}{13.5}\selectfont\itshape] at (\B+0.75,3.55) {%
+  Nicholas G.\ Polson is the Robert Law Jr.\ Professor of Econometrics and Statistics at the Booth
+  School of Business, University of Chicago. His research spans Bayesian computation, machine
+  learning and applied probability, and includes the horseshoe prior and P\'olya Gamma data
+  augmentation.};
+  % barcode area kept clear (KDP places the barcode here)
+  \fill[white] (\B+7-0.25-2.0,0.125+0.25) rectangle (\B+7-0.25,0.125+0.25+1.2);
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,6 @@
+two parameter fit alpha -0.1454 theta 209.70 n 9747 m 1442.6
+E K_n finite pool formula 619.83   EK_py 619.83
+two parameter expected species <= 24: 500.21, > 24: 119.61
+Ewens expected alternating sum over j > 24: 2.12
+two parameter expected alternating sum over j > 24: 2.47
+LR 8.57  chi2_1 99 percent point 6.63  p value 0.0034

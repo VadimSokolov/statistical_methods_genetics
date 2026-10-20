@@ -1,0 +1,15 @@
+sigma=0.5 theta=1 alpha=2 sigma*=0.3333 predicted=1.3661 simulated=1.3588 relsd=0.065 se_mean=0.0114 (sim-pred)/pred=-0.53%
+sigma=0.4 theta=1 alpha=2 sigma*=0.2500 predicted=1.1623 simulated=1.1559 relsd=0.101 se_mean=0.0151 (sim-pred)/pred=-0.55%
+sigma=0.6 theta=1 alpha=1.5 sigma*=0.5000 predicted=1.4058 simulated=1.4034 relsd=0.019 se_mean=0.0035 (sim-pred)/pred=-0.16%
+sigma=0.5 theta=1 alpha=1 sigma*=0.5000 predicted=1.0000 simulated=1.0000 relsd=0.000 se_mean=0.0000 (sim-pred)/pred=+0.00%
+sigma=0.5 theta=2 alpha=2 sigma*=0.3333 predicted=1.3661 simulated=1.3650 relsd=0.050 se_mean=0.0088 (sim-pred)/pred=-0.08%
+
+Table values: theta=1 row 1.3624, theta=2 row 1.3450, prediction 1.3661
+table change theta 1 to 2: -1.28%
+table theta=2 vs prediction: -1.54%
+table sim 1.3624 pred 1.3661: diff -0.41 standard errors of the mean
+table sim 1.1726 pred 1.1623: diff +0.82 standard errors of the mean
+table sim 1.4094 pred 1.4058: diff +1.32 standard errors of the mean
+table sim 1.345 pred 1.3661: diff -2.96 standard errors of the mean
+table theta 1 vs 2 difference in standard errors (independent): 1.52
+this run: change theta 1 to 2: +0.46%

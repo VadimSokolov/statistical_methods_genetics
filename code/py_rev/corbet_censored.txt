@@ -1,0 +1,4 @@
+tabulated K 501 n 3306 1-2A2/A1 -0.254
+A2/A1 0.627  Poisson delta method se 0.093
+censored fit: theta 141.75 n 11068 E A1 139.97 E A2 69.10 ratio 0.494, (data - ratio)/se 1.43
+old, tabulated classes as whole sample: theta 163.99 n 3306 E A1 156.28 E A2 74.47 ratio 0.477, (data - ratio)/se 1.62

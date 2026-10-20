@@ -1,0 +1,14 @@
+N: [200, 400, 800, 1600, 3200]
+unregularised projection:      [3.09, 2.09, 1.55, 1.27, 1.14]
+species sampling, tau=L^-1/2:  [0.65, 0.81, 0.89, 0.94, 0.98]
+species sampling, oracle tau:  [0.8, 0.89, 0.93, 0.96, 0.98]
+gap canonical vs oracle:       [0.15, 0.08, 0.03, 0.02, 0.01]
+mean residual var (epi+env):   [1.941, 1.879, 1.902, 1.923, 1.9]
+mean true sigma_A^2:           [21.32, 19.47, 18.84, 20.2, 19.42]
+N s^2 (coef noise var x N):    [24.28, 23.15, 23.38, 24.63, 24.07]
+MC s.e. of projection ratio:   [0.053, 0.036, 0.023, 0.012, 0.008]
+prior effective model size L tau/(1+tau) at tau=L^-1/2: 19.05
+theta=2 n=200: K_n 9.84  predicted K_2n 11.25  actual K_2n 11.34  mean rel err 9.3%  naive 2K_n / K_2n 1.74
+theta=2 n=1000: K_n 12.87  predicted K_2n 14.25  actual K_2n 14.22  mean rel err 7.3%  naive 2K_n / K_2n 1.81
+theta=10 n=200: K_n 31.14  predicted K_2n 37.96  actual K_2n 37.97  mean rel err 6.0%  naive 2K_n / K_2n 1.64
+theta=10 n=1000: K_n 46.42  predicted K_2n 53.28  actual K_2n 53.23  mean rel err 4.3%  naive 2K_n / K_2n 1.74

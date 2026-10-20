@@ -1,0 +1,57 @@
+=== training seed 0 (chapter uses seed 0) ===
+theta before: width 97.413 cov90 0.9074 cov50 0.5056 SBC 33.2 thirds [0.909 0.9   0.914]
+theta after : width 94.195 cov90 0.8971 cov50 0.4984 SBC 14.6 thirds [0.898 0.89  0.903]  G^-1(.05,.95) [0.0501 0.9395]
+   S= 40 ref [24.53 34.08 40.76 47.61 58.18] gbc [24.85 34.02 40.91 48.23 60.3 ]
+   S=100 ref [ 49.43  71.86  88.14 103.13 123.55] gbc [ 50.02  72.24  89.19 104.22 125.68]
+   S=200 ref [ 71.41 103.96 133.47 166.34 210.03] gbc [ 71.11 103.37 133.44 167.9  213.23]
+   max abs disc 3.197 at S=200 level 0.95 (1.52% of quantile); max rel disc 3.66% at S=40 level 0.95 (abs 2.129)
+g     before: width 15.491 cov90 0.8991 cov50 0.4980 SBC 8.3 thirds [0.896 0.894 0.907]
+g     after : width 15.550 cov90 0.9007 cov50 0.4958 SBC 8.3 thirds [0.898 0.896 0.908]  G^-1(.05,.95) [0.0483 0.9503]
+   S= 40 ref [ 4.69 10.36 14.4  17.44 19.52] gbc [ 4.9  10.29 14.35 17.44 19.52]
+   S=100 ref [ 2.62  7.41 11.81 15.88 19.16] gbc [ 2.62  7.47 11.84 15.91 19.14]
+   S=200 ref [ 0.83  3.29  6.49 10.89 17.21] gbc [ 0.82  3.26  6.54 10.97 17.22]
+   max abs disc 0.214 at S=40 level 0.05 (4.56% of quantile); max rel disc 4.56% at S=40 level 0.05 (abs 0.214)
+=== training seed 1 (chapter uses seed 0) ===
+theta before: width 94.434 cov90 0.8972 cov50 0.4989 SBC 31.0 thirds [0.898 0.892 0.902]
+theta after : width 94.319 cov90 0.8964 cov50 0.4969 SBC 13.5 thirds [0.896 0.891 0.902]  G^-1(.05,.95) [0.0483 0.9483]
+   S= 40 ref [24.53 34.08 40.76 47.61 58.18] gbc [24.6  34.23 41.17 47.92 58.8 ]
+   S=100 ref [ 49.43  71.86  88.14 103.13 123.55] gbc [ 49.82  72.35  89.32 103.28 123.81]
+   S=200 ref [ 71.41 103.96 133.47 166.34 210.03] gbc [ 73.08 104.79 133.84 167.65 210.24]
+   max abs disc 1.672 at S=200 level 0.05 (2.34% of quantile); max rel disc 2.34% at S=200 level 0.05 (abs 1.672)
+g     before: width 15.455 cov90 0.8961 cov50 0.4951 SBC 17.8 thirds [0.895 0.892 0.901]
+g     after : width 15.588 cov90 0.9003 cov50 0.4967 SBC 8.4 thirds [0.9   0.896 0.905]  G^-1(.05,.95) [0.0451 0.9495]
+   S= 40 ref [ 4.69 10.36 14.4  17.44 19.52] gbc [ 4.89 10.39 14.26 17.4  19.5 ]
+   S=100 ref [ 2.62  7.41 11.81 15.88 19.16] gbc [ 2.69  7.44 11.84 15.88 19.14]
+   S=200 ref [ 0.83  3.29  6.49 10.89 17.21] gbc [ 0.89  3.37  6.62 11.06 17.22]
+   max abs disc 0.200 at S=40 level 0.05 (4.26% of quantile); max rel disc 7.88% at S=200 level 0.05 (abs 0.065)
+=== training seed 2 (chapter uses seed 0) ===
+theta before: width 97.098 cov90 0.9082 cov50 0.5065 SBC 17.6 thirds [0.905 0.901 0.918]
+theta after : width 94.389 cov90 0.8963 cov50 0.4975 SBC 11.3 thirds [0.894 0.888 0.907]  G^-1(.05,.95) [0.0535 0.9441]
+   S= 40 ref [24.53 34.08 40.76 47.61 58.18] gbc [24.4  34.22 41.17 48.36 59.45]
+   S=100 ref [ 49.43  71.86  88.14 103.13 123.55] gbc [ 49.18  71.98  88.87 103.21 124.8 ]
+   S=200 ref [ 71.41 103.96 133.47 166.34 210.03] gbc [ 69.79 103.3  133.3  168.4  212.18]
+   max abs disc 2.146 at S=200 level 0.95 (1.02% of quantile); max rel disc 2.27% at S=200 level 0.05 (abs 1.623)
+g     before: width 15.560 cov90 0.9012 cov50 0.5010 SBC 5.9 thirds [0.899 0.897 0.907]
+g     after : width 15.516 cov90 0.9002 cov50 0.4964 SBC 9.5 thirds [0.898 0.896 0.906]  G^-1(.05,.95) [0.0514 0.9499]
+   S= 40 ref [ 4.69 10.36 14.4  17.44 19.52] gbc [ 4.64 10.15 14.42 17.46 19.51]
+   S=100 ref [ 2.62  7.41 11.81 15.88 19.16] gbc [ 2.49  7.51 11.81 15.94 19.15]
+   S=200 ref [ 0.83  3.29  6.49 10.89 17.21] gbc [ 0.79  3.23  6.49 10.94 17.16]
+   max abs disc 0.210 at S=40 level 0.25 (2.03% of quantile); max rel disc 5.13% at S=100 level 0.05 (abs 0.134)
+=== training seed 3 (chapter uses seed 0) ===
+theta before: width 95.724 cov90 0.9026 cov50 0.4993 SBC 15.5 thirds [0.902 0.897 0.909]
+theta after : width 94.125 cov90 0.8966 cov50 0.4964 SBC 11.4 thirds [0.896 0.892 0.903]  G^-1(.05,.95) [0.0501 0.9449]
+   S= 40 ref [24.53 34.08 40.76 47.61 58.18] gbc [24.66 33.25 40.61 47.59 58.81]
+   S=100 ref [ 49.43  71.86  88.14 103.13 123.55] gbc [ 49.53  72.15  88.65 103.84 125.67]
+   S=200 ref [ 71.41 103.96 133.47 166.34 210.03] gbc [ 71.28 103.73 133.07 166.2  212.14]
+   max abs disc 2.121 at S=100 level 0.95 (1.72% of quantile); max rel disc 2.42% at S=40 level 0.25 (abs 0.826)
+g     before: width 15.557 cov90 0.9024 cov50 0.4998 SBC 8.1 thirds [0.902 0.899 0.906]
+g     after : width 15.502 cov90 0.9001 cov50 0.4959 SBC 4.1 thirds [0.899 0.896 0.905]  G^-1(.05,.95) [0.0491 0.9471]
+   S= 40 ref [ 4.69 10.36 14.4  17.44 19.52] gbc [ 4.79 10.4  14.51 17.57 19.57]
+   S=100 ref [ 2.62  7.41 11.81 15.88 19.16] gbc [ 2.6   7.48 11.89 16.01 19.2 ]
+   S=200 ref [ 0.83  3.29  6.49 10.89 17.21] gbc [ 0.81  3.24  6.53 10.85 17.2 ]
+   max abs disc 0.133 at S=100 level 0.75 (0.84% of quantile); max rel disc 2.36% at S=200 level 0.05 (abs 0.020)
+reference standard errors (max over S and levels): theta 0.0004 g 0.0000
+se of cov90 in a third: 0.0037
+seed 0 theta before: spread across thirds 0.0146
+seed 0 theta after: spread across thirds 0.0133
+recalibrated exact map: SBC mean 17.90, P(SBC > 16.92) = 0.489, 95th percentile 32.98

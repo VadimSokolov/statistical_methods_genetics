@@ -1,0 +1,36 @@
+Insurance: 64 cells, mean 49.234, variance (divisor n) 4984.96
+
+1. Profile likelihood of alpha (no finite maximum)
+Poisson fit: Pearson chi2/df = 0.901
+  alpha         2: l(alpha) - sup =   -63.249
+  alpha       8.3: l(alpha) - sup =   -30.754
+  alpha        10: l(alpha) - sup =   -27.547
+  alpha      13.1: l(alpha) - sup =   -23.330
+  alpha        20: l(alpha) - sup =   -17.718
+  alpha      20.1: l(alpha) - sup =   -17.658
+  alpha        50: l(alpha) - sup =    -9.246
+  alpha      74.3: l(alpha) - sup =    -6.842
+  alpha       100: l(alpha) - sup =    -5.419
+  alpha      1000: l(alpha) - sup =    -0.722
+  alpha     10000: l(alpha) - sup =    -0.076
+  alpha     1e+06: l(alpha) - sup =    -0.001
+  profile increasing on the grid 1..1e6: True
+  likelihood bound alpha_L, one sided 95% (chi2_1 0.90 / 2 = 1.353): 508.07; ratio to 20.1: 25.28
+  likelihood bound alpha_L, two sided 95% (chi2_1 0.95 / 2 = 1.921): 343.60; ratio to 20.1: 17.09
+
+2./3. Posterior of alpha and 90% predictive bands, 4 chains x 25000 retained draws
+
+model A: (alpha, psi) model, beta ~ N(0,100I) on psi coefficients (as stated in the chapter)
+  PH(0,1,2,1)    MCMC median     353.3  2.5%     65.5  97.5%     7433.5  mean      1664 | pred coverage 0.953 width 24.8 | ESS(log alpha) 8903 of 100000, accept 0.66, 23s | grid check median 359.6 (67.0, 7661.0)
+  Ga(0.01,0.01)  MCMC median     159.8  2.5%     55.2  97.5%      449.2  mean       183 | pred coverage 0.953 width 27.0 | ESS(log alpha) 22253 of 100000, accept 0.46, 31s | grid check median 160.0 (55.3, 443.7)
+  Ga(2,1)        MCMC median      13.1  2.5%      8.2  97.5%       20.0  mean        13 | pred coverage 1.000 width 55.3 | ESS(log alpha) 14893 of 100000, accept 0.23, 42s | grid check median 13.1 (8.2, 20.0)
+
+model B: mean parameterization, beta ~ N(0,100I) on log mean coefficients
+  PH(0,1,2,1)    MCMC median     395.3  2.5%     70.1  97.5%    11328.7  mean      2371 | pred coverage 0.953 width 24.5 | ESS(log alpha) 8654 of 100000, accept 0.68, 86s | grid check median 401.7 (70.1, 11116.0)
+  Ga(0.01,0.01)  MCMC median     164.4  2.5%     56.7  97.5%      454.0  mean       188 | pred coverage 0.953 width 27.0 | ESS(log alpha) 23134 of 100000, accept 0.46, 79s | grid check median 163.3 (56.3, 451.8)
+  Ga(2,1)        MCMC median      13.1  2.5%      8.2  97.5%       20.0  mean        13 | pred coverage 1.000 width 55.2 | ESS(log alpha) 14832 of 100000, accept 0.23, 89s | grid check median 13.1 (8.2, 20.1)
+
+4. Posterior mean of alpha under PH(0,1,2,1), Laplace grid in t = log alpha up to t = 400
+   (likelihood replaced by its Poisson limit above alpha = 1e7, where it differs by under 1e-4)
+  model A: posterior mean = 2071 (log10 3.32); integrand alpha p(alpha) peaks at log10 alpha = 3.5
+  model B: posterior mean = 110843 (log10 5.04); integrand alpha p(alpha) peaks at log10 alpha = 139.7  (no finite mean: the integrand does not decay, value grows with the cutoff)

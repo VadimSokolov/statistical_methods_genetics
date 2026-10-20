@@ -1,0 +1,30 @@
+theta=1.0 alpha=0.5 row 1 uniform, G=r                     P(coincide)=0.49883 +- 0.00064  ESF(1) value=0.50000  z=-1.8
+theta=1.0 alpha=0.5 row 2/3 size biased, G=r^a             P(coincide)=0.33266 +- 0.00047  ESF(2) value=0.33333  z=-1.4
+theta=1.0 alpha=0.5 row 4 size biased left, G=1-(1-r)^a    P(coincide)=0.58944 +- 0.00066  ESF(1) value=0.50000  z=+136.5
+theta=1.0 alpha=0.5 row 5 ranked, G=r^a                    P(coincide)=0.30471 +- 0.00047  ESF(2) value=0.33333  z=-60.4
+
+theta=1.0 alpha=2.0 row 1 uniform, G=r                     P(coincide)=0.50125 +- 0.00065  ESF(1) value=0.50000  z=+1.9
+theta=1.0 alpha=2.0 row 2/3 size biased, G=r^a             P(coincide)=0.66765 +- 0.00071  ESF(0.5) value=0.66667  z=+1.4
+theta=1.0 alpha=2.0 row 4 size biased left, G=1-(1-r)^a    P(coincide)=0.44546 +- 0.00062  ESF(1) value=0.50000  z=-88.7
+theta=1.0 alpha=2.0 row 5 ranked, G=r^a                    P(coincide)=0.72790 +- 0.00061  ESF(0.5) value=0.66667  z=+100.4
+
+theta=1.0 alpha=3.0 row 1 uniform, G=r                     P(coincide)=0.49953 +- 0.00065  ESF(1) value=0.50000  z=-0.7
+theta=1.0 alpha=3.0 row 2/3 size biased, G=r^a             P(coincide)=0.74929 +- 0.00070  ESF(0.333333) value=0.75000  z=-1.0
+theta=1.0 alpha=3.0 row 4 size biased left, G=1-(1-r)^a    P(coincide)=0.42494 +- 0.00059  ESF(1) value=0.50000  z=-126.3
+theta=1.0 alpha=3.0 row 5 ranked, G=r^a                    P(coincide)=0.84372 +- 0.00047  ESF(0.333333) value=0.75000  z=+198.8
+
+theta=2.0 alpha=0.5 row 1 uniform, G=r                     P(coincide)=0.33313 +- 0.00047  ESF(2) value=0.33333  z=-0.4
+theta=2.0 alpha=0.5 row 2/3 size biased, G=r^a             P(coincide)=0.19969 +- 0.00027  ESF(4) value=0.20000  z=-1.1
+theta=2.0 alpha=0.5 row 4 size biased left, G=1-(1-r)^a    P(coincide)=0.43624 +- 0.00055  ESF(2) value=0.33333  z=+188.3
+theta=2.0 alpha=0.5 row 5 ranked, G=r^a                    P(coincide)=0.17648 +- 0.00027  ESF(4) value=0.20000  z=-88.7
+
+theta=2.0 alpha=2.0 row 1 uniform, G=r                     P(coincide)=0.33374 +- 0.00047  ESF(2) value=0.33333  z=+0.9
+theta=2.0 alpha=2.0 row 2/3 size biased, G=r^a             P(coincide)=0.50102 +- 0.00065  ESF(1) value=0.50000  z=+1.6
+theta=2.0 alpha=2.0 row 4 size biased left, G=1-(1-r)^a    P(coincide)=0.27762 +- 0.00040  ESF(2) value=0.33333  z=-138.0
+theta=2.0 alpha=2.0 row 5 ranked, G=r^a                    P(coincide)=0.56369 +- 0.00060  ESF(1) value=0.50000  z=+106.5
+
+theta=2.0 alpha=3.0 row 1 uniform, G=r                     P(coincide)=0.33340 +- 0.00047  ESF(2) value=0.33333  z=+0.1
+theta=2.0 alpha=3.0 row 2/3 size biased, G=r^a             P(coincide)=0.60000 +- 0.00070  ESF(0.666667) value=0.60000  z=-0.0
+theta=2.0 alpha=3.0 row 4 size biased left, G=1-(1-r)^a    P(coincide)=0.26021 +- 0.00038  ESF(2) value=0.33333  z=-192.3
+theta=2.0 alpha=3.0 row 5 ranked, G=r^a                    P(coincide)=0.71011 +- 0.00056  ESF(0.666667) value=0.60000  z=+196.2
+

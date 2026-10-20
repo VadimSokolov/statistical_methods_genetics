@@ -1,0 +1,5 @@
+sd=0.3  mean tau hat=0.004  mean retained fraction of the total=0.135
+sd=0.5  mean tau hat=0.028  mean retained fraction of the total=0.300
+sd=1.0  mean tau hat=0.294  mean retained fraction of the total=0.770
+sd=2.0  mean tau hat=1.180  mean retained fraction of the total=0.966
+sd=4.0  mean tau hat=2.990  mean retained fraction of the total=0.991

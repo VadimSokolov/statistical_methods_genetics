@@ -1,0 +1,81 @@
+%% Preface
+\chapter*{Preface}
+\markboth{Preface}{Preface}
+\addcontentsline{toc}{chapter}{Preface}
+
+This book grew out of a correspondence. Over the course of 2026 Warren Ewens sent me a series of
+questions, some about the Fundamental Theorem of Natural Selection, on which he had just written
+what he called the end of a story, and more about the sampling formula that carries his name. What
+happens to the formula when a Poisson Dirichlet subdivision is sampled with a nonuniform density?
+How much of that survives in the two parameter family? What is the mean number of singleton colours
+in a paintbox? Does a derivation from de Finetti's theorem say anything about probabilities in
+Kingman's coalescent? Each question became a note, most of the notes became papers, and the papers
+turned out to be chapters of a single argument.
+
+The argument is that the classical questions of population genetics are statistical questions, and
+that the statistical tools developed in recent decades (global local shrinkage priors,
+Bayesian nonparametrics, data augmentation, and generative methods for inference without a
+likelihood) answer some of them in ways that were not available to Fisher, Haldane, Wright, Kimura
+or Ewens himself. In the other direction, several objects that statisticians now use routinely,
+from the Dirichlet process to the horseshoe prior, turn out to be objects that population
+geneticists defined first, for reasons of their own, or to share their marginal laws exactly.
+
+The book has three parts, framed by a historical introduction, a chapter of mathematical
+preliminaries, and a closing chapter on open problems. Chapter~\ref{ch:intro} tells the history of
+the subject and introduces its basic models. Chapter~\ref{ch:toolkit}, \emph{A Mathematical
+Toolkit}, collects in one place the probability and statistics that the later chapters draw on
+repeatedly, so that those chapters can get to their arguments quickly. Part I
+(Chapters~\ref{ch:ftns}, \ref{ch:hs} and \ref{ch:mp}) is about selection and Fisher's additive
+model; Part II (Chapters~\ref{ch:esf}, \ref{ch:py}, \ref{ch:pig} and \ref{ch:rc}) about the Ewens
+sampling formula and the sampling theory of neutral alleles; Part III (Chapters~\ref{ch:suff} and
+\ref{ch:coal}) about inference for the coalescent when the likelihood cannot be computed.
+Chapter~\ref{ch:future} collects the open problems, stated where possible as precise questions.
+Each chapter has its own summary, notation and
+references, so that it can be read independently. The cross references between chapters are there
+for the reader who wants to follow a thread.
+
+Two features are meant to make the book usable for teaching and for self study. Every chapter
+contains worked examples, set apart from the text, in which the main results are carried out on
+cases small enough to check by hand or with a few lines of code, and most chapters contain at least one
+analysis of real genetic or ecological data. And every chapter ends with a set of exercises,
+mixing proofs, calculations and short computations, each with a hint.
+
+The chapters need not be read in order. Some suggested paths:
+\begin{itemize}[leftmargin=*]
+\item A course on the sampling formula: Chapters~\ref{ch:toolkit}, \ref{ch:esf}, \ref{ch:py}
+and \ref{ch:pig}, adding Chapter~\ref{ch:rc} for a longer course.
+\item A course on selection and the Fundamental Theorem: Chapters~\ref{ch:toolkit},
+\ref{ch:ftns}, \ref{ch:hs} and \ref{ch:mp}.
+\item A course on likelihood free inference: Chapters~\ref{ch:toolkit}, \ref{ch:esf},
+\ref{ch:suff} and \ref{ch:coal}.
+\item A short introduction for a reader new to the subject: Chapter~\ref{ch:intro}, then
+Chapter~\ref{ch:toolkit}, then the first three sections of Chapter~\ref{ch:esf}, and finally
+Chapter~\ref{ch:future}.
+\end{itemize}
+Chapter~\ref{ch:intro} can serve as background reading for any of these.
+
+The prerequisites are a working knowledge of probability and of Bayesian inference at the level of
+a first graduate course. No previous acquaintance with population genetics is assumed;
+Chapter~\ref{ch:intro} supplies the history and the basic models, Chapter~\ref{ch:toolkit} the
+common mathematical tools, and each later chapter defines what it uses. The numerical results and
+worked examples in every chapter were produced by short Python programs, and the figures can be
+reproduced from them.
+
+\section*{Acknowledgements}
+
+My first and largest debt is to Warren Ewens. This book exists because of our correspondence: a
+long run of emails in which he asked the questions that started almost every chapter, read the
+answers as they arrived, pointed out what was wrong or unclear in them, and then, more often than
+not, asked the next question. I am grateful for every one of those emails, for the generosity with
+which he shared his preprints and his memory of how the subject developed, and for the motivating
+questions themselves, which were always better than the answers I first gave. His work over more
+than half a century defines much of the territory the book covers, and Chapter~\ref{ch:intro}
+tries to give some account of it. The book is dedicated to him.
+
+I am also grateful to Vadim Sokolov for many discussions, in particular of double descent and of
+overparameterised models, and to the Booth School of Business at the University of Chicago for
+its support. The errors that remain are mine.
+
+\vspace{1em}
+\noindent Nicholas G.\ Polson\\
+Chicago, October 2026

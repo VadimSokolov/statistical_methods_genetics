@@ -1,0 +1,981 @@
+%% Chapter 1: historical introduction (new for the book)
+\chapter{A Short History of Population Genetics}\label{ch:intro}
+\chaptermark{A Short History of Population Genetics}
+
+\begin{chaptersummary}
+Population genetics is among the oldest mathematical theories in biology and one of the two parents of
+modern statistics. This chapter traces the subject from Darwin's difficulty with blending
+inheritance, through Mendel, the quarrel between the biometricians and the Mendelians, and the
+synthesis of Fisher, Haldane and Wright, to Kimura's diffusions and the neutral theory, the sampling
+theory of Ewens and Kingman, the coalescent, and the genomic era of biobanks and polygenic traits.
+Along the way six worked examples carry out, on numbers small enough to check by hand, the
+calculation that defined each period: Mendel's $3:1$ ratio and its chi square test, the Hardy
+Weinberg law, Fisher's decomposition of the genetic variance, Haldane's $2s$, the Ewens sampling
+formula and the expected times of the coalescent. The emphasis throughout is on the statistical
+questions each period left open, because those are the questions the remaining chapters of this
+book take up.
+\end{chaptersummary}
+
+\section{Two subjects with one founder}
+
+It is unusual for a science and its methodology to be founded by the same person in the same
+paper, but that is roughly what happened to population genetics and statistics. In 1918
+R.~A.\ Fisher published ``The correlation between relatives on the supposition of Mendelian
+inheritance'' \citep{intro:fisher1918}. The paper showed that the correlations Karl Pearson and
+his school had measured between relatives were exactly what Mendel's discrete factors would
+produce if a trait were governed by many of them, and in order to show it Fisher introduced the
+word \emph{variance} and the decomposition of a total variance into additive, dominance and
+epistatic components. The analysis of variance, which Fisher later developed at Rothamsted for
+agricultural experiments, was born as a statement about genes.
+
+The intertwining did not stop there. Fisher's work on maximum likelihood was motivated in part by
+the estimation of linkage, Haldane wrote one of the first papers on what we would now call a
+default prior, with genetic linkage as his leading example \citep{intro:haldane1932prior}, the Dirichlet process
+of Bayesian nonparametrics turned out to be the de Finetti measure behind a sampling formula
+derived for alleles, and approximate Bayesian computation was invented by population geneticists
+who could simulate their models but could not write down their likelihoods. A book on statistical
+methods for genetics is therefore also, in some measure, a book on the history of statistical
+thought.
+
+This chapter sketches that history, with an eye on the problems it left unsolved. It is not a
+substitute for the full histories of the subject, and it makes no attempt at completeness. Its
+purpose is to put the later chapters in context and to introduce, in their historical order, the
+handful of models on which everything else rests. For that reason each period is accompanied by a
+worked example, set apart from the narrative, in which the central calculation of the period is
+carried out on small numbers. The mathematical tools that these examples only touch, and that
+the later chapters use in earnest, are collected in Chapter~\ref{ch:toolkit}.
+
+\section{Darwin's difficulty and the biometricians}
+
+The problem that population genetics was invented to solve was a problem about inheritance, and it
+was posed by Darwin's critics before anyone had a theory of heredity adequate to answer it.
+Darwin's \emph{Origin of Species} (1859) offered natural selection as the mechanism of evolution
+but had no adequate account of inheritance. The prevailing assumption was blending: the offspring
+is an average of its parents. In 1867 the engineer Fleeming Jenkin pointed out, in a review that
+Darwin took seriously, that blending halves the heritable variation in every generation
+\citep{intro:jenkin1867}. If $X$ and $Y$ are the values of two unrelated parents with common
+variance $\sigma^2$, a blended offspring $(X+Y)/2$ has variance $\sigma^2/2$. A favourable variant
+arising in one individual would be diluted away long before selection could act on it, and
+variation itself would collapse unless something replenished it at an implausible rate. The
+objection is, at bottom, a statement about a variance, and its resolution would require a theory
+in which variance is conserved.
+
+Francis Galton approached heredity from the opposite direction, by measurement. His studies of
+stature in parents and children led to the discovery of regression towards the mean
+\citep{intro:galton1886} and to the correlation coefficient, and his ``law of ancestral heredity''
+attempted to apportion an individual's character among the contributions of its ancestors. Karl
+Pearson and W.~F.~R.\ Weldon built on Galton to found biometry: the statistical study of continuous
+variation in natural populations, with the journal \emph{Biometrika} established in 1901 as its
+organ. For the biometricians evolution was gradual, variation was continuous, and the correct
+description of heredity was a set of correlations between relatives.
+
+\section{Mendel and the rediscovery}
+
+The answer to Jenkin had in fact been published a year before his review appeared, in a journal
+almost nobody read. Gregor Mendel's experiments on the garden pea, reported to the Natural
+History Society of Br\"unn in 1865 and published the following year \citep{intro:mendel1866},
+proposed something entirely different from blending: heredity is carried by discrete factors that
+come in pairs, segregate cleanly at the formation of gametes, and recombine at fertilisation
+without blending. The ratios $3:1$ and $9:3:3:1$ were the visible consequence. The paper was largely
+ignored until 1900, when it was rediscovered more or less simultaneously by Hugo de Vries, Carl
+Correns and Erich von Tschermak. William Bateson became its most energetic advocate in the English
+speaking world, coined the word \emph{genetics}, and saw in Mendelism a theory of discontinuous
+evolution by large steps.
+
+\begin{example}[Mendel's $3:1$ ratio and a chi square check]\label{intro:ex:mendel}
+Cross a pure line of round seeded peas with a pure line of wrinkled seeded peas. Every first
+generation plant carries one factor of each kind, say $Rr$, and since round is dominant every
+seed it bears on the parent plant is round. Self fertilise the first generation. Each parent
+passes $R$ or $r$ with probability $1/2$, independently, so a second generation seed is $RR$, $Rr$
+or $rr$ with probabilities $1/4$, $1/2$ and $1/4$, and is round unless it is $rr$. The predicted
+proportion of round seeds is therefore $3/4$.
+
+Mendel counted $5474$ round and $1850$ wrinkled seeds, $7324$ in all, a ratio of $2.96$ to one.
+Under the hypothesis the expected counts are $\tfrac34\times 7324=5493$ and
+$\tfrac14\times7324=1831$, so the observed counts are each $19$ away from expectation, and
+Pearson's statistic is
+\begin{equation*}
+X^2=\frac{19^2}{5493}+\frac{19^2}{1831}=0.066+0.197=0.263 .
+\end{equation*}
+On one degree of freedom this has upper tail probability $0.61$. Equivalently, the number of round
+seeds is binomial with standard deviation $\sqrt{7324\times\tfrac34\times\tfrac14}=37.1$, and the
+observed shortfall of $19$ is half a standard deviation. The data agree with the $3:1$ law about as
+well as one could ask.
+
+Too well, in Fisher's later opinion. Pooling the chi square statistics over all of Mendel's
+experiments, \citet{intro:fisher1936} found that the aggregate agreement was closer than chance
+would ordinarily allow, and suggested that the data had been adjusted, perhaps by an assistant who
+knew what was expected. The debate over Fisher's charge has never been fully settled. Its
+interest for us is that the most famous statistical analysis of Mendel's data is a test of
+goodness of fit in the \emph{lower} tail: a test of whether the data were too good to be true.
+\end{example}
+
+What followed the rediscovery was one of the more bitter disputes in the history of science. The
+Mendelians held that discrete factors explained heredity and that continuous variation was largely
+environmental noise; the biometricians held that the correlations between relatives, which were
+real and measurable, could not be explained by Mendel's factors. Both sides were partly right, and
+the reconciliation was in plain sight. G.~Udny Yule argued as early as 1902 that many Mendelian
+factors acting together would produce continuous variation and the correlations Pearson observed
+\citep{intro:yule1902}, and Pearson himself in 1904 derived some of the consequences of Mendelian
+inheritance for correlations, though he concluded that the agreement was imperfect.
+
+A second early result was more decisive for the mathematics. In 1908 G.~H.\ Hardy, responding to a
+question from the geneticist R.~C.\ Punnett, showed that under random mating a dominant allele does
+not increase in frequency merely because it is dominant: genotype frequencies settle in one
+generation at $p^2:2pq:q^2$ and allele frequencies stay fixed in the absence of other forces
+\citep{intro:hardy1908}. Wilhelm Weinberg had derived the same result independently in the same year
+\citep{intro:weinberg1908}. The Hardy Weinberg law answered Jenkin. Under particulate inheritance
+variation is conserved, so selection has something persistent to act upon. It also established the
+null model against which every later force (selection, mutation, drift, migration, nonrandom mating)
+would be measured, and the manifold of product measures it defines will reappear, in a
+geometrical guise, in Chapter~\ref{ch:ftns}.
+
+\begin{example}[The Hardy Weinberg law in numbers]\label{intro:ex:hw}
+Suppose a population has genotype frequencies $AA:Aa:aa=0.6:0.2:0.2$, which are far from
+Hardy Weinberg proportions. The frequency of $A$ is $p=0.6+\tfrac12(0.2)=0.7$, because each $AA$
+individual carries two copies and each $Aa$ one. Under random mating a zygote is formed by two
+independent draws from the gamete pool, each $A$ with probability $0.7$, so the next generation
+has frequencies
+\begin{equation*}
+p^2=0.49,\qquad 2pq=0.42,\qquad q^2=0.09 .
+\end{equation*}
+The allele frequency of this generation is $0.49+0.21=0.7$ again, so the generation after has
+the same genotype frequencies, and so on for ever. Equilibrium is reached in a single generation,
+and nothing in the calculation depends on which allele is dominant. That was Hardy's answer to
+Punnett: a dominant allele at frequency $0.3$ stays at $0.3$.
+
+The same arithmetic run backwards is how the law is most often used. If a recessive condition
+affects one birth in $2500$, then $q^2=1/2500$ gives $q=0.02$, and the frequency of carriers is
+$2pq=2(0.98)(0.02)=0.0392$, about one person in $25.5$. There are $98$ carriers for every affected
+individual, which is why selection against a rare recessive is so slow: almost all copies of the
+allele are hidden in heterozygotes.
+
+Finally, a test. In a hypothetical sample of $N=500$ individuals with counts $180$, $220$ and $100$,
+the estimated frequency is $\hat p=(2\times180+220)/1000=0.58$, the expected counts are $168.2$,
+$243.6$ and $88.2$, and $X^2=4.69$ on one degree of freedom ($P=0.03$). The departure has a single
+interpretable parameter. Writing the observed heterozygote frequency as $2\hat p\hat q(1-\hat F)$
+gives $\hat F=0.097$, a deficit of heterozygotes of about ten percent, and one can check that
+$X^2=N\hat F^{2}$ exactly (Exercise~\ref{intro:exr:F}). Wright's inbreeding coefficient, met
+below, is this $F$.
+\end{example}
+
+\section{Fisher, Haldane and Wright}
+
+The reconciliation of Mendelism with the biometrical facts and with Darwinian selection was the
+work of three people in roughly fifteen years. Each brought a different kind of mathematics:
+Fisher the analysis of variance and the diffusion equation, Haldane the deterministic recursion and
+the branching process, Wright path analysis and the inbreeding coefficient.
+
+Fisher's 1918 paper settled the biometrical question by showing that a large number of Mendelian
+factors with small effects produces a normally distributed trait with exactly the correlations
+between relatives that the biometricians had measured, provided one separates the additive
+component of the genetic variance from the dominance and epistatic components. The separation is a
+least squares regression, and it is worth seeing once at a single locus.
+
+\begin{example}[Fisher's decomposition at one locus]\label{intro:ex:fisher}
+Let the genotypes $A_1A_1$, $A_1A_2$ and $A_2A_2$ have genotypic values $a$, $d$ and $-a$, and let
+$A_1$ have frequency $p$ with $q=1-p$, in Hardy Weinberg proportions. Regress the genotypic value
+on the number $x\in\{2,1,0\}$ of $A_1$ alleles, weighting each genotype by its frequency. The
+least squares slope is Fisher's \emph{average effect of a gene substitution},
+\begin{equation}\label{intro:eq:alpha}
+\alpha=a+d(q-p),
+\end{equation}
+and the variance of the fitted values (the \emph{breeding values}) and of the residuals (the
+\emph{dominance deviations}) are
+\begin{equation}\label{intro:eq:VAVD}
+V_A=2pq\,\alpha^2,\qquad V_D=(2pqd)^2 .
+\end{equation}
+Because the residuals of a least squares fit are orthogonal to the fitted values, the genotypic
+variance splits exactly as $V_G=V_A+V_D$.
+
+Take $a=1$, $d=0.5$ and $p=0.3$. The genotype frequencies are $0.09$, $0.42$ and $0.49$, the mean
+genotypic value is $a(p-q)+2pqd=-0.19$, and a direct calculation gives $V_G=0.6489$. Formula
+\eqref{intro:eq:alpha} gives $\alpha=1+0.5(0.4)=1.2$, which is also the slope a weighted regression
+returns. The breeding values are $1.49$, $0.29$ and $-0.91$, the dominance deviations are $-0.49$,
+$0.21$ and $-0.09$, and
+\begin{equation*}
+V_A=2(0.3)(0.7)(1.2)^2=0.6048,\qquad V_D=\{2(0.3)(0.7)(0.5)\}^2=0.0441,
+\end{equation*}
+which sum to $0.6489$ as they must. Most of the variance is additive even though the locus shows
+substantial dominance, as is usual when dominance is partial.
+
+Fisher's point about relatives now follows. A parent passes one allele to its offspring, so the
+covariance between parent and offspring is $V_A/2$, and the covariance between full sibs, who
+share both alleles with probability $1/4$, is $V_A/2+V_D/4$. Adding an environmental variance
+$V_E=1$ gives a phenotypic variance $V_P=1.6489$, a heritability $V_A/V_P=0.37$, a parent and
+offspring correlation of $0.183$ and a full sib correlation of $0.190$. These are the kinds of quantities the
+biometricians measured, and the Mendelian factors produce them without any blending.
+\end{example}
+
+In 1922 Fisher introduced the diffusion approximation to the stochastic fluctuation of gene
+frequencies \citep{intro:fisher1922}, and in \emph{The Genetical Theory of Natural Selection}
+\citep{intro:fisher1930} he set out a comprehensive theory of evolution in Mendelian populations.
+Its centrepiece was the Fundamental Theorem of Natural Selection: the rate of increase in fitness
+of any organism at any time is equal to its genetic variance in fitness at that time. Fisher
+compared it to the second law of thermodynamics. As Chapters~\ref{ch:ftns} and \ref{ch:hs}
+explain, its meaning remained disputed for half a century, and the dispute was resolved only by
+recognising that Fisher's average effects are the coefficients of a least squares projection,
+exactly the projection of Example~\ref{intro:ex:fisher}, but taken in an inner product that
+changes as the population evolves.
+
+J.~B.~S.\ Haldane, in a series of papers beginning in 1924 under the title ``A mathematical theory
+of natural and artificial selection'' \citep{intro:haldane1924}, worked out the deterministic
+dynamics of selection for a great variety of genetic systems, and in the fifth paper of the series
+\citep{intro:haldane1927} showed that a new advantageous mutant with selective advantage $s$ is
+fixed with probability approximately $2s$. His book \emph{The Causes of Evolution}
+\citep{intro:haldane1932} brought the results to a wide audience. Haldane also thought carefully
+about inference: his 1932 note on inverse probability proposed the improper prior proportional to
+$\{\theta(1-\theta)\}^{-1}$ for a proportion \citep{intro:haldane1932prior}, a prior that
+reappears in Chapter~\ref{ch:ftns} as the limiting member of a ladder whose middle rung is the
+horseshoe.
+
+\begin{example}[Haldane's $2s$ and Kimura's formula]\label{intro:ex:haldane}
+Haldane's argument is a branching process. A single new mutant in a large population is carried
+by a heterozygote whose expected number of offspring carrying the mutant is $1+s$. If that number
+is Poisson with mean $1+s$, the probability $\pi$ that the mutant's line survives for ever solves
+\begin{equation}\label{intro:eq:gw}
+1-\pi=\exp\{-(1+s)\pi\},
+\end{equation}
+since the line dies out exactly when each of the offspring lines does. Expanding the exponential to
+second order gives $\pi\approx(1+s)\pi-\tfrac12(1+s)^2\pi^2$, so $\pi\approx2s/(1+s)^2\approx2s$.
+More precisely $\pi=2s-\tfrac83s^2+O(s^3)$ (Exercise~\ref{intro:exr:gw}). Survival of the line
+in an infinite population is the same thing as fixation in a large one, because a line that has
+become common is no longer at risk from chance.
+
+Kimura's diffusion formula \citep{intro:kimura1962} removes the assumption of an infinite
+population. For a diploid population of size $N$ with genic selection (fitnesses $1$, $1+s$ and
+$1+2s$) the probability that an allele at initial frequency $p$ is eventually fixed is
+\begin{equation}\label{intro:eq:kimura}
+u(p)=\frac{1-e^{-4Nsp}}{1-e^{-4Ns}},\qquad u\Bigl(\frac1{2N}\Bigr)=\frac{1-e^{-2s}}{1-e^{-4Ns}} .
+\end{equation}
+When $4Ns$ is large the denominator is essentially one and $u\approx1-e^{-2s}\approx2s$, which is
+Haldane's answer. When $s\to0$ the formula tends to $1/(2N)$, the neutral answer: each of the $2N$
+copies present now is equally likely to be the ancestor of the whole population in the future.
+
+Table~\ref{intro:tab:fix} compares the three approximations with the exact fixation probability of
+the Wright Fisher chain, computed by solving the linear equations for absorption of the
+$1001$ state Markov chain with $N=500$. Haldane's $2s$ is good when $s$ is small and $4Ns$ is large, is
+thirteen percent too small at $4Ns=2$, and is useless when $4Ns$ is well below one, where drift
+rather than selection decides the mutant's fate; there the
+probability of fixation of a slightly advantageous mutant is barely more than that of a neutral
+one, the observation that underlies the nearly neutral theory. Kimura's formula is accurate
+throughout, with an error of order $s^2$ when $s$ is not small.
+\end{example}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Probability of fixation of a single new mutant in a diploid population of size $N=500$
+with genic selection coefficient $s$. Haldane: $2s$; branching: root of \eqref{intro:eq:gw};
+Kimura: formula \eqref{intro:eq:kimura}; exact: Wright Fisher chain.}\label{intro:tab:fix}
+\begin{tabular}{rrcccc}
+\toprule
+$s$ & $4Ns$ & Haldane & Branching & Kimura & Exact \\
+\midrule
+$0.05$   & $100$ & $0.10000$ & $0.09370$ & $0.09516$ & $0.09364$ \\
+$0.01$   & $20$  & $0.02000$ & $0.01974$ & $0.01980$ & $0.01972$ \\
+$0.001$  & $2$   & $0.00200$ & $0.00200$ & $0.00231$ & $0.00231$ \\
+$0.0001$ & $0.2$ & $0.00020$ & $0.00020$ & $0.00110$ & $0.00110$ \\
+$0$      & $0$   & $0$       & $0$       & $0.00100$ & $0.00100$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Sewall Wright emphasised what the other two treated as secondary: the random fluctuation of gene
+frequencies in finite populations, inbreeding and population structure, and the interaction of
+genes. His coefficients of inbreeding and relationship \citep{intro:wright1922} and his long paper
+``Evolution in Mendelian populations'' \citep{intro:wright1931} made genetic drift a central
+evolutionary force, and his shifting balance theory and adaptive landscapes framed a debate with
+Fisher about the relative importance of drift and selection that was never fully settled. Wright's
+$F$ statistics \citep{intro:wright1951} remain the standard language for population structure; the
+$F$ of Example~\ref{intro:ex:hw} is the simplest of them.
+
+The mathematical theory of Fisher, Haldane and Wright was absorbed into biology in the 1930s and
+1940s by Dobzhansky, Mayr, Huxley, Simpson and others, in what became known as the Modern Synthesis.
+On the mathematical side the most important continuation was Gustave Mal\'ecot's probabilistic
+treatment of identity by descent \citep{intro:malecot1948}, which looked backwards in time from
+the sample to its ancestors and in that sense anticipated the coalescent by three decades.
+
+\section{Diffusions, drift and the neutral theory}
+
+After the war the stochastic theory was put on a rigorous footing, and the question of how much
+variation natural populations carry was, for the first time, put to direct measurement. Motoo
+Kimura, working first with James Crow, solved the diffusion equations for random drift
+\citep{intro:kimura1955}, derived the probability of fixation of a mutant with arbitrary dominance
+and selection \citep{intro:kimura1962}, and turned the diffusion approximation into the main
+computational tool of the subject. P.~A.~P.\ Moran introduced the overlapping generation model that
+carries his name \citep{intro:moran1958}, in which many diffusion results are exact. Kimura also
+wrote the first serious critique of the Fundamental Theorem, showing in 1958 that Fisher's
+statement does not hold as a statement about the total change in mean fitness
+\citep{intro:kimura1958}.
+
+In 1966 the technique of protein gel electrophoresis allowed, for the first time, a direct
+estimate of how much genetic variation natural populations actually contain. Lewontin and Hubby in
+\emph{Drosophila} \citep{intro:lewontin1966} and Harris in humans \citep{intro:harris1966} found far
+more polymorphism than the classical view expected. If all of it were maintained by balancing
+selection the genetic load would be intolerable. Kimura's answer \citep{intro:kimura1968}, and
+independently that of King and Jukes \citep{intro:king1969}, was the neutral theory of molecular
+evolution: most molecular variation is selectively neutral, and its frequencies are governed by
+mutation and drift. The last row of Table~\ref{intro:tab:fix} contains the theory's most useful
+consequence. A neutral mutant is fixed with probability $1/(2N)$, and $2N\mu$ new mutants arise in
+each generation, so neutral substitutions accumulate at rate $2N\mu\times1/(2N)=\mu$, independent
+of the population size. That is the molecular clock. The neutralist and selectionist controversy
+that followed was in large part a statistical controversy, because it turned on what patterns of
+variation in a sample could distinguish neutral from selected alleles.
+
+To make the neutral theory testable one needs mutation models. Kimura and Crow's infinite alleles
+model \citep{intro:kimura1964} assumes that every mutation creates an allele never seen before, which
+is the right model for electrophoretic data, where one can tell alleles apart but not how different
+they are. Kimura's infinite sites model \citep{intro:kimura1969} assumes that every mutation strikes a
+new nucleotide site, which is the right model for DNA sequence data, where one can count
+segregating sites. These two models are the two worked examples of Chapter~\ref{ch:suff}.
+
+\section{The sampling theory of selectively neutral alleles}
+
+The neutral theory made a quantitative prediction about samples, and the next step was to work it
+out. The question was this: given a sample of $n$ genes from a population at equilibrium under the
+infinite alleles model, what is the probability of the observed allelic configuration? Warren Ewens
+answered it in 1972 \citep{intro:ewens1972}. If $a_j$ is the number of alleles represented exactly
+$j$ times in the sample, so that $\sum_j ja_j=n$, then
+\begin{equation}\label{intro:eq:esf}
+\Prob(a_1,\dots,a_n)\;=\;\frac{n!}{\theta(\theta+1)\cdots(\theta+n-1)}
+\prod_{j=1}^{n}\frac{(\theta/j)^{a_j}}{a_j!},
+\end{equation}
+where $\theta=4N\mu$ is the scaled mutation rate. Karlin and McGregor gave a second proof the same
+year \citep{intro:karlin1972}. The formula has a striking statistical property, which Ewens
+emphasised from the start: the number of distinct alleles $K_n=\sum_ja_j$ is sufficient for
+$\theta$, so that the configuration of allele counts, given $K_n$, carries no information about
+the mutation rate and can be used to test neutrality without reference to it. It follows that
+the natural estimator of $\theta$, Ewens's moment estimator, depends on the data only through
+$K_n$, and that its variance decreases only like $1/\log n$.
+
+\begin{example}[The sampling formula for five genes]\label{intro:ex:esf}
+With $n=5$ there are seven possible allelic configurations, one for each partition of $5$. For
+$\theta=1$ the leading factor of \eqref{intro:eq:esf} is $5!/(1\cdot2\cdot3\cdot4\cdot5)=1$, and
+each probability is a product of the factors $(1/j)^{a_j}/a_j!$. For the configuration with one
+allele seen four times and one seen once ($a_4=a_1=1$) it is $\tfrac14\times1=\tfrac14$; for one
+allele seen three times and one twice it is $\tfrac13\times\tfrac12=\tfrac16$; and so on.
+Table~\ref{intro:tab:esf} lists all seven for $\theta=1$ and $\theta=2$. Each column sums to one,
+and a larger mutation rate moves probability from configurations with few alleles to
+configurations with many.
+
+The sufficiency of $K_5$ can be seen in the table. Two configurations have $K_5=2$, namely $4+1$
+and $3+2$. For $\theta=1$ their probabilities are $\tfrac14$ and $\tfrac16$, for $\theta=2$ they
+are $\tfrac16$ and $\tfrac19$, and in both cases the conditional probabilities given $K_5=2$ are
+$\tfrac35$ and $\tfrac25$. In general the factor $\theta^{K_n}/\{\theta(\theta+1)\cdots(\theta+n-1)\}$
+is the only place $\theta$ enters, so the conditional law of the configuration given $K_n$ is free
+of $\theta$, and the law of $K_n$ itself is
+\begin{equation*}
+\Prob(K_n=k)=\frac{|s(n,k)|\,\theta^{k}}{\theta(\theta+1)\cdots(\theta+n-1)},
+\end{equation*}
+where $|s(n,k)|$ is an unsigned Stirling number of the first kind. For $n=5$ these are $24$, $50$,
+$35$, $10$ and $1$, giving $\Prob(K_5=k)=\tfrac15,\tfrac5{12},\tfrac7{24},\tfrac1{12},\tfrac1{120}$
+for $\theta=1$ and $k=1,\dots,5$. The mean is
+$\E K_n=\sum_{i=0}^{n-1}\theta/(\theta+i)$, which is $137/60\approx2.28$ for $\theta=1$ and
+$2.9$ for $\theta=2$. Since $\E K_n\approx\theta\log n$ for large $n$, doubling the sample adds only
+about $\theta\log2$ alleles, and that is the source of the slow $1/\log n$ rate.
+\end{example}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{The Ewens sampling formula for a sample of $n=5$ genes. Each configuration is written as a
+partition of $5$ into allele counts.}\label{intro:tab:esf}
+\begin{tabular}{lccc}
+\toprule
+Configuration & $K_5$ & $\theta=1$ & $\theta=2$ \\
+\midrule
+$5$             & 1 & $1/5=0.200$    & $1/15=0.067$ \\
+$4+1$           & 2 & $1/4=0.250$    & $1/6=0.167$ \\
+$3+2$           & 2 & $1/6=0.167$    & $1/9=0.111$ \\
+$3+1+1$         & 3 & $1/6=0.167$    & $2/9=0.222$ \\
+$2+2+1$         & 3 & $1/8=0.125$    & $1/6=0.167$ \\
+$2+1+1+1$       & 4 & $1/12=0.083$   & $2/9=0.222$ \\
+$1+1+1+1+1$     & 5 & $1/120=0.008$  & $2/45=0.044$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Formula \eqref{intro:eq:esf} turned out to be far more than a result about alleles. Its
+connection with the species abundance problem had in effect been glimpsed by Fisher himself,
+whose logarithmic series for the number of species represented by $j$ individuals
+\citep{intro:fisher1943} is the large sample limit of the frequency spectrum implied by
+\eqref{intro:eq:esf}. Watterson studied the corresponding sufficiency and estimation questions
+for the infinite sites model \citep{intro:watterson1975}. Kingman, in a series of papers from 1975,
+showed that the Ewens formula is the canonical example of an exchangeable random partition, that
+every such partition arises by sampling from a random discrete distribution (his ``paintbox''
+representation \citep{intro:kingman1978}), and that for the Ewens formula that distribution is the
+Poisson Dirichlet law. Meanwhile, and at first quite independently, Ferguson had introduced the
+Dirichlet process as a prior for Bayesian nonparametric inference \citep{intro:ferguson1973}, and
+Antoniak had shown that the partition induced by a sample from it is exactly Ewens's
+\citep{intro:antoniak1974}. Hoppe's urn \citep{intro:hoppe1984}, the Chinese restaurant process, and
+eventually the two parameter family of Pitman and Yor \citep{intro:pitman1997} made the sampling
+formula a central object of modern probability and of machine learning. Hoppe's urn also gives the
+quickest proof of the mean in Example~\ref{intro:ex:esf}: the $(i+1)$th gene is a new allele with
+probability $\theta/(\theta+i)$, whatever happened before.
+
+Part II of this book is about this formula: its derivation from de Finetti's theorem
+(Chapter~\ref{ch:esf}), what happens to it when the sample is ascertained rather than drawn at
+random (Chapter~\ref{ch:py}), and how to do Bayesian inference for its parameter
+(Chapters~\ref{ch:pig} and \ref{ch:rc}).
+
+\section{The coalescent}
+
+Kingman's second great contribution looked at the same problem from the other end, and it turned
+the prospective theory of Fisher and Wright into a retrospective one. Trace the ancestry of a
+sample of $n$ genes backwards in time in a large population: each pair of lineages coalesces into a
+common ancestor at rate one on the appropriate time scale, so that while there are $k$ lineages the
+waiting time to the next coalescence is exponential with rate $\binom{k}{2}$. This is the
+coalescent \citep{intro:kingman1982}. Superimposing neutral mutation on the coalescent tree as a
+Poisson process reproduces the Ewens formula under the infinite alleles model and the distribution
+of segregating sites under the infinite sites model, and it makes simulation of neutral samples
+almost trivial.
+
+\begin{example}[Coalescence times for a sample of five]\label{intro:ex:coal}
+Measure time in units of $2N$ generations, so that two lineages in a diploid population of size
+$N$ find a common ancestor at rate one. Let $T_k$ be the time during which the sample has exactly
+$k$ ancestral lineages. Since each of the $\binom k2$ pairs coalesces at rate one, $T_k$ is
+exponential with rate $\binom k2$ and mean $2/\{k(k-1)\}$. For $n=5$,
+\begin{equation*}
+\E T_5=\tfrac1{10},\qquad \E T_4=\tfrac16,\qquad \E T_3=\tfrac13,\qquad \E T_2=1 .
+\end{equation*}
+The expected time to the most recent common ancestor is the sum,
+$\E T_{\mathrm{MRCA}}=2(1-1/n)=1.6$, with standard deviation
+$\{\sum_k(\E T_k)^2\}^{1/2}=1.07$. The last two lineages account for $1/1.6=62.5$ percent of the
+expected depth of the tree, and the depth for a sample of five is already $80$ percent of the
+depth $2$ for an infinitely large sample. A small sample sees most of the history of the
+population; a large sample mainly adds short branches near the tips.
+
+The total branch length is $L=\sum_k kT_k$, with mean $\E L=\sum_{k=2}^{5}2/(k-1)=2h_5=25/6$, where
+$h_n=\sum_{j=1}^{n-1}1/j$ and $h_5=25/12$. Mutations fall on the branches at rate $\theta/2$, so
+the expected number of segregating sites is $\E S=\theta h_5=2.083\,\theta$; this is the basis of
+Watterson's estimator $\hat\theta_W=S/h_n$ \citep{intro:watterson1975}. With $N=10{,}000$ the
+expected depth of the tree is $1.6\times20{,}000=32{,}000$ generations. A simulation of $200{,}000$
+coalescent trees with $n=5$ gives a mean depth of $1.596$ and a mean length of $4.156$, in
+agreement with the exact values $1.6$ and $4.167$.
+\end{example}
+
+Hudson extended the coalescent to recombination \citep{intro:hudson1983}, Tajima used it to study
+nucleotide diversity \citep{intro:tajima1983} and later proposed the neutrality test that bears his
+name \citep{intro:tajima1989}, and Griffiths and Marjoram gave the ancestral recombination graph its
+modern form \citep{intro:griffiths1996}. Selection was brought in by the ancestral selection graph
+of Krone and Neuhauser \citep{intro:krone1997}, and populations with high fecundity and skewed
+offspring distributions by the multiple merger, or $\Lambda$, coalescents \citep{intro:pitman1999}.
+
+The coalescent turned population genetics into a subject of computational statistics. The
+likelihood of a sample is an integral over all genealogies consistent with it, which is
+intractable for any realistic model, but samples are easy to simulate. Two lines of response
+emerged. One evaluated the likelihood by importance sampling or Markov chain Monte Carlo over
+genealogies, beginning with Griffiths and Tavar\'e \citep{intro:griffiths1994} and Felsenstein's
+group. The other abandoned the likelihood: Tavar\'e, Balding, Griffiths and Donnelly
+\citep{intro:tavare1997} and Pritchard and colleagues \citep{intro:pritchard1999} proposed accepting
+simulated parameter values whose simulated data resembled the observed data, and Beaumont, Zhang
+and Balding \citep{intro:beaumont2002} named the method approximate Bayesian computation. Its two
+acknowledged defects, the choice of summary statistics and the choice of a tolerance, are the
+subject of Part III (Chapters~\ref{ch:suff} and \ref{ch:coal}).
+
+\section{Warren Ewens and the statistical reading of population genetics}\label{intro:sec:ewens}
+
+One career runs through almost every theme of this chapter, and through every chapter of this
+book. Warren Ewens trained in Australia as a student of P.~A.~P.\ Moran, whose \emph{Statistical
+Processes of Evolutionary Theory} \citep{intro:moran1962} was the first systematic account of the
+stochastic theory after Fisher, Wright and Mal\'ecot. From the beginning Ewens approached population
+genetics as a statistician: not only what a model predicts, but what a sample drawn from it can
+tell us, and with what precision. That emphasis is the thread this book tries to follow.
+
+\paragraph{The sampling formula and its statistics.} The formula \eqref{intro:eq:esf} of 1972 is
+usually remembered as a probability result, but the paper in which it appeared
+\citep{intro:ewens1972} is a paper about inference. It observes that the number of alleles $K_n$
+is sufficient for $\theta$, so that the allelic configuration given $K_n$ is free of the mutation
+rate and can be used to test the neutral model without estimating anything; it derives the
+estimator of $\theta$ as the root of $\E(K_n)=k$, where $k$ is the observed number of alleles; and it notes that the precision of that
+estimator improves only like $1/\log n$, so that very large samples buy surprisingly little.
+Each of these observations reappears below: the conditional test as the Ewens and Watterson test
+of neutrality \citep{intro:watterson1978}, the sufficiency of $K_n$ as the benchmark that the
+learned summaries of Chapter~\ref{ch:suff} must rediscover, and the logarithmic information as the
+length of the coalescent tree in Chapter~\ref{ch:esf}. Simple consequences of the formula often
+have long histories in his hands; the mean number of singletons in a sample, for instance, is
+\begin{equation*}
+\E(A_1)=\frac{n\theta}{\theta+n-1},
+\end{equation*}
+a consequence of the sampling formula.
+
+\paragraph{The textbook.} \emph{Mathematical Population Genetics} \citep{intro:ewens1979}, revised
+and much expanded in its second edition \citep{intro:ewens2004}, set out the diffusion theory, the
+sampling theory and the coalescent in a single rigorous framework. For two generations of
+probabilists and statisticians it has been the route into the subject, and much of the notation of
+this book is its notation.
+
+\paragraph{Effective population size.} The parameter $N$ in every formula of the theory is an
+idealisation, and real populations are not Wright Fisher populations. Ewens's analysis of the
+effective population size \citep{intro:ewens1982} asked which features of a real population an
+effective size can and cannot summarise, and whether different definitions (inbreeding,
+variance, eigenvalue) agree. His recent critical assessment with H\"ossjer
+\citep{intro:ewens2025b} returns to the question with the historical record in view, and is one of
+the starting points of Chapter~\ref{ch:mp}.
+
+\paragraph{From population genetics to genetic epidemiology.} With Spielman and McGinnis, Ewens
+introduced the transmission disequilibrium test \citep{intro:spielman1993}, which tests for linkage
+between a marker and a disease locus in the presence of association by comparing the alleles a
+heterozygous parent transmits to an affected child with those not transmitted. Because each parent
+serves as its own control, the test is immune to the population stratification that confounds a
+case control comparison. It became one of the standard designs of family based association
+studies, and its logic (condition on what is fixed, compare what is random) is exactly the logic of
+the sufficiency arguments of the 1972 paper. With Grant he also wrote one of the first statistical
+textbooks for bioinformatics \citep{intro:ewens2001}.
+
+\paragraph{The Fundamental Theorem.} For more than thirty years Ewens has argued that Fisher's
+theorem, read as Fisher intended, is a statement about the partial change in mean fitness due to
+changes in gene frequency, and that so read it is exact \citep{intro:ewens1989,
+intro:ewens2015}. His most recent account \citep{intro:ewens2024} sets out the history and calls
+itself the end of a story. Part I of this book begins where that account ends: if the average
+effects are a least squares projection, then estimating the theorem's terms from data is a many
+parameter regression, and the statistical questions take over.
+
+\paragraph{A ubiquitous formula.} Half a century after it appeared, the sampling formula is used in
+ecology, in Bayesian nonparametrics, in combinatorics, in the analysis of random permutations and
+random integers, and in machine learning, often by people unaware of its origin in the
+electrophoresis data of the 1960s \citep{intro:arratia2003, intro:crane2016}. The questions that
+began the chapters of this book (what happens when the paintbox is sampled with a nonuniform
+density, how much of that survives in the two parameter family, what a derivation from de Finetti's
+theorem says about the coalescent) were his questions, asked in correspondence, and they show that
+the formula still has things to teach.
+
+\section{The genomic era}
+
+The last forty years have changed the data far more than the models. DNA sequence variation in a
+natural population was first surveyed by Kreitman in 1983, at the alcohol dehydrogenase locus of
+\emph{Drosophila} \citep{intro:kreitman1983}. Two decades later the human genome had been sequenced
+\citep{intro:ihgsc2001}, the HapMap had catalogued common variation and its patterns of linkage
+disequilibrium \citep{intro:hapmap2005}, and genome wide association studies had begun to map the
+loci underlying common diseases, beginning in earnest with the Wellcome Trust Case Control
+Consortium \citep{intro:wtccc2007}. The statistical situation changed completely. A typical study
+measures hundreds of thousands or millions of variants on a sample that, until recently, numbered
+in the thousands: many more parameters than observations.
+
+Three findings of this era bear directly on Part I of the book. First, the associated variants
+explained only a small fraction of the heritability estimated from twin and family studies, the
+problem of ``missing heritability'' \citep{intro:manolio2009}. Second, Yang and colleagues showed
+that much of the missing heritability is recovered when all common variants are fitted jointly
+as random effects \citep{intro:yang2010}, so that complex traits are highly polygenic, with very
+many loci of very small effect. Third, Boyle, Li and Pritchard argued that the polygenicity is so
+extreme that essentially every gene expressed in a relevant tissue affects the trait, the
+omnigenic model \citep{intro:boyle2017}. These findings put a question at the centre of the
+subject that is, in statistical language, a question about the prior: is the vector of genetic
+effects sparse, dense, or something in between? Ten years of association studies
+\citep{intro:visscher2017} have not settled it. Fisher's infinitesimal model of 1918 corresponds to
+a Gaussian prior, the classical picture of a few genes of large effect to a sparse prior, and the
+horseshoe of Chapters~\ref{ch:ftns}, \ref{ch:hs} and \ref{ch:mp} to a family that lets the data
+choose.
+
+At the same time the scale of the data has grown by orders of magnitude. Biobanks genotype
+hundreds of thousands of people, catalogues of rare variation are built from more than a hundred
+thousand exomes and genomes, ancient DNA has turned the history of human populations into a time
+series \citep{intro:green2010}, and the genealogies of samples as large as entire biobanks can now be simulated and
+stored as tree sequences \citep{intro:kelleher2016}. In this regime the classical approximations
+begin to fail: when the sample is comparable in size to the effective population, the Kingman
+coalescent is no longer an adequate model of the sample's genealogy
+\citep{intro:wakeley2003,intro:bhaskar2014}, and the rare variant end of the frequency spectrum,
+which is exactly what the Ewens and Pitman formulae describe, becomes the most informative part of
+the data. Example~\ref{intro:ex:coal} shows why: the extra lineages of a very large sample live on
+short branches near the present, which is where the rare variants are and where the assumptions of
+the coalescent are weakest.
+
+\section{The plan of this book}
+
+The chapters that follow began as answers to questions. Most were posed by Warren Ewens in
+correspondence, a few by reading his recent work on the Fundamental Theorem and on the effective
+population size, and the remainder by following the answers where they led. After this chapter
+and a chapter of mathematical preliminaries they are arranged in three parts.
+
+Chapter~\ref{ch:toolkit}, \emph{A Mathematical Toolkit}, collects the probability and statistics
+that the later chapters use repeatedly, such as exchangeability and de Finetti's theorem, the
+Dirichlet and Poisson Dirichlet laws, diffusion approximations and shrinkage priors. A reader who knows this material can skip it and
+return to it as needed.
+
+Part I, \emph{Selection and the Additive Model}, concerns Fisher's Fundamental Theorem.
+Chapter~\ref{ch:ftns} explains why the theorem as Fisher stated it is false, why the error went
+undetected for so long, and what replaces it: the average effects are a projection onto a fixed
+subspace in a moving inner product, and the neglected term vanishes exactly when the population
+stays on the manifold of Hardy Weinberg and linkage equilibrium. It then asks what data can say
+about the question, which leads to Jeffreys' Bayes factors, Haldane's prior and the horseshoe.
+Chapter~\ref{ch:hs} takes Ewens's corrected reading as given and shows that the remaining content
+of the theorem is a regression problem with more loci than individuals, so that the plug in
+estimate of the additive genetic variance is badly inflated and a horseshoe prior repairs it.
+Chapter~\ref{ch:mp} generalises the point to many parameter models in population genetics and
+proves that the global local shrinkage priors of sparse Bayesian statistics and the two
+parameter Poisson Dirichlet family are linked by an exact identity of marginal laws (the shrinkage weight has the law of the first stick breaking weight, and the frequency spectrum intensities agree), so that the sparsity level is Pitman's $\alpha$; whether the full partition laws agree is left open.
+
+Part II, \emph{The Sampling Theory of Neutral Alleles}, concerns the Ewens sampling formula.
+Chapter~\ref{ch:esf} derives it from de Finetti's theorem in the elementary form of Heath and
+Sudderth, identifies its parameter from the empirical distribution function, connects the
+information about $\theta$ to the length of the coalescent tree, and reanalyses Corbet's Malayan
+butterflies. Chapter~\ref{ch:py} studies ascertainment, the sampling of a Poisson Dirichlet
+subdivision with a nonuniform density, in the two parameter family, and proves that when the discount is positive no sampling
+density that charges every interval carries the size biased sticks to those of another member of the family. Chapter~\ref{ch:pig} gives the Bayesian account of Fisher's species
+model and Good's predictive rule through P\'olya inverse gamma augmentation. Chapter~\ref{ch:rc}
+develops rational conjugacy, the theory of Pochhammer priors for concentration parameters that
+enter a likelihood through ratios of Gamma functions.
+
+Part III, \emph{Inference Without a Likelihood}, concerns the coalescent. Chapter~\ref{ch:suff}
+replaces approximate Bayesian computation by a learned transport map fitted by quantile regression,
+and shows that sufficiency itself can be tested by fitting: the method rediscovers Ewens's theorem
+that $K_n$ is sufficient, and proves that Watterson's $S$ is not. Chapter~\ref{ch:coal} studies
+generative Bayesian computation for the Kingman coalescent, gives an exact law for the number of
+segregating sites, and establishes a ceiling on what permutation invariant architectures can
+learn.
+
+Chapter~\ref{ch:future} closes the book with the open problems that the preceding chapters leave,
+stated where possible as precise questions, and with some thoughts on where the subject is going.
+
+Each chapter is self contained, with its own notation and references, its own worked examples, and
+a set of exercises at the end. The reader who wants a single thread through the book might read
+Chapter~\ref{ch:toolkit} and then Chapter~\ref{ch:esf}, since the sampling formula and the de
+Finetti representation behind it recur in almost every chapter, then Chapter~\ref{ch:ftns}, and
+then follow the cross references. The preface suggests shorter paths for readers with a particular
+interest in selection, in the sampling formula, or in likelihood free inference.
+
+\section{Exercises}
+
+\begin{enumerate}[label=\arabic*.,ref=\arabic*,leftmargin=*]
+
+\item Mendel also scored seed colour in the second generation and counted $6022$ yellow and
+$2001$ green seeds. Test the $3:1$ hypothesis with Pearson's statistic and with the binomial
+normal approximation, and compare the agreement with that of Example~\ref{intro:ex:mendel}.
+\emph{Hint.} The expected counts are $6017.25$ and $2005.75$, and $X^2=0.015$.
+
+\item In a dihybrid cross Mendel counted $315$ round yellow, $101$ wrinkled yellow, $108$ round
+green and $32$ wrinkled green seeds. Test the $9:3:3:1$ hypothesis. How many degrees of freedom
+does the test have, and why? \emph{Hint.} $X^2=0.47$ on three degrees of freedom, with upper tail
+probability about $0.93$.
+
+\item Prove that under random mating, with no selection, mutation or migration and
+nonoverlapping generations, an autosomal locus with any number of alleles reaches Hardy Weinberg
+proportions after one generation. For two loci with recombination fraction $r$, show that the
+linkage disequilibrium coefficient is multiplied by $1-r$ in each generation. \emph{Hint.} A
+gamete is a recombinant with probability $r$, and then its two alleles come from independent
+parental haplotypes.
+
+\item\label{intro:exr:F} For a biallelic locus with $N$ genotyped individuals, define $\hat F$
+by writing the observed heterozygote frequency as $2\hat p\hat q(1-\hat F)$. Show that Pearson's
+statistic for Hardy Weinberg proportions is exactly $X^2=N\hat F^2$. \emph{Hint.} All three
+observed minus expected counts equal $\pm N\hat F\hat p\hat q$ up to a factor of two.
+
+\item Derive \eqref{intro:eq:alpha} and \eqref{intro:eq:VAVD} by weighted least squares, and show
+that $V_G=V_A+V_D$. \emph{Hint.} The regressor $x$ has mean $2p$ and variance $2pq$ under Hardy
+Weinberg proportions.
+
+\item With complete dominance ($d=a$) show that $V_A=8pq^3a^2$, where $q$ is the frequency of the
+recessive allele. Conclude that the additive variance, and hence by the Fundamental Theorem the
+response to selection, vanishes like $q^3$ as a recessive allele becomes rare. Relate this to the
+carrier calculation of Example~\ref{intro:ex:hw}. \emph{Hint.} $1+q-p=2q$.
+
+\item\label{intro:exr:gw} Show that the positive root of \eqref{intro:eq:gw} satisfies
+$\pi=2s-\tfrac83s^2+O(s^3)$, and check the value $0.01974$ in Table~\ref{intro:tab:fix}.
+\emph{Hint.} Substitute $\pi=c_1s+c_2s^2$ and match coefficients of $s^2$ and $s^3$; the next term is $\tfrac{28}{9}s^3$, which is needed to reproduce $0.01974$ to five places.
+
+\item Show that Kimura's $u(p)$ in \eqref{intro:eq:kimura} tends to $p$ as $s\to0$ and to
+$1-e^{-2s}$ as $N\to\infty$ with $p=1/(2N)$. For which values of $Ns$ is the relative error of
+Haldane's $2s$ below ten percent? \emph{Hint.} $2s/u(1/2N)\approx(1+s)(1-e^{-4Ns})$ for small $s$.
+
+\item Verify the column $\theta=2$ of Table~\ref{intro:tab:esf}, and show from
+\eqref{intro:eq:esf} that the conditional law of the configuration given $K_n=k$ does not depend
+on $\theta$. Compute $\Prob(K_5=k)$ for $\theta=2$. \emph{Hint.} The answer is
+$\tfrac1{15},\tfrac5{18},\tfrac7{18},\tfrac29,\tfrac2{45}$.
+
+\item For the coalescent with $n$ lineages show that $\E T_{\mathrm{MRCA}}=2(1-1/n)$,
+$\E L=2h_n$ and $\Var S=\theta h_n+\theta^2\sum_{j=1}^{n-1}j^{-2}$. Write a short simulation that
+checks the values $1.6$ and $25/6$ of Example~\ref{intro:ex:coal}, and the value
+$\Var S=46.0$ for $n=5$ and $\theta=5$. \emph{Hint.} $T_k$ are independent exponentials, and given
+$L$ the count $S$ is Poisson with mean $\theta L/2$.
+
+\end{enumerate}
+
+\begin{thebibliography}{99}
+
+\bibitem[Antoniak(1974)]{intro:antoniak1974}
+Antoniak, C.~E. (1974). Mixtures of Dirichlet processes with applications to Bayesian
+nonparametric problems. \emph{The Annals of Statistics} 2, 1152 to 1174.
+
+\bibitem[Arratia et~al.(2003)]{intro:arratia2003}
+Arratia, R., Barbour, A.~D. and Tavar\'e, S. (2003). \emph{Logarithmic Combinatorial Structures:
+A Probabilistic Approach}. Z\"urich: European Mathematical Society.
+
+\bibitem[Beaumont et~al.(2002)]{intro:beaumont2002}
+Beaumont, M.~A., Zhang, W. and Balding, D.~J. (2002). Approximate Bayesian computation in
+population genetics. \emph{Genetics} 162, 2025 to 2035.
+
+\bibitem[Bhaskar et~al.(2014)]{intro:bhaskar2014}
+Bhaskar, A., Clark, A.~G. and Song, Y.~S. (2014). Distortion of genealogical properties when the
+sample is very large. \emph{Proceedings of the National Academy of Sciences} 111, 2385 to 2390.
+
+\bibitem[Boyle et~al.(2017)]{intro:boyle2017}
+Boyle, E.~A., Li, Y.~I. and Pritchard, J.~K. (2017). An expanded view of complex traits: from
+polygenic to omnigenic. \emph{Cell} 169, 1177 to 1186.
+
+\bibitem[Crane(2016)]{intro:crane2016}
+Crane, H. (2016). The ubiquitous Ewens sampling formula. \emph{Statistical Science} 31, 1 to 19.
+
+\bibitem[Ewens(1972)]{intro:ewens1972}
+Ewens, W.~J. (1972). The sampling theory of selectively neutral alleles. \emph{Theoretical
+Population Biology} 3, 87 to 112.
+
+\bibitem[Ewens(1979)]{intro:ewens1979}
+Ewens, W.~J. (1979). \emph{Mathematical Population Genetics}. Berlin: Springer.
+
+\bibitem[Ewens(1982)]{intro:ewens1982}
+Ewens, W.~J. (1982). On the concept of effective population size. \emph{Theoretical
+Population Biology} 21, 373 to 378.
+
+\bibitem[Ewens(1989)]{intro:ewens1989}
+Ewens, W.~J. (1989). An interpretation and proof of the fundamental theorem of natural selection.
+\emph{Theoretical Population Biology} 36, 167 to 180.
+
+\bibitem[Ewens(2004)]{intro:ewens2004}
+Ewens, W.~J. (2004). \emph{Mathematical Population Genetics I: Theoretical Introduction}, second
+edition. New York: Springer.
+
+\bibitem[Ewens(2024)]{intro:ewens2024}
+Ewens, W.~J. (2024). The Fundamental Theorem of Natural Selection: the end of a story. \emph{Evolution} 78, 803 to 808.
+
+\bibitem[Ewens and Grant(2001)]{intro:ewens2001}
+Ewens, W.~J. and Grant, G.~R. (2001). \emph{Statistical Methods in Bioinformatics: An
+Introduction}. New York: Springer.
+
+\bibitem[Ewens and H\"ossjer(2026)]{intro:ewens2025b}
+Ewens, W.~J. and H\"ossjer, O. (2026). A clarification of historical concepts of effective
+population size and their applicability to subdivided populations. \emph{Theoretical Population
+Biology} 167, 11 to 21.
+
+\bibitem[Ewens and Lessard(2015)]{intro:ewens2015}
+Ewens, W.~J. and Lessard, S. (2015). On the interpretation and relevance of the fundamental
+theorem of natural selection. \emph{Theoretical Population Biology} 104, 59 to 67.
+
+\bibitem[Ferguson(1973)]{intro:ferguson1973}
+Ferguson, T.~S. (1973). A Bayesian analysis of some nonparametric problems. \emph{The Annals of
+Statistics} 1, 209 to 230.
+
+\bibitem[Fisher(1918)]{intro:fisher1918}
+Fisher, R.~A. (1918). The correlation between relatives on the supposition of Mendelian
+inheritance. \emph{Transactions of the Royal Society of Edinburgh} 52, 399 to 433.
+
+\bibitem[Fisher(1922)]{intro:fisher1922}
+Fisher, R.~A. (1922). On the dominance ratio. \emph{Proceedings of the Royal Society of
+Edinburgh} 42, 321 to 341.
+
+\bibitem[Fisher(1930)]{intro:fisher1930}
+Fisher, R.~A. (1930). \emph{The Genetical Theory of Natural Selection}. Oxford: Clarendon Press.
+
+\bibitem[Fisher(1936)]{intro:fisher1936}
+Fisher, R.~A. (1936). Has Mendel's work been rediscovered? \emph{Annals of Science} 1, 115 to
+137.
+
+\bibitem[Fisher et~al.(1943)]{intro:fisher1943}
+Fisher, R.~A., Corbet, A.~S. and Williams, C.~B. (1943). The relation between the number of
+species and the number of individuals in a random sample of an animal population. \emph{Journal
+of Animal Ecology} 12, 42 to 58.
+
+\bibitem[Galton(1886)]{intro:galton1886}
+Galton, F. (1886). Regression towards mediocrity in hereditary stature. \emph{Journal of the
+Anthropological Institute of Great Britain and Ireland} 15, 246 to 263.
+
+\bibitem[Green et~al.(2010)]{intro:green2010}
+Green, R.~E. et al. (2010). A draft sequence of the Neandertal genome. \emph{Science} 328, 710 to
+722.
+
+\bibitem[Griffiths and Marjoram(1996)]{intro:griffiths1996}
+Griffiths, R.~C. and Marjoram, P. (1996). Ancestral inference from samples of DNA sequences with
+recombination. \emph{Journal of Computational Biology} 3, 479 to 502.
+
+\bibitem[Griffiths and Tavar\'e(1994)]{intro:griffiths1994}
+Griffiths, R.~C. and Tavar\'e, S. (1994). Simulating probability distributions in the coalescent.
+\emph{Theoretical Population Biology} 46, 131 to 159.
+
+\bibitem[Haldane(1924)]{intro:haldane1924}
+Haldane, J.~B.~S. (1924). A mathematical theory of natural and artificial selection, Part I.
+\emph{Transactions of the Cambridge Philosophical Society} 23, 19 to 41.
+
+\bibitem[Haldane(1927)]{intro:haldane1927}
+Haldane, J.~B.~S. (1927). A mathematical theory of natural and artificial selection, Part V:
+selection and mutation. \emph{Proceedings of the Cambridge Philosophical Society} 23, 838 to 844.
+
+\bibitem[Haldane(1932a)]{intro:haldane1932}
+Haldane, J.~B.~S. (1932a). \emph{The Causes of Evolution}. London: Longmans, Green.
+
+\bibitem[Haldane(1932b)]{intro:haldane1932prior}
+Haldane, J.~B.~S. (1932b). A note on inverse probability. \emph{Proceedings of the Cambridge
+Philosophical Society} 28, 55 to 61.
+
+\bibitem[Hardy(1908)]{intro:hardy1908}
+Hardy, G.~H. (1908). Mendelian proportions in a mixed population. \emph{Science} 28, 49 to 50.
+
+\bibitem[Harris(1966)]{intro:harris1966}
+Harris, H. (1966). Enzyme polymorphisms in man. \emph{Proceedings of the Royal Society of London,
+Series B} 164, 298 to 310.
+
+\bibitem[Hoppe(1984)]{intro:hoppe1984}
+Hoppe, F.~M. (1984). P\'olya like urns and the Ewens sampling formula. \emph{Journal of
+Mathematical Biology} 20, 91 to 94.
+
+\bibitem[Hudson(1983)]{intro:hudson1983}
+Hudson, R.~R. (1983). Properties of a neutral allele model with intragenic recombination.
+\emph{Theoretical Population Biology} 23, 183 to 201.
+
+\bibitem[International HapMap Consortium(2005)]{intro:hapmap2005}
+International HapMap Consortium (2005). A haplotype map of the human genome. \emph{Nature} 437,
+1299 to 1320.
+
+\bibitem[International Human Genome Sequencing Consortium(2001)]{intro:ihgsc2001}
+International Human Genome Sequencing Consortium (2001). Initial sequencing and analysis of the
+human genome. \emph{Nature} 409, 860 to 921.
+
+\bibitem[Jenkin(1867)]{intro:jenkin1867}
+Jenkin, F. (1867). The origin of species. \emph{The North British Review} 46, 277 to 318.
+
+\bibitem[Karlin and McGregor(1972)]{intro:karlin1972}
+Karlin, S. and McGregor, J. (1972). Addendum to a paper of W.~Ewens. \emph{Theoretical Population
+Biology} 3, 113 to 116.
+
+\bibitem[Kelleher et~al.(2016)]{intro:kelleher2016}
+Kelleher, J., Etheridge, A.~M. and McVean, G. (2016). Efficient coalescent simulation and
+genealogical analysis for large sample sizes. \emph{PLoS Computational Biology} 12, e1004842.
+
+\bibitem[Kimura(1955)]{intro:kimura1955}
+Kimura, M. (1955). Solution of a process of random genetic drift with a continuous model.
+\emph{Proceedings of the National Academy of Sciences} 41, 144 to 150.
+
+\bibitem[Kimura(1958)]{intro:kimura1958}
+Kimura, M. (1958). On the change of population fitness by natural selection. \emph{Heredity} 12,
+145 to 167.
+
+\bibitem[Kimura(1962)]{intro:kimura1962}
+Kimura, M. (1962). On the probability of fixation of mutant genes in a population.
+\emph{Genetics} 47, 713 to 719.
+
+\bibitem[Kimura(1968)]{intro:kimura1968}
+Kimura, M. (1968). Evolutionary rate at the molecular level. \emph{Nature} 217, 624 to 626.
+
+\bibitem[Kimura(1969)]{intro:kimura1969}
+Kimura, M. (1969). The number of heterozygous nucleotide sites maintained in a finite population
+due to steady flux of mutations. \emph{Genetics} 61, 893 to 903.
+
+\bibitem[Kimura and Crow(1964)]{intro:kimura1964}
+Kimura, M. and Crow, J.~F. (1964). The number of alleles that can be maintained in a finite
+population. \emph{Genetics} 49, 725 to 738.
+
+\bibitem[King and Jukes(1969)]{intro:king1969}
+King, J.~L. and Jukes, T.~H. (1969). Non Darwinian evolution. \emph{Science} 164, 788 to 798.
+
+\bibitem[Kingman(1978)]{intro:kingman1978}
+Kingman, J.~F.~C. (1978). The representation of partition structures. \emph{Journal of the London
+Mathematical Society} 18, 374 to 380.
+
+\bibitem[Kingman(1982)]{intro:kingman1982}
+Kingman, J.~F.~C. (1982). The coalescent. \emph{Stochastic Processes and their Applications} 13,
+235 to 248.
+
+\bibitem[Kreitman(1983)]{intro:kreitman1983}
+Kreitman, M. (1983). Nucleotide polymorphism at the alcohol dehydrogenase locus of
+\emph{Drosophila melanogaster}. \emph{Nature} 304, 412 to 417.
+
+\bibitem[Krone and Neuhauser(1997)]{intro:krone1997}
+Krone, S.~M. and Neuhauser, C. (1997). Ancestral processes with selection. \emph{Theoretical
+Population Biology} 51, 210 to 237.
+
+\bibitem[Lewontin and Hubby(1966)]{intro:lewontin1966}
+Lewontin, R.~C. and Hubby, J.~L. (1966). A molecular approach to the study of genic heterozygosity
+in natural populations. II. Amount of variation and degree of heterozygosity in natural populations of \emph{Drosophila pseudoobscura}. \emph{Genetics} 54, 595 to 609.
+
+\bibitem[Mal\'ecot(1948)]{intro:malecot1948}
+Mal\'ecot, G. (1948). \emph{Les Math\'ematiques de l'H\'er\'edit\'e}. Paris: Masson.
+
+\bibitem[Manolio et~al.(2009)]{intro:manolio2009}
+Manolio, T.~A. et al. (2009). Finding the missing heritability of complex diseases.
+\emph{Nature} 461, 747 to 753.
+
+\bibitem[Mendel(1866)]{intro:mendel1866}
+Mendel, G. (1866). Versuche \"uber Pflanzen Hybriden. \emph{Verhandlungen des naturforschenden
+Vereines in Br\"unn} 4, 3 to 47.
+
+\bibitem[Moran(1958)]{intro:moran1958}
+Moran, P.~A.~P. (1958). Random processes in genetics. \emph{Proceedings of the Cambridge
+Philosophical Society} 54, 60 to 71.
+
+\bibitem[Moran(1962)]{intro:moran1962}
+Moran, P.~A.~P. (1962). \emph{The Statistical Processes of Evolutionary Theory}. Oxford: Clarendon
+Press.
+
+\bibitem[Pitman(1999)]{intro:pitman1999}
+Pitman, J. (1999). Coalescents with multiple collisions. \emph{The Annals of Probability} 27, 1870
+to 1902.
+
+\bibitem[Pitman and Yor(1997)]{intro:pitman1997}
+Pitman, J. and Yor, M. (1997). The two parameter Poisson Dirichlet distribution derived from a
+stable subordinator. \emph{The Annals of Probability} 25, 855 to 900.
+
+\bibitem[Pritchard et~al.(1999)]{intro:pritchard1999}
+Pritchard, J.~K., Seielstad, M.~T., Perez Lezaun, A. and Feldman, M.~W. (1999). Population growth
+of human Y chromosomes: a study of Y chromosome microsatellites. \emph{Molecular Biology and
+Evolution} 16, 1791 to 1798.
+
+\bibitem[Spielman et~al.(1993)]{intro:spielman1993}
+Spielman, R.~S., McGinnis, R.~E. and Ewens, W.~J. (1993). Transmission test for linkage
+disequilibrium: the insulin gene region and insulin dependent diabetes mellitus (IDDM).
+\emph{American Journal of Human Genetics} 52, 506 to 516.
+
+\bibitem[Tajima(1983)]{intro:tajima1983}
+Tajima, F. (1983). Evolutionary relationship of DNA sequences in finite populations.
+\emph{Genetics} 105, 437 to 460.
+
+\bibitem[Tajima(1989)]{intro:tajima1989}
+Tajima, F. (1989). Statistical method for testing the neutral mutation hypothesis by DNA
+polymorphism. \emph{Genetics} 123, 585 to 595.
+
+\bibitem[Tavar\'e et~al.(1997)]{intro:tavare1997}
+Tavar\'e, S., Balding, D.~J., Griffiths, R.~C. and Donnelly, P. (1997). Inferring coalescence
+times from DNA sequence data. \emph{Genetics} 145, 505 to 518.
+
+\bibitem[Visscher et~al.(2017)]{intro:visscher2017}
+Visscher, P.~M., Wray, N.~R., Zhang, Q., Sklar, P., McCarthy, M.~I., Brown, M.~A. and Yang, J.
+(2017). 10 years of GWAS discovery: biology, function, and translation. \emph{American Journal of
+Human Genetics} 101, 5 to 22.
+
+\bibitem[Wakeley and Takahashi(2003)]{intro:wakeley2003}
+Wakeley, J. and Takahashi, T. (2003). Gene genealogies when the sample size exceeds the effective
+size of the population. \emph{Molecular Biology and Evolution} 20, 208 to 213.
+
+\bibitem[Watterson(1975)]{intro:watterson1975}
+Watterson, G.~A. (1975). On the number of segregating sites in genetical models without
+recombination. \emph{Theoretical Population Biology} 7, 256 to 276.
+
+\bibitem[Watterson(1978)]{intro:watterson1978}
+Watterson, G.~A. (1978). The homozygosity test of neutrality. \emph{Genetics} 88, 405 to 417.
+
+\bibitem[Weinberg(1908)]{intro:weinberg1908}
+Weinberg, W. (1908). \"Uber den Nachweis der Vererbung beim Menschen. \emph{Jahreshefte des
+Vereins f\"ur vaterl\"andische Naturkunde in W\"urttemberg} 64, 369 to 382.
+
+\bibitem[Wellcome Trust Case Control Consortium(2007)]{intro:wtccc2007}
+Wellcome Trust Case Control Consortium (2007). Genome wide association study of 14,000 cases of
+seven common diseases and 3,000 shared controls. \emph{Nature} 447, 661 to 678.
+
+\bibitem[Wright(1922)]{intro:wright1922}
+Wright, S. (1922). Coefficients of inbreeding and relationship. \emph{The American Naturalist} 56,
+330 to 338.
+
+\bibitem[Wright(1931)]{intro:wright1931}
+Wright, S. (1931). Evolution in Mendelian populations. \emph{Genetics} 16, 97 to 159.
+
+\bibitem[Wright(1951)]{intro:wright1951}
+Wright, S. (1951). The genetical structure of populations. \emph{Annals of Eugenics} 15, 323 to
+354.
+
+\bibitem[Yang et~al.(2010)]{intro:yang2010}
+Yang, J. et al. (2010). Common SNPs explain a large proportion of the heritability for human
+height. \emph{Nature Genetics} 42, 565 to 569.
+
+\bibitem[Yule(1902)]{intro:yule1902}
+Yule, G.~U. (1902). Mendel's laws and their probable relations to intra racial heredity.
+\emph{New Phytologist} 1, 193 to 207 and 222 to 238.
+
+\end{thebibliography}

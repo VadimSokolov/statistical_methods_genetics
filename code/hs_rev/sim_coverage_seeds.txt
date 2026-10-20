@@ -1,0 +1,28 @@
+Coverage experiment, 10 batches of 60 replicates, seeds 101 to 700
+
+plain: coverage 509/600 = 0.848 (se 0.015); misses 91: above 80 (0.133), below 11 (0.018); share of misses above 0.879 (se 0.034); mean ratio 1.0603
+   batch  1 seeds 101-160: coverage 0.850, above  8, below  1, mean ratio 1.056
+   batch  2 seeds 161-220: coverage 0.783, above  9, below  4, mean ratio 1.055
+   batch  3 seeds 221-280: coverage 0.817, above  9, below  2, mean ratio 1.040
+   batch  4 seeds 281-340: coverage 0.833, above 10, below  0, mean ratio 1.063
+   batch  5 seeds 341-400: coverage 0.917, above  4, below  1, mean ratio 1.053
+   batch  6 seeds 401-460: coverage 0.817, above 11, below  0, mean ratio 1.055
+   batch  7 seeds 461-520: coverage 0.950, above  3, below  0, mean ratio 1.048
+   batch  8 seeds 521-580: coverage 0.883, above  7, below  0, mean ratio 1.082
+   batch  9 seeds 581-640: coverage 0.833, above  9, below  1, mean ratio 1.063
+   batch 10 seeds 641-700: coverage 0.800, above 10, below  2, mean ratio 1.089
+   batches with more misses above: 10, more below: 0, tied: 0
+
+regularized: coverage 536/600 = 0.893 (se 0.013); misses 64: above 39 (0.065), below 25 (0.042); share of misses above 0.609 (se 0.061); mean ratio 1.0239
+   batch  1 seeds 101-160: coverage 0.900, above  3, below  3, mean ratio 1.021
+   batch  2 seeds 161-220: coverage 0.817, above  5, below  6, mean ratio 1.016
+   batch  3 seeds 221-280: coverage 0.817, above  6, below  5, mean ratio 1.007
+   batch  4 seeds 281-340: coverage 0.883, above  5, below  2, mean ratio 1.029
+   batch  5 seeds 341-400: coverage 0.933, above  3, below  1, mean ratio 1.017
+   batch  6 seeds 401-460: coverage 0.967, above  0, below  2, mean ratio 1.015
+   batch  7 seeds 461-520: coverage 0.933, above  2, below  2, mean ratio 1.006
+   batch  8 seeds 521-580: coverage 0.917, above  5, below  0, mean ratio 1.055
+   batch  9 seeds 581-640: coverage 0.917, above  4, below  1, mean ratio 1.028
+   batch 10 seeds 641-700: coverage 0.850, above  6, below  3, mean ratio 1.045
+   batches with more misses above: 6, more below: 2, tied: 2
+

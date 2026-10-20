@@ -1,0 +1,752 @@
+{
+ "edition": "1",
+ "pdf": {
+  "bytes": 3493820,
+  "file": "pdf/statistical_methods_genetics.pdf",
+  "pages": 489,
+  "parts": [
+   {
+    "first_page": "i",
+    "key": "",
+    "last_page": "xiv",
+    "pages": 14,
+    "title": "Front matter"
+   },
+   {
+    "first_page": "1",
+    "key": "1",
+    "last_page": "20",
+    "pages": 20,
+    "title": "Chapter 1. A Short History of Population Genetics"
+   },
+   {
+    "first_page": "21",
+    "key": "2",
+    "last_page": "48",
+    "pages": 28,
+    "title": "Chapter 2. A Mathematical Toolkit"
+   },
+   {
+    "first_page": "51",
+    "key": "3",
+    "last_page": "126",
+    "pages": 76,
+    "title": "Chapter 3. The Fundamental Theorem of Natural Selection: From Deterministic to Stochastic, Fisher to Bayes"
+   },
+   {
+    "first_page": "127",
+    "key": "4",
+    "last_page": "160",
+    "pages": 34,
+    "title": "Chapter 4. The Horseshoe and the Fundamental Theorem of Natural Selection"
+   },
+   {
+    "first_page": "161",
+    "key": "5",
+    "last_page": "208",
+    "pages": 48,
+    "title": "Chapter 5. Many Parameter Models in Population Genetics"
+   },
+   {
+    "first_page": "211",
+    "key": "6",
+    "last_page": "258",
+    "pages": 48,
+    "title": "Chapter 6. The Ewens Sampling Formula by de Finetti's Theorem"
+   },
+   {
+    "first_page": "259",
+    "key": "7",
+    "last_page": "306",
+    "pages": 48,
+    "title": "Chapter 7. Ascertainment and the Two Parameter Poisson Dirichlet Family"
+   },
+   {
+    "first_page": "307",
+    "key": "8",
+    "last_page": "340",
+    "pages": 34,
+    "title": "Chapter 8. Pólya Inverse Gamma Posteriors, Fisher's Species Model, and Good's Predictive Rule for the Ewens Sampling Problem"
+   },
+   {
+    "first_page": "341",
+    "key": "9",
+    "last_page": "382",
+    "pages": 42,
+    "title": "Chapter 9. Rational Conjugacy: Pochhammer Priors and Gamma Ratios"
+   },
+   {
+    "first_page": "385",
+    "key": "10",
+    "last_page": "430",
+    "pages": 46,
+    "title": "Chapter 10. Sufficiency Without a Likelihood in Population Genetics"
+   },
+   {
+    "first_page": "431",
+    "key": "11",
+    "last_page": "462",
+    "pages": 32,
+    "title": "Chapter 11. Learning to Coalesce"
+   },
+   {
+    "first_page": "463",
+    "key": "12",
+    "last_page": "475",
+    "pages": 13,
+    "title": "Chapter 12. Open Problems and the Future"
+   }
+  ],
+  "sha256": "9626da9e9c9ad3d04ba2634a5129fedd81bb928df00257e743505b35a150a1bd"
+ },
+ "results": {
+  "a_bottleneck_that_attains_the_bayes_risk_is_sufficient": {
+   "environment": "theorem",
+   "file": "chapters/suff.tex",
+   "fingerprint": "b9ec5cec7e11",
+   "label": "suff:thm:suff",
+   "number": "10.12",
+   "page": "399",
+   "printed": "Theorem 10.12",
+   "verified_fingerprint": "b9ec5cec7e11",
+   "verified_on": "2026-10-20"
+  },
+  "asymptotic_redundancy": {
+   "environment": "proposition",
+   "file": "chapters/pig.tex",
+   "fingerprint": "a8a706a108a1",
+   "label": "pig:prop:bvm",
+   "number": "8.13",
+   "page": "319",
+   "printed": "Proposition 8.13",
+   "verified_fingerprint": "a8a706a108a1",
+   "verified_on": "2026-10-20"
+  },
+  "bernoulli_geometric_duality": {
+   "environment": "corollary",
+   "file": "chapters/coal.tex",
+   "fingerprint": "1b46525e5c1c",
+   "label": "coal:cor:duality",
+   "number": "11.7",
+   "page": "439",
+   "printed": "Corollary 11.7",
+   "verified_fingerprint": "1b46525e5c1c",
+   "verified_on": "2026-10-20"
+  },
+  "bias_of_the_plug_in": {
+   "environment": "proposition",
+   "file": "chapters/hs.tex",
+   "fingerprint": "b9fac8031860",
+   "label": "hs:prop:bias",
+   "number": "4.4",
+   "page": "133",
+   "printed": "Proposition 4.4",
+   "verified_fingerprint": "b9fac8031860",
+   "verified_on": "2026-10-20"
+  },
+  "boundary_zipf_law": {
+   "environment": "proposition",
+   "file": "chapters/rc.tex",
+   "fingerprint": "709ff7665f64",
+   "label": "rc:prop:boundaryzipf",
+   "number": "9.22",
+   "page": "363",
+   "printed": "Proposition 9.22",
+   "verified_fingerprint": "709ff7665f64",
+   "verified_on": "2026-10-20"
+  },
+  "conditional_exponentiality": {
+   "environment": "theorem",
+   "file": "chapters/rc.tex",
+   "fingerprint": "34d0a5cb4e2d",
+   "label": "rc:thm:cm",
+   "number": "9.9",
+   "page": "348",
+   "printed": "Theorem 9.9",
+   "verified_fingerprint": "34d0a5cb4e2d",
+   "verified_on": "2026-10-20"
+  },
+  "constant_in_the_diversity_power_law": {
+   "environment": "proposition",
+   "file": "chapters/py.tex",
+   "fingerprint": "7db965ac5445",
+   "label": "py:prop:constant",
+   "number": "7.18",
+   "page": "280",
+   "printed": "Proposition 7.18",
+   "verified_fingerprint": "7db965ac5445",
+   "verified_on": "2026-10-20"
+  },
+  "converse": {
+   "environment": "proposition",
+   "file": "chapters/suff.tex",
+   "fingerprint": "28249b8e70fa",
+   "label": "suff:prop:converse",
+   "number": "10.21",
+   "page": "404",
+   "printed": "Proposition 10.21",
+   "verified_fingerprint": "28249b8e70fa",
+   "verified_on": "2026-10-20"
+  },
+  "deepsets_encoders_factor_through_the_spectrum": {
+   "environment": "theorem",
+   "file": "chapters/coal.tex",
+   "fingerprint": "acf5f815a3f1",
+   "label": "coal:thm:deepsets",
+   "number": "11.16",
+   "page": "445",
+   "printed": "Theorem 11.16",
+   "verified_fingerprint": "acf5f815a3f1",
+   "verified_on": "2026-10-20"
+  },
+  "discovery_rates_of_shrinkage_priors": {
+   "environment": "corollary",
+   "file": "chapters/mp.tex",
+   "fingerprint": "d4b8bf07ce31",
+   "label": "mp:cor:growth",
+   "number": "5.22",
+   "page": "182",
+   "printed": "Corollary 5.22",
+   "verified_fingerprint": "d4b8bf07ce31",
+   "verified_on": "2026-10-20"
+  },
+  "diversity_is_a_power_of_the_unweighted_diversity": {
+   "environment": "proposition",
+   "file": "chapters/py.tex",
+   "fingerprint": "3f959d5bbeca",
+   "label": "py:prop:power",
+   "number": "7.17",
+   "page": "280",
+   "printed": "Proposition 7.17",
+   "verified_fingerprint": "3f959d5bbeca",
+   "verified_on": "2026-10-20"
+  },
+  "effective_model_size": {
+   "environment": "theorem",
+   "file": "chapters/mp.tex",
+   "fingerprint": "0093babbad33",
+   "label": "mp:thm:effsize",
+   "number": "5.23",
+   "page": "183",
+   "printed": "Theorem 5.23",
+   "verified_fingerprint": "0093babbad33",
+   "verified_on": "2026-10-20"
+  },
+  "exact_dispersion_block": {
+   "environment": "proposition",
+   "file": "chapters/rc.tex",
+   "fingerprint": "2c9c899c2c5c",
+   "label": "rc:prop:dispersion",
+   "number": "9.21",
+   "page": "358",
+   "printed": "Proposition 9.21",
+   "verified_fingerprint": "2c9c899c2c5c",
+   "verified_on": "2026-10-20"
+  },
+  "exact_finite_variance_and_a_moment_estimator": {
+   "environment": "proposition",
+   "file": "chapters/esf.tex",
+   "fingerprint": "44ff4c54d02f",
+   "label": "esf:prop:exactvar",
+   "number": "6.11",
+   "page": "219",
+   "printed": "Proposition 6.11",
+   "verified_fingerprint": "44ff4c54d02f",
+   "verified_on": "2026-10-20"
+  },
+  "exact_relative_error_two_alleles": {
+   "environment": "corollary",
+   "file": "chapters/ftns.tex",
+   "fingerprint": "8cd9ec03da02",
+   "label": "ftns:cor:relerr",
+   "number": "3.17",
+   "page": "76",
+   "printed": "Corollary 3.17",
+   "verified_fingerprint": "8cd9ec03da02",
+   "verified_on": "2026-10-20"
+  },
+  "exact_remainder_one_locus_alleles": {
+   "environment": "theorem",
+   "file": "chapters/ftns.tex",
+   "fingerprint": "633e81e41c3e",
+   "label": "ftns:thm:main",
+   "number": "3.16",
+   "page": "76",
+   "printed": "Theorem 3.16",
+   "verified_fingerprint": "633e81e41c3e",
+   "verified_on": "2026-10-20"
+  },
+  "exact_tail_index_of_the_pochhammer_law": {
+   "environment": "corollary",
+   "file": "chapters/rc.tex",
+   "fingerprint": "15f57330ecda",
+   "label": "rc:cor:tail",
+   "number": "9.7",
+   "page": "348",
+   "printed": "Corollary 9.7",
+   "verified_fingerprint": "15f57330ecda",
+   "verified_on": "2026-10-20"
+  },
+  "excess_risk_is_a_posterior_distance": {
+   "environment": "theorem",
+   "file": "chapters/suff.tex",
+   "fingerprint": "9a5f88d4b2dc",
+   "label": "suff:thm:quant",
+   "number": "10.16",
+   "page": "402",
+   "printed": "Theorem 10.16",
+   "verified_fingerprint": "9a5f88d4b2dc",
+   "verified_on": "2026-10-20"
+  },
+  "exponent_map_under_power_sampling": {
+   "environment": "proposition",
+   "file": "chapters/py.tex",
+   "fingerprint": "5d2ef217fb6e",
+   "label": "py:prop:pyimage",
+   "number": "7.13",
+   "page": "275",
+   "printed": "Proposition 7.13",
+   "verified_fingerprint": "5d2ef217fb6e",
+   "verified_on": "2026-10-20"
+  },
+  "exponential_family_factorization": {
+   "environment": "theorem",
+   "file": "chapters/ftns.tex",
+   "fingerprint": "0600af3af00a",
+   "label": "ftns:thm:expfam",
+   "number": "3.8",
+   "page": "69",
+   "printed": "Theorem 3.8",
+   "verified_fingerprint": "0600af3af00a",
+   "verified_on": "2026-10-20"
+  },
+  "future_conj_rigid": {
+   "environment": "conjecture",
+   "file": "chapters/future.tex",
+   "fingerprint": "0add6566df29",
+   "label": "future:conj:rigid",
+   "number": "12.7",
+   "page": "467",
+   "printed": "Conjecture 12.7",
+   "verified_fingerprint": "0add6566df29",
+   "verified_on": "2026-10-20"
+  },
+  "goods_rule_is_the_ewens_predictive": {
+   "environment": "proposition",
+   "file": "chapters/pig.tex",
+   "fingerprint": "d6ef1e61bba7",
+   "label": "pig:prop:good",
+   "number": "8.9",
+   "page": "316",
+   "printed": "Proposition 8.9",
+   "verified_fingerprint": "d6ef1e61bba7",
+   "verified_on": "2026-10-20"
+  },
+  "haplotype_count_escapes_the_spectrum": {
+   "environment": "proposition",
+   "file": "chapters/coal.tex",
+   "fingerprint": "5556e0e6f4a3",
+   "label": "coal:prop:hap",
+   "number": "11.18",
+   "page": "446",
+   "printed": "Proposition 11.18",
+   "verified_fingerprint": "5556e0e6f4a3",
+   "verified_on": "2026-10-20"
+  },
+  "inflation_of_fishers_fitted_projection": {
+   "environment": "corollary",
+   "file": "chapters/mp.tex",
+   "fingerprint": "9a0fbacb712f",
+   "label": "mp:prop:optimism",
+   "number": "5.6",
+   "page": "167",
+   "printed": "Corollary 5.6",
+   "verified_fingerprint": "9a0fbacb712f",
+   "verified_on": "2026-10-20"
+  },
+  "inverse_gamma_series_for_pig0": {
+   "environment": "proposition",
+   "file": "chapters/pig.tex",
+   "fingerprint": "470181f1bfa1",
+   "label": "pig:prop:pig0",
+   "number": "8.7",
+   "page": "313",
+   "printed": "Proposition 8.7",
+   "verified_fingerprint": "470181f1bfa1",
+   "verified_on": "2026-10-20"
+  },
+  "is_not_sufficient_for": {
+   "environment": "proposition",
+   "file": "chapters/coal.tex",
+   "fingerprint": "f6155dbcb342",
+   "label": "coal:prop:notsuff",
+   "number": "11.12",
+   "page": "443",
+   "printed": "Proposition 11.12",
+   "verified_fingerprint": "f6155dbcb342",
+   "verified_on": "2026-10-20"
+  },
+  "mellin_transform": {
+   "environment": "theorem",
+   "file": "chapters/rc.tex",
+   "fingerprint": "6d11fb91d8f2",
+   "label": "rc:thm:mellin",
+   "number": "9.6",
+   "page": "347",
+   "printed": "Theorem 9.6",
+   "verified_fingerprint": "6d11fb91d8f2",
+   "verified_on": "2026-10-20"
+  },
+  "moving_projection_lemma": {
+   "environment": "lemma",
+   "file": "chapters/ftns.tex",
+   "fingerprint": "bbedfcb2e2d7",
+   "label": "ftns:lem:moving",
+   "number": "3.2",
+   "page": "63",
+   "printed": "Lemma 3.2",
+   "verified_fingerprint": "bbedfcb2e2d7",
+   "verified_on": "2026-10-20"
+  },
+  "normalizing_constant": {
+   "environment": "theorem",
+   "file": "chapters/rc.tex",
+   "fingerprint": "720cfbdb97a8",
+   "label": "rc:thm:residue",
+   "number": "9.3",
+   "page": "346",
+   "printed": "Theorem 9.3",
+   "verified_fingerprint": "720cfbdb97a8",
+   "verified_on": "2026-10-20"
+  },
+  "oracle_shrinkage_understates_the_additive_variance": {
+   "environment": "proposition",
+   "file": "chapters/hs.tex",
+   "fingerprint": "38981db70621",
+   "label": "hs:prop:oracle",
+   "number": "4.10",
+   "page": "140",
+   "printed": "Proposition 4.10",
+   "verified_fingerprint": "38981db70621",
+   "verified_on": "2026-10-20"
+  },
+  "predictive_law_of_new_species": {
+   "environment": "proposition",
+   "file": "chapters/pig.tex",
+   "fingerprint": "c24b02a22f35",
+   "label": "pig:prop:newspecies",
+   "number": "8.11",
+   "page": "317",
+   "printed": "Proposition 8.11",
+   "verified_fingerprint": "c24b02a22f35",
+   "verified_on": "2026-10-20"
+  },
+  "py_prop_nocoal": {
+   "environment": "proposition",
+   "file": "chapters/py.tex",
+   "fingerprint": "840f8da18e75",
+   "label": "py:prop:nocoal",
+   "number": "7.12",
+   "page": "273",
+   "printed": "Proposition 7.12",
+   "verified_fingerprint": "840f8da18e75",
+   "verified_on": "2026-10-20"
+  },
+  "py_prop_rate": {
+   "environment": "proposition",
+   "file": "chapters/py.tex",
+   "fingerprint": "cefa2162e6f8",
+   "label": "py:prop:rate",
+   "number": "7.27",
+   "page": "288",
+   "printed": "Proposition 7.27",
+   "verified_fingerprint": "cefa2162e6f8",
+   "verified_on": "2026-10-20"
+  },
+  "py_thm_pitman": {
+   "environment": "theorem",
+   "file": "chapters/py.tex",
+   "fingerprint": "8fce8d2d89ae",
+   "label": "py:thm:pitman",
+   "number": "7.9",
+   "page": "269",
+   "printed": "Theorem 7.9",
+   "verified_fingerprint": "8fce8d2d89ae",
+   "verified_on": "2026-10-20"
+  },
+  "py_thm_regimes": {
+   "environment": "theorem",
+   "file": "chapters/py.tex",
+   "fingerprint": "7964dfe14093",
+   "label": "py:thm:regimes",
+   "number": "7.33",
+   "page": "296",
+   "printed": "Theorem 7.33",
+   "verified_fingerprint": "7964dfe14093",
+   "verified_on": "2026-10-20"
+  },
+  "py_thm_rigid": {
+   "environment": "theorem",
+   "file": "chapters/py.tex",
+   "fingerprint": "38fe085ae4c7",
+   "label": "py:thm:rigid",
+   "number": "7.11",
+   "page": "271",
+   "printed": "Theorem 7.11",
+   "verified_fingerprint": "38fe085ae4c7",
+   "verified_on": "2026-10-20"
+  },
+  "remainder_in_lindley_coordinates": {
+   "environment": "corollary",
+   "file": "chapters/ftns.tex",
+   "fingerprint": "e975a300f9d0",
+   "label": "ftns:thm:lindley",
+   "number": "3.10",
+   "page": "70",
+   "printed": "Corollary 3.10",
+   "verified_fingerprint": "e975a300f9d0",
+   "verified_on": "2026-10-20"
+  },
+  "saturation_of_the_optimism": {
+   "environment": "corollary",
+   "file": "chapters/mp.tex",
+   "fingerprint": "49cfd6ce1514",
+   "label": "mp:cor:saturate",
+   "number": "5.10",
+   "page": "174",
+   "printed": "Corollary 5.10",
+   "verified_fingerprint": "49cfd6ce1514",
+   "verified_on": "2026-10-20"
+  },
+  "shrinkage_is_conservative": {
+   "environment": "proposition",
+   "file": "chapters/hs.tex",
+   "fingerprint": "3310d6a32d8c",
+   "label": "hs:prop:conservative",
+   "number": "4.9",
+   "page": "139",
+   "printed": "Proposition 4.9",
+   "verified_fingerprint": "3310d6a32d8c",
+   "verified_on": "2026-10-20"
+  },
+  "shrinkage_rate_corrected": {
+   "environment": "corollary",
+   "file": "chapters/rc.tex",
+   "fingerprint": "0e28f3cdc378",
+   "label": "rc:cor:rate",
+   "number": "9.8",
+   "page": "348",
+   "printed": "Corollary 9.8",
+   "verified_fingerprint": "0e28f3cdc378",
+   "verified_on": "2026-10-20"
+  },
+  "shrinkage_weights_are_stick_breaking_weights": {
+   "environment": "theorem",
+   "file": "chapters/mp.tex",
+   "fingerprint": "9bcc858279ed",
+   "label": "mp:thm:main",
+   "number": "5.15",
+   "page": "180",
+   "printed": "Theorem 5.15",
+   "verified_fingerprint": "9bcc858279ed",
+   "verified_on": "2026-10-20"
+  },
+  "sigma_diversity_is_a_power_of_the_stick_envelope": {
+   "environment": "lemma",
+   "file": "chapters/py.tex",
+   "fingerprint": "69d10a4ef2dc",
+   "label": "py:lem:MS",
+   "number": "7.16",
+   "page": "279",
+   "printed": "Lemma 7.16",
+   "verified_fingerprint": "69d10a4ef2dc",
+   "verified_on": "2026-10-20"
+  },
+  "spectrum_and_shrinkage_profile": {
+   "environment": "theorem",
+   "file": "chapters/mp.tex",
+   "fingerprint": "cae0f2359732",
+   "label": "mp:thm:spectrum",
+   "number": "5.18",
+   "page": "181",
+   "printed": "Theorem 5.18",
+   "verified_fingerprint": "cae0f2359732",
+   "verified_on": "2026-10-20"
+  },
+  "spectrum_is_a_strict_coarsening": {
+   "environment": "corollary",
+   "file": "chapters/coal.tex",
+   "fingerprint": "536fadd84705",
+   "label": "coal:cor:coarse",
+   "number": "11.17",
+   "page": "445",
+   "printed": "Corollary 11.17",
+   "verified_fingerprint": "536fadd84705",
+   "verified_on": "2026-10-20"
+  },
+  "suff_prop_notsuff": {
+   "environment": "proposition",
+   "file": "chapters/suff.tex",
+   "fingerprint": "1ba4c9865323",
+   "label": "suff:prop:notsuff",
+   "number": "10.25",
+   "page": "412",
+   "printed": "Proposition 10.25",
+   "verified_fingerprint": "1ba4c9865323",
+   "verified_on": "2026-10-20"
+  },
+  "tail_of_the_concentration_posterior": {
+   "environment": "proposition",
+   "file": "chapters/pig.tex",
+   "fingerprint": "49325bd73551",
+   "label": "pig:prop:tail",
+   "number": "8.15",
+   "page": "321",
+   "printed": "Proposition 8.15",
+   "verified_fingerprint": "49325bd73551",
+   "verified_on": "2026-10-20"
+  },
+  "the_check_loss_identifies_the_posterior": {
+   "environment": "theorem",
+   "file": "chapters/suff.tex",
+   "fingerprint": "27004c3076e1",
+   "label": "suff:thm:check",
+   "number": "10.8",
+   "page": "394",
+   "printed": "Theorem 10.8",
+   "verified_fingerprint": "27004c3076e1",
+   "verified_on": "2026-10-20"
+  },
+  "the_coherent_estimator": {
+   "environment": "proposition",
+   "file": "chapters/hs.tex",
+   "fingerprint": "e4b3bb14135f",
+   "label": "hs:prop:posterior",
+   "number": "4.11",
+   "page": "141",
+   "printed": "Proposition 4.11",
+   "verified_fingerprint": "e4b3bb14135f",
+   "verified_on": "2026-10-20"
+  },
+  "the_de_finetti_architecture_is_invariant": {
+   "environment": "proposition",
+   "file": "chapters/esf.tex",
+   "fingerprint": "b5c10187dbf9",
+   "label": "esf:prop:invariant",
+   "number": "6.23",
+   "page": "233",
+   "printed": "Proposition 6.23",
+   "verified_fingerprint": "b5c10187dbf9",
+   "verified_on": "2026-10-20"
+  },
+  "the_negative_branch_is_not_a_weighted_paintbox": {
+   "environment": "proposition",
+   "file": "chapters/esf.tex",
+   "fingerprint": "632b564ad6cb",
+   "label": "esf:prop:notweighted",
+   "number": "6.34",
+   "page": "239",
+   "printed": "Proposition 6.34",
+   "verified_fingerprint": "632b564ad6cb",
+   "verified_on": "2026-10-20"
+  },
+  "the_rates_agree_and_the_constants_nearly_do": {
+   "environment": "corollary",
+   "file": "chapters/mp.tex",
+   "fingerprint": "9931166a909a",
+   "label": "mp:cor:agree",
+   "number": "5.24",
+   "page": "183",
+   "printed": "Corollary 5.24",
+   "verified_fingerprint": "9931166a909a",
+   "verified_on": "2026-10-20"
+  },
+  "the_residual_in_closed_form": {
+   "environment": "proposition",
+   "file": "chapters/ftns.tex",
+   "fingerprint": "0e64f3052fe9",
+   "label": "ftns:prop:resid",
+   "number": "3.11",
+   "page": "71",
+   "printed": "Proposition 3.11",
+   "verified_fingerprint": "0e64f3052fe9",
+   "verified_on": "2026-10-20"
+  },
+  "the_two_constructions_fluctuate_differently": {
+   "environment": "proposition",
+   "file": "chapters/mp.tex",
+   "fingerprint": "886f0b718000",
+   "label": "mp:prop:fluct",
+   "number": "5.27",
+   "page": "186",
+   "printed": "Proposition 5.27",
+   "verified_fingerprint": "886f0b718000",
+   "verified_on": "2026-10-20"
+  },
+  "the_weights_are_forced": {
+   "environment": "proposition",
+   "file": "chapters/esf.tex",
+   "fingerprint": "bbd87d4bcbdc",
+   "label": "esf:prop:weights",
+   "number": "6.8",
+   "page": "217",
+   "printed": "Proposition 6.8",
+   "verified_fingerprint": "bbd87d4bcbdc",
+   "verified_on": "2026-10-20"
+  },
+  "tilted_normalizer": {
+   "environment": "theorem",
+   "file": "chapters/rc.tex",
+   "fingerprint": "d5b617262f64",
+   "label": "rc:thm:tilt",
+   "number": "9.16",
+   "page": "353",
+   "printed": "Theorem 9.16",
+   "verified_fingerprint": "d5b617262f64",
+   "verified_on": "2026-10-20"
+  },
+  "two_locus_residual": {
+   "environment": "proposition",
+   "file": "chapters/ftns.tex",
+   "fingerprint": "34f9b6a77b77",
+   "label": "ftns:prop:twolocus",
+   "number": "3.14",
+   "page": "73",
+   "printed": "Proposition 3.14",
+   "verified_fingerprint": "34f9b6a77b77",
+   "verified_on": "2026-10-20"
+  },
+  "whole_genome": {
+   "environment": "theorem",
+   "file": "chapters/ftns.tex",
+   "fingerprint": "44d185393481",
+   "label": "ftns:thm:whole",
+   "number": "3.5",
+   "page": "66",
+   "printed": "Theorem 3.5",
+   "verified_fingerprint": "44d185393481",
+   "verified_on": "2026-10-20"
+  },
+  "zipf_tails": {
+   "environment": "theorem",
+   "file": "chapters/rc.tex",
+   "fingerprint": "af3f1e0fb83c",
+   "label": "rc:thm:zipf",
+   "number": "9.20",
+   "page": "358",
+   "printed": "Theorem 9.20",
+   "verified_fingerprint": "af3f1e0fb83c",
+   "verified_on": "2026-10-20"
+  }
+ },
+ "updated": "2026-10-20",
+ "zenodo": {
+  "draft": {
+   "doi": "10.5281/zenodo.23509613",
+   "html": "https://zenodo.org/deposit/23509613",
+   "id": 23509613,
+   "reserved_on": "2026-10-20",
+   "version": "1.0.0"
+  }
+ }
+}

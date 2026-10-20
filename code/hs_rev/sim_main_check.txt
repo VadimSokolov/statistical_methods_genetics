@@ -1,0 +1,35 @@
+== summary.json, as quoted in the text ==
+truth s2A 0.0205  MC se 0.0022  s2D 0.0012
+realized 0.020472  partial 0.020464  ratio of means 1.00039  mean of ratios 1.00027
+marg     mean 0.0635  ratio 3.24
+ridge    mean 0.0083  ratio 0.40
+hs_plug  mean 0.0186  ratio 0.91
+hs_post  mean 0.0219  ratio 1.08
+observed marginal bias 0.0431
+MSE marg 0.000297 ridge 7.78e-05 hs 1.51e-05; folds marg/hs 19.7 ridge/hs 5.1
+kappa all reps: null 0.89 signal 0.48; replicate 1 (figure): null 0.91 signal 0.50
+scaling L=100: marg 1.49 (minus one 0.49)  hs 0.97
+scaling L=200: marg 2.01 (minus one 1.01)  hs 0.98
+scaling L=400: marg 2.96 (minus one 1.96)  hs 1.01
+scaling L=800: marg 4.86 (minus one 3.86)  hs 1.07
+successive ratios of (ratio minus one): 2.06 1.95 1.97
+coverage plain: 85.0%  below 1.7%  above 13.3%  se 4.6%  misses 9  mean ratio 1.056
+coverage reg: 90.0%  below 5.0%  above 5.0%  se 3.9%  misses 6  mean ratio 1.021
+secondary: marg 2.58 hs plug 0.77 hs post 0.83
+
+== rerun of the twelve main replicates ==
+rerun truth 0.02046 (summary 0.02046); marg ratio 3.236 (summary 3.236); hs post ratio 1.084 (summary 1.084)
+mean var(y) 0.0320; R2 = s2A/var(y) 0.640
+predicted bias L var(y)/n 0.0426; observed bias 0.0431; difference 0.0005, MC se 0.0016
+predicted bias with the error variance 0.01 only: 0.0133
+90% interval coverage in the 12 main replicates: 10/12 = 83.3% (se 10.8%); below 0, above 2
+
+== rerun of the scaling experiment (seeds 201 to 206 per L) ==
+L=100 marg     ratio 1.490  MC se 0.087  (ratio minus one)/se 5.61
+L=100 hs_post  ratio 0.968  MC se 0.033  (ratio minus one)/se 0.96
+L=200 marg     ratio 2.009  MC se 0.113  (ratio minus one)/se 8.90
+L=200 hs_post  ratio 0.977  MC se 0.032  (ratio minus one)/se 0.72
+L=400 marg     ratio 2.965  MC se 0.142  (ratio minus one)/se 13.83
+L=400 hs_post  ratio 1.005  MC se 0.042  (ratio minus one)/se 0.13
+L=800 marg     ratio 4.863  MC se 0.209  (ratio minus one)/se 18.48
+L=800 hs_post  ratio 1.072  MC se 0.048  (ratio minus one)/se 1.51

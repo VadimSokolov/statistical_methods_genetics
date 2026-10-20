@@ -1,0 +1,18 @@
+spectrum means at theta 8 (theory 8/i): {'1': 8.0465, '2': 4.0144, '3': 2.628, '5': 1.56725, '10': 0.7955}
+E[S] const 396.17 growth 142.34 (se 0.06)
+const simulated in 1.2 s, mean S train 395.2 test 395.3
+const prior theta      width 159.683 cov90 0.8988 cov50 0.4989 chi2 6.1
+const xi theta         width 63.741 cov90 0.8814 cov50 0.4446 chi2 208.6
+   train time 25.3
+const S theta          width 84.366 cov90 0.8955 cov50 0.4991 chi2 13.1
+   train time 36.2
+growth simulated in 3.4 s, mean S train 142.1 test 145.1
+growth prior theta     width 159.683 cov90 0.8994 cov50 0.5020 chi2 6.5
+growth xi theta        width 75.229 cov90 0.8822 cov50 0.4472 chi2 182.7
+   train time 102.0
+growth xi g            width 12.190 cov90 0.8798 cov50 0.4699 chi2 80.7
+   train time 90.0
+growth S theta         width 95.014 cov90 0.9004 cov50 0.5015 chi2 9.2
+   train time 84.0
+growth S g             width 15.599 cov90 0.9033 cov50 0.5042 chi2 10.9
+   train time 73.1

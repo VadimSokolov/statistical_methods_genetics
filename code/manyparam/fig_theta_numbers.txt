@@ -1,0 +1,7 @@
+theta=5 n=100: median interval [2.53, 8.52]  median width 5.99 = 120% of theta  coverage 0.915  mean K 15.83
+theta=5 n=1000: median interval [3.07, 7.20]  median width 4.13 = 83% of theta  coverage 0.927  mean K 26.61
+theta=1 n=100: median interval [0.30, 2.31]  median width 2.00 = 200% of theta  coverage 0.963  mean K 5.26
+theta=5 n=100: exact coverage 0.943, P(K_n<=15)=0.485
+theta=5 n=1000: exact coverage 0.938, P(K_n<=15)=0.004
+theta=1 n=100: exact coverage 0.972, P(K_n<=15)=1.000
+representative: K=15, theta_hat=4.66, posterior mean 4.53, 95% interval [2.25, 7.83]

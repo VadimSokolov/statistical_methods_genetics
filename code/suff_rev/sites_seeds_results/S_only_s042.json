@@ -1,0 +1,1 @@
+{"config": "S_only", "seed": 42, "loss": 0.10534168034791946, "sum_S_train": 867850, "sum_S_test": 116886, "elapsed_s": 8.891467809677124, "jax": "0.6.2", "numpy": "2.2.6"}

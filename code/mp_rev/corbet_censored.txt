@@ -1,0 +1,5 @@
+theta hat 141.7473  se given n 6.473 (profile se over n: 7.0, Chapter esf)
+Pochhammer posterior at n hat: mean 141.50 95% [129.15, 154.49]
+E a1 139.97 E a2 69.10 ; observed 118, 74
+singleton fraction observed 118/620 = 0.190, model E a1/K = 0.226 ; (old 118/501 = 0.236)
+E K_2n - K_n = 97.36

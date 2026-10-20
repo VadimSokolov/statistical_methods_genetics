@@ -1,0 +1,204 @@
+%% On Statistical Methods for Genetics
+%% Nicholas G. Polson
+%% KDP paperback interior: 7 x 10 in trim, no bleed.
+\documentclass[11pt,openright,twoside]{book}
+
+\usepackage[paperwidth=7in,paperheight=10in,
+            inner=0.875in,outer=0.7in,top=0.85in,bottom=0.9in,
+            headheight=14pt,headsep=14pt,footskip=24pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathpazo}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{graphicx,booktabs,array,multirow,tabularx}
+\usepackage{adjustbox}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+\usepackage[round,authoryear]{natbib}
+\usepackage{microtype}
+\usepackage{titlesec,titletoc}
+\usepackage{fancyhdr}
+\usepackage{emptypage}
+\usepackage[hidelinks,bookmarksnumbered]{hyperref}
+\usepackage{caption}
+
+\graphicspath{{./}}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{2}
+
+%% ------------------------------------------------------------------ house style
+%% No bold type anywhere; no automatic hyphenation at line ends.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setlength{\emergencystretch}{4em}
+\tolerance=2000
+\raggedbottom
+\widowpenalty=4000
+\clubpenalty=4000
+\renewcommand{\bfdefault}{m}  % any stray bold request renders at normal weight
+
+\captionsetup{font=small,labelfont=sc,labelsep=period,margin=0pt}
+\setlist[description]{font=\normalfont\itshape}
+\setlist{itemsep=2pt,topsep=4pt}
+
+%% Headings
+\titleformat{\part}[display]{\normalfont\centering}
+  {\large\scshape\partname\ \thepart}{18pt}{\Huge\normalfont}
+\titleformat{\chapter}[display]{\normalfont}
+  {\normalsize\scshape\MakeLowercase{\chaptertitlename}\ \thechapter}{10pt}
+  {\LARGE\raggedright}[\vspace{4pt}\rule{\textwidth}{0.4pt}]
+\titlespacing*{\chapter}{0pt}{24pt}{26pt}
+\titleformat{\section}{\normalfont\large\raggedright}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\normalfont\itshape\raggedright}{\thesubsection}{0.8em}{}
+\titleformat{\paragraph}[runin]{\normalfont\itshape}{}{0pt}{}
+\titlespacing*{\section}{0pt}{16pt plus 4pt minus 2pt}{8pt plus 2pt}
+\titlespacing*{\subsection}{0pt}{12pt plus 3pt minus 2pt}{5pt plus 2pt}
+\titlespacing*{\paragraph}{0pt}{8pt plus 2pt minus 1pt}{0.6em}
+
+%% Table of contents without bold
+\titlecontents{part}[0pt]{\addvspace{12pt}\centering\scshape}{\partname\ \thecontentslabel\quad}{}{}[\addvspace{4pt}]
+\titlecontents{chapter}[1.8em]{\addvspace{6pt}\normalfont}{\contentslabel{1.8em}}{\hspace*{-1.8em}}{\titlerule*[0.6pc]{.}\contentspage}
+\titlecontents{section}[4.2em]{\small}{\contentslabel{2.4em}}{\hspace*{-2.4em}}{\titlerule*[0.6pc]{.}\contentspage}
+
+%% Running heads
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\fancyhead[LE]{\small\thepage\hspace{1.2em}\scshape\MakeLowercase{\leftmark}}
+\fancyhead[RO]{\small\scshape\MakeLowercase{\rightmark}\hspace{1.2em}\upshape\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}}
+
+%% Theorems: small capitals heads, no bold
+\newtheoremstyle{bookplain}{6pt}{6pt}{\itshape}{}{\scshape}{.}{0.5em}{}
+\newtheoremstyle{bookdef}{6pt}{6pt}{\normalfont}{}{\scshape}{.}{0.5em}{}
+\theoremstyle{bookplain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{bookdef}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+%% Chapter summary (the abstract of the original paper)
+\newenvironment{chaptersummary}
+  {\par\small\itshape\begin{list}{}{\leftmargin=1.2em\rightmargin=1.2em\topsep=0pt}\item\relax}
+  {\end{list}\par\vspace{10pt}}
+
+%% Parts inside a chapter (the original paper's own parts)
+\newcounter{cpart}[chapter]
+\newcommand{\chapterpart}[1]{\refstepcounter{cpart}\par\bigskip
+  \begin{center}\large\scshape Part \Roman{cpart}\quad #1\end{center}
+  \addcontentsline{toc}{section}{\textsc{Part \Roman{cpart}: #1}}\medskip}
+
+%% Per chapter bibliographies
+\renewcommand{\bibsection}{\section*{References}}
+\renewcommand{\bibfont}{\small}
+\setlength{\bibsep}{2pt plus 1pt}
+
+%% Common macros, reset at the start of every chapter
+\newcommand{\resetmacros}{%
+  \DeclareRobustCommand{\E}{\mathbb{E}}%
+  \DeclareRobustCommand{\Prob}{\mathbb{P}}%
+  \DeclareRobustCommand{\R}{\mathbb{R}}%
+  \DeclareRobustCommand{\N}{\mathbb{N}}%
+  \DeclareRobustCommand{\Var}{\operatorname{Var}}%
+  \DeclareRobustCommand{\Cov}{\operatorname{Cov}}%
+  \DeclareRobustCommand{\dd}{\,\mathrm{d}}%
+  \DeclareRobustCommand{\Pr}{\operatorname{Pr}}%
+}
+\resetmacros
+\newcommand{\chapterfile}[1]{\resetmacros\input{chapters/#1}\clearpage}
+
+\hypersetup{pdftitle={On Statistical Methods for Genetics},
+            pdfauthor={Nicholas G. Polson}}
+\input{bookmeta}% generated by bookrepo.py from book.yaml: \BookDOIline is empty until a DOI exists
+
+\begin{document}
+
+%% ------------------------------------------------------------------ front matter
+\frontmatter
+\pagestyle{empty}
+
+% half title
+\begin{center}
+\vspace*{2.2in}
+{\LARGE On Statistical Methods for Genetics}
+\end{center}
+\cleardoublepage
+
+% title page
+\begin{center}
+\vspace*{1.3in}
+{\Huge On Statistical Methods\\[8pt] for Genetics}\\[22pt]
+{\large\itshape Fisher, Ewens and the Bayesian Programme}\\[1.6in]
+{\Large Nicholas G. Polson}
+\vfill
+\end{center}
+\clearpage
+
+% copyright
+\begin{flushleft}
+\vspace*{\fill}
+\small
+On Statistical Methods for Genetics\\
+Copyright \copyright\ 2026 Nicholas G. Polson\\[6pt]
+License: the text, figures and PDF are distributed under the Creative Commons Attribution 4.0 International License (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}. You may copy, share and adapt them for any purpose, provided you credit the author. The code is released under the MIT License.\\[6pt]
+First edition, 2026\\[6pt]
+\ifx\BookDOIline\empty\else\BookDOIline\\[6pt]\fi
+% ISBN:
+Typeset in Palatino with \LaTeX.
+\end{flushleft}
+\cleardoublepage
+
+% dedication
+\begin{center}
+\vspace*{2.4in}
+\itshape For Warren J.\ Ewens,\\[4pt]
+whose questions began these chapters
+\end{center}
+\cleardoublepage
+
+\pagestyle{fancy}
+\fancyhead[LE]{\small\thepage\hspace{1.2em}\scshape contents}
+\fancyhead[RO]{\small\scshape contents\hspace{1.2em}\upshape\thepage}
+\tableofcontents
+\cleardoublepage
+\fancyhead[LE]{\small\thepage\hspace{1.2em}\scshape\MakeLowercase{\leftmark}}
+\fancyhead[RO]{\small\scshape\MakeLowercase{\rightmark}\hspace{1.2em}\upshape\thepage}
+
+\input{chapters/preface}
+
+%% ------------------------------------------------------------------ main matter
+\mainmatter
+
+\chapterfile{intro}
+\chapterfile{toolkit}
+
+\part{Selection and the Additive Model}
+\chapterfile{ftns}
+\chapterfile{hs}
+\chapterfile{mp}
+
+\part{The Sampling Theory of Neutral Alleles}
+\chapterfile{esf}
+\chapterfile{py}
+\chapterfile{pig}
+\chapterfile{rc}
+
+\part{Inference Without a Likelihood}
+\chapterfile{suff}
+\chapterfile{coal}
+
+\chapterfile{future}
+
+\end{document}

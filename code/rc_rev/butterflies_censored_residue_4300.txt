@@ -1,0 +1,4 @@
+n 11068 K 620 dps 4300 time 442.3 s
+  C -4.02721244133156e-38602  log10 kappa 4299.69  sum gamma_i1 5.85e-38603
+  mean -22261.533011456  P(new) -2.55834206356214
+python3 -I butterflies_censored_residue.py 4300  270.65s user 3.02s system 61% cpu 7:22.45 total

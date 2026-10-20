@@ -1,0 +1,28 @@
+quine: K = 146, sum n = 2403, mean 16.46, variance (divisor n) 262.4
+Table rc:tab:nbreg rows: 2000 burn in + 100000 retained iterations of Algorithm 2, start alpha = 1
+  Algorithm 2, PH(0,1,2,1)           median      1.21 (2.5%     0.94, 97.5%      1.54) | ESS(alpha)    4442, ESS(log alpha)    4439 of 100000 |  221.2 s,    20.1 eff/s | pred coverage 0.932 width 49.8
+  Algorithm 2, Ga(0.01,0.01)         median      1.21 (2.5%     0.94, 97.5%      1.54) | ESS(alpha)    4518, ESS(log alpha)    4508 of 100000 |  142.9 s,    31.6 eff/s | pred coverage 0.938 width 49.8
+  Algorithm 2, Ga(2,1)               median      1.22 (2.5%     0.95, 97.5%      1.56) | ESS(alpha)    4554, ESS(log alpha)    4547 of 100000 |  139.8 s,    32.6 eff/s | pred coverage 0.932 width 49.4
+quine, PH(0,1,2,1), runs of 2000 burn in + 20000 retained: Algorithm 2 against a tuned random walk Metropolis alpha step, 4 runs each
+  run 0: Algorithm 2                 median      1.21 (2.5%     0.95, 97.5%      1.56) | ESS(alpha)     843, ESS(log alpha)     845 of 20000 |   29.0 s,    29.1 eff/s
+  run 0: random walk Metropolis      median      1.21 (2.5%     0.94, 97.5%      1.51) | ESS(alpha)     810, ESS(log alpha)     815 of 20000 |   27.4 s,    29.6 eff/s | accept 0.41
+  run 1: Algorithm 2                 median      1.21 (2.5%     0.92, 97.5%      1.55) | ESS(alpha)     894, ESS(log alpha)     888 of 20000 |   18.7 s,    47.9 eff/s
+  run 1: random walk Metropolis      median      1.21 (2.5%     0.94, 97.5%      1.54) | ESS(alpha)     772, ESS(log alpha)     766 of 20000 |   26.6 s,    29.0 eff/s | accept 0.47
+  run 2: Algorithm 2                 median      1.21 (2.5%     0.94, 97.5%      1.54) | ESS(alpha)     731, ESS(log alpha)     731 of 20000 |   30.2 s,    24.2 eff/s
+  run 2: random walk Metropolis      median      1.21 (2.5%     0.94, 97.5%      1.56) | ESS(alpha)     698, ESS(log alpha)     707 of 20000 |   30.5 s,    22.9 eff/s | accept 0.44
+  run 3: Algorithm 2                 median      1.20 (2.5%     0.93, 97.5%      1.54) | ESS(alpha)     522, ESS(log alpha)     816 of 20000 |   32.4 s,    16.1 eff/s
+  run 3: random walk Metropolis      median      1.22 (2.5%     0.94, 97.5%      1.56) | ESS(alpha)     720, ESS(log alpha)     712 of 20000 |   29.1 s,    24.7 eff/s | accept 0.41
+
+Insurance: K = 64, sum n = 3151; prior PH(0,1,2,1); 4 runs per sampler from alpha0 = 20, 50, 200, 1000
+  run 0: Algorithm 2                 median    189.61 (2.5%    39.02, 97.5%    770.20) | ESS(alpha)       5, ESS(log alpha)       4 of 20000 |   21.0 s,     0.2 eff/s
+  run 0: slice alpha step, (alpha, psi) median    200.17 (2.5%    60.49, 97.5%    871.33) | ESS(alpha)      10, ESS(log alpha)      10 of 20000 |   37.9 s,     0.3 eff/s
+  run 0: mean parameterization, slice median    399.32 (2.5%    71.09, 97.5%  10577.02) | ESS(alpha)   16669, ESS(log alpha)   10266 of 20000 |   44.2 s,   377.2 eff/s
+  run 1: Algorithm 2                 median    532.33 (2.5%    76.25, 97.5%   1355.38) | ESS(alpha)       4, ESS(log alpha)       4 of 20000 |   37.0 s,     0.1 eff/s
+  run 1: slice alpha step, (alpha, psi) median    575.12 (2.5%   121.06, 97.5%   5573.79) | ESS(alpha)       4, ESS(log alpha)       3 of 20000 |   22.8 s,     0.2 eff/s
+  run 1: mean parameterization, slice median    408.51 (2.5%    71.06, 97.5%  12072.91) | ESS(alpha)   16645, ESS(log alpha)    9721 of 20000 |   27.1 s,   613.2 eff/s
+  run 2: Algorithm 2                 median    432.34 (2.5%    81.64, 97.5%   1061.48) | ESS(alpha)      10, ESS(log alpha)       7 of 20000 |   13.4 s,     0.8 eff/s
+  run 2: slice alpha step, (alpha, psi) median    415.76 (2.5%    83.89, 97.5%    935.11) | ESS(alpha)      16, ESS(log alpha)      16 of 20000 |    7.9 s,     2.1 eff/s
+  run 2: mean parameterization, slice median    396.02 (2.5%    69.56, 97.5%  10800.66) | ESS(alpha)   17526, ESS(log alpha)    9849 of 20000 |    6.6 s,  2674.6 eff/s
+  run 3: Algorithm 2                 median    228.53 (2.5%    63.52, 97.5%    851.30) | ESS(alpha)       5, ESS(log alpha)       5 of 20000 |    7.9 s,     0.6 eff/s
+  run 3: slice alpha step, (alpha, psi) median    990.07 (2.5%   411.03, 97.5%   2043.89) | ESS(alpha)      13, ESS(log alpha)      12 of 20000 |   10.3 s,     1.2 eff/s
+  run 3: mean parameterization, slice median    404.97 (2.5%    70.80, 97.5%  10932.79) | ESS(alpha)   13256, ESS(log alpha)    9585 of 20000 |    8.7 s,  1525.3 eff/s

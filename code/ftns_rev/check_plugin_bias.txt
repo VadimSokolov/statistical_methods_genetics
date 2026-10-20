@@ -1,0 +1,4 @@
+alpha = 0.1300, exact relative plug in bias = 10.1864/n
+n=  25: MC relative bias 0.42021 (MC s.e. 0.00976), exact 0.40746, MC/exact - 1 = +0.0313, MC s.e./exact = 0.0240
+n=  50: MC relative bias 0.20226 (MC s.e. 0.00661), exact 0.20373, MC/exact - 1 = -0.0072, MC s.e./exact = 0.0324
+n= 100: MC relative bias 0.10535 (MC s.e. 0.00462), exact 0.10186, MC/exact - 1 = +0.0342, MC s.e./exact = 0.0454

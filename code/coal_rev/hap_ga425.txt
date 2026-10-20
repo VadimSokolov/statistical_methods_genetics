@@ -1,0 +1,25 @@
+# Ga(4, 25) block of Table coal:tab:hap, round 2 rerun (see hap_train.py docstring). Seed 0 then seed 1.
+time 9.895979642868042 H==Hrec True mean H 25.6245 mean flagless 25.219333333333335 mean S 397.64391666666666
+time 76.10581493377686 H==Hrec True mean H 25.64595 mean flagless 25.2465625 mean S 396.624675
+exact given S          width 84.748 cov90 0.900 cov50 0.503 chi2 7.8
+exact given H          width 118.210 cov90 0.902 cov50 0.508 chi2 6.4
+prior                  width 159.683 cov90 0.898 cov50 0.503 chi2 17.8
+net S                  width 86.655 cov90 0.905 cov50 0.507 chi2 15.6
+   train time 32.4
+net SH                 width 80.554 cov90 0.907 cov50 0.499 chi2 15.7
+   train time 24.9
+net xi                 width 63.155 cov90 0.879 cov50 0.440 chi2 224.1
+   train time 39.3
+net xiH                width 63.286 cov90 0.877 cov50 0.442 chi2 275.5
+   train time 69.9
+exact given S          width 84.748 cov90 0.900 cov50 0.503 chi2 7.8
+exact given H          width 118.210 cov90 0.902 cov50 0.508 chi2 6.4
+prior                  width 159.683 cov90 0.898 cov50 0.503 chi2 17.8
+net S                  width 83.365 cov90 0.887 cov50 0.487 chi2 58.4
+   train time 32.3
+net SH                 width 80.983 cov90 0.900 cov50 0.500 chi2 56.9
+   train time 25.0
+net xi                 width 61.856 cov90 0.876 cov50 0.447 chi2 230.2
+   train time 39.9
+net xiH                width 61.223 cov90 0.876 cov50 0.438 chi2 248.6
+   train time 70.1

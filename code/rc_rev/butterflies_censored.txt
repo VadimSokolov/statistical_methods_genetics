@@ -1,0 +1,19 @@
+== censored, conditional on n hat n 11068 K 620
+PH(0,1,2,1)  mean 141.50 median 141.39 95% (129.15, 154.49) P(new) 0.01262
+Ga(0.1,0.1)  mean 137.76 median 137.65 95% (125.79, 150.35) P(new) 0.01229
+Ga(2,1)      mean 110.71 median 110.63 95% (101.35, 120.52) P(new) 0.00990
+MLE 141.7473 info 0.02387 se 6.473 plug in P(new) 0.01265 a1/n 0.0107
+Ga(2,1): median shift -31.1 = 4.81 se; normal approx shift (1/th - 1)/I = -41.6; theta hat - median 31.1; median/MLE 0.780
+Ga(0.1,0.1) median shift -4.09 = 0.63 se
+== tabulated classes only (old, ignores the censoring) n 3306 K 501
+PH(0,1,2,1)  mean 163.63 median 163.44 95% (146.88, 181.48) P(new) 0.04715
+Ga(0.1,0.1)  mean 156.74 median 156.56 95% (140.86, 173.65) P(new) 0.04526
+Ga(2,1)      mean 114.27 median 114.16 95% (103.27, 125.89) P(new) 0.03341
+MLE 163.9943 info 0.01280 se 8.839 plug in P(new) 0.04726 a1/n 0.0357
+Ga(2,1): median shift -49.8 = 5.64 se; normal approx shift (1/th - 1)/I = -77.6; theta hat - median 49.8; median/MLE 0.696
+Ga(0.1,0.1) median shift -7.43 = 0.84 se
+sampler n hat: mean 141.50 median 141.39 95% (129.13, 154.51) P(new) 0.0126 draws 400000
+quad (mp, dps 40): C 3.83864527031441e-38952 mean 141.500581177552 P(new) 0.0126229439748154
+log10 kappa 4649.7 at j=5827; N=11069; digits/N 0.420; ceil(N/2) 5535
+check old: log10 kappa 1794.3 (text: about 1794 digits), digits/N 0.543
+fine quad (mp, dps 30): C 3.83864526978646e-38952 mean 141.500581201682 P(new) 0.0126229439769425

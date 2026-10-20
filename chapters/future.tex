@@ -1,0 +1,550 @@
+%% Closing chapter: open problems and the future (new for the book)
+\chapter{Open Problems and the Future}\label{ch:future}
+\chaptermark{Open Problems and the Future}
+
+\begin{chaptersummary}
+Each chapter of this book closes with the problems it leaves open. This chapter collects them,
+arranges them by the three themes of the book, and states as many as possible as precise
+mathematical or statistical questions. It then adds the larger questions that the genomic era is
+now forcing on statistical genetics: samples comparable in size to the population, genealogies
+inferred at biobank scale, ancient DNA as a time series, the portability of polygenic prediction,
+and learned inference whose calibration has to be checked rather than assumed. Short calculations show
+the scale of the difficulties: the slow approach of the singleton fraction to Pitman's discount
+parameter, the gap between marginal and conditional calibration, and the failure of the
+coalescent when the sample approaches the size of the population.
+\end{chaptersummary}
+
+\section{What a century has settled}
+
+It is worth beginning with what is no longer in question. Particulate inheritance conserves
+variance, and that answers Jenkin. The correlations between relatives follow from Mendel's laws
+applied to many loci, and that answers the biometricians. The Fundamental Theorem, read as Fisher
+almost certainly meant it and as Ewens has set out, is an identity about the partial change in mean
+fitness attributable to changes in gene frequency, and Chapter~\ref{ch:ftns} shows exactly what the
+total change adds to it. The Ewens sampling formula is the law of an exchangeable partition whose
+predictive rule is affine in the empirical distribution function, and Chapter~\ref{ch:esf} shows
+that exchangeability then forces everything else. Under the infinite alleles model the number of
+alleles is sufficient for the mutation parameter, and under the infinite sites model the number of
+segregating sites is not (Chapters~\ref{ch:suff} and \ref{ch:coal}).
+
+What remains open is, almost without exception, statistical. The mathematics of the classical
+models is in excellent shape. What we lack is a reliable account of what samples of the size and
+kind we now collect can tell us about the quantities the classical theory defines. Below, each problem is described in words and then, where it is sharp enough, stated
+as a displayed question or conjecture precise enough that one could recognise a solution.
+
+\section{Selection and the additive model}
+
+This section collects the problems left by Part I. They concern the empirical content of the
+Fundamental Theorem, the prior on genetic architecture, and the estimation of quadratic functionals
+of many small effects.
+
+\paragraph{The measurement that has not been made.} The neglected term in the Fundamental Theorem
+vanishes exactly when the population moves tangentially to the manifold of Hardy Weinberg and
+linkage equilibrium (Chapter~\ref{ch:ftns}). Whether real populations do so on the timescale of
+selection is an empirical question, and it is answerable: one needs Lindley's Hardy Weinberg
+disequilibrium coefficient and the linkage disequilibrium spectrum, tracked through time in a
+population under measurable selection. Long running evolution experiments and the temporal
+samples that ancient DNA now provides are the natural places to look. If the association
+coordinates turn out to be stationary, the constant genic environment becomes an observation
+rather than an assumption. If they move, the size of the remainder can be estimated directly. Of
+all the problems in this chapter, this is the one most worth doing first.
+
+Write the total rate of change of mean fitness as $\sigma_A^2(t)+R(t)$, where $\sigma_A^2(t)$ is
+the additive genetic variance in the Malthusian parameter and $R(t)$ is the remainder of Chapter~\ref{ch:ftns}, the term that vanishes exactly when the motion is tangential to the manifold of product measures.
+
+\begin{question}\label{future:q:remainder}
+Given genotype samples of sizes $n_0,\dots,n_m$ taken at times $t_0<\dots<t_m$ from a population
+under selection, construct an estimator of the ratio
+\begin{equation*}
+\rho=\frac{\int_{t_0}^{t_m}R(t)\dd t}{\int_{t_0}^{t_m}\sigma_A^2(t)\dd t}
+\end{equation*}
+that is consistent as $\min_i n_i\to\infty$, and determine the sample sizes and spacing needed to
+distinguish $\rho=0$ from $|\rho|\ge\rho_0$ with given error probabilities.
+\end{question}
+
+The difficulty is one of scale. At a single biallelic locus the departure from Hardy Weinberg
+proportions is measured by $F$, and the chi square test has statistic $N\hat F^2$ (Exercise~\ref{intro:exr:F} of
+Chapter~\ref{ch:intro}). A one degree of freedom test at level $0.05$ has power $0.8$ when the
+noncentrality is $7.85$, so detecting $F=0.1$ needs about $785$ genotypes, detecting $F=0.03$
+about $8700$, and detecting $F=0.01$ about $78{,}500$. Departures produced by selection within a
+generation are of the order of the selection coefficients, so the measurement requires either
+strong selection or samples of biobank size, repeated through time.
+
+\paragraph{Is the genome sparse?} Every estimate in Part I depends on the answer. A horseshoe prior
+encodes a genetic architecture with a few substantial effects among many negligible ones; a
+Gaussian prior encodes Fisher's infinitesimal model; the omnigenic model of Boyle, Li and Pritchard
+suggests that the truth may be dense in a way neither captures. Chapter~\ref{ch:mp} shows, through an exact identity of marginal laws, that the
+choice of prior corresponds to the choice of Pitman's discount $\sigma$ (written $\alpha$ in Chapter~\ref{ch:mp}), and that the growth of the
+singleton count identifies it. That makes the sparsity level estimable from the frequency
+spectrum rather than chosen, but the identification has so far been shown only for the matched
+species sampling model.
+
+Recall the correspondence of Chapter~\ref{ch:mp}. If the shrinkage weight of a prior in the three
+parameter beta normal class is $\kappa\sim\mathrm{Be}(a,b)$, then $\kappa$ has the law of the
+first stick breaking weight of $\mathrm{GEM}(\sigma,\vartheta)$ with $\sigma=1-a$ and
+$\vartheta=a+b-1$, and the frequency spectrum intensities agree, $x^{-1}f_\kappa(x)\propto
+x^{-1-\sigma}(1-x)^{\vartheta+\sigma-1}$. The horseshoe, $a=b=\tfrac12$, corresponds to
+$\sigma=\tfrac12$ and $\vartheta=0$.
+
+\begin{question}\label{future:q:mp}
+Let $\Pi_n$ be the exchangeable random partition of $\{1,\dots,n\}$ induced by the global local
+shrinkage prior with $\kappa\sim\mathrm{Be}(a,b)$, constructed as in Chapter~\ref{ch:mp}. Is the
+exchangeable partition probability function of $\Pi_n$ equal, for every $n$, to Pitman's
+\begin{equation*}
+p(n_1,\dots,n_k)=\frac{\prod_{i=1}^{k-1}(\vartheta+i\sigma)}{(\vartheta+1)_{n-1}}
+\prod_{j=1}^{k}(1-\sigma)_{n_j-1},
+\qquad \sigma=1-a,\ \vartheta=a+b-1,
+\end{equation*}
+where $(x)_m=x(x+1)\cdots(x+m-1)$? If not, which functionals of the partition (beyond the
+expected frequency spectrum) do the two laws share?
+\end{question}
+
+A positive answer would make the sparsity level a parameter with a sufficient statistic in the
+data, rather than a modelling choice. Under the two parameter law the proportion of alleles seen
+exactly $j$ times tends to $\sigma(1-\sigma)_{j-1}/j!$, so for the horseshoe half of all alleles
+in a large sample are singletons, an eighth are doubletons and a sixteenth tripletons. Example~\ref{future:ex:singleton} shows how slowly this limit is
+approached.
+
+\paragraph{Functionals, not coefficients.} The additive genetic variance is a quadratic functional
+of the average effects, Robertson's secondary theorem a bilinear one, and under linkage
+disequilibrium the estimand is $\alpha^\top V\alpha$ rather than a diagonal form
+(Chapter~\ref{ch:hs}). Posterior intervals for such functionals under shrinkage priors undercover
+by a few points at moderate sample sizes. The theory for signals of intermediate size suggests that the misses are one sided and that the interval sits low, but the simulations of Chapter~\ref{ch:hs} show the opposite for the plain horseshoe: its misses lie mostly above the truth (80 of 91 in 600 replicates). A frequentist
+theory of coverage for quadratic functionals under the horseshoe, analogous to the results of
+\citet{future:vanderpas2017} for the coefficients themselves, would make the rate of adaptation a
+quantity one could report with a calibrated interval.
+
+\begin{question}\label{future:q:quad}
+In the normal means model $Y_i\sim N(\beta_i,1)$, $i=1,\dots,p$, with $\beta$ in the nearly black
+class $\ell_0[s_p]=\{\beta:\#\{i:\beta_i\ne0\}\le s_p\}$ and $s_p=o(p)$, let $C_p$ be the
+equal tailed $1-\gamma$ horseshoe credible interval for $Q(\beta)=\sum_i\beta_i^2$. Characterise
+the set of $\beta\in\ell_0[s_p]$ on which $\liminf_p\Prob_\beta\{Q(\beta)\in C_p\}\ge1-\gamma$,
+and decide on which side of $Q(\beta)$ the interval lies, with probability tending to
+one, on its complement. The theory of intermediate signals suggests that it lies below, whereas the simulations of Chapter~\ref{ch:hs} found the misses mostly above the truth for the plain horseshoe, in a design that need not lie in the regime of the theory. Both the set to be characterised and the direction on its complement are open, and the second presupposes that the complement has no sequences with limiting coverage strictly between $0$ and $1-\gamma$.
+\end{question}
+
+The need for shrinkage, and the danger of it, are both visible in a small calculation. Take
+$p=10{,}000$ coefficients of which $100$ equal $3$ and the rest are zero, so that $Q=900$. The plug
+in estimate $\sum_iY_i^2$ has expectation $Q+p=10{,}900$, twelve times too large. The unbiased
+estimate $\sum_i(Y_i^2-1)$ has standard deviation $(2p+4Q)^{1/2}=154$, so it is correct on average
+but noisy. A shrinkage estimator removes most of the noise, and the open question is how much of
+the signal it removes with it.
+
+\paragraph{Ascertainment is not a shrinkage problem.} Measuring fitness only on survivors
+understates the additive variance severalfold, and no prior repairs it, because the bias is in the
+estimand rather than in the estimator. Writing the selection mechanism into the likelihood,
+in the manner of the weighted distributions of Rao that Part II applies to the paintbox, is the
+obvious route. Chapter~\ref{ch:hs} simulates truncation at a known fraction and rescales, but writing the mechanism into the likelihood has not been carried out for quantitative genetic designs, and it is the
+precondition for any empirical test of the Fundamental Theorem in a wild population.
+
+\begin{question}\label{future:q:ascert}
+Let $(G,W)$ be the genotype and fitness of an individual, and suppose $(G,W)$ is observed only
+with probability $\pi(W)$ for a known or parametrically specified function $\pi$. Under what
+conditions on $\pi$ is the additive genetic variance in $W$ identified from the law of the
+observed pairs, and what is the efficiency loss relative to complete observation?
+\end{question}
+
+\paragraph{Linkage disequilibrium at biobank scale.} The inflation of the plug in additive variance
+is $\sigma^2\,\mathrm{tr}(H^\top H)/N$, where $H$ is the smoother matrix of Chapter~\ref{ch:mp}. The trace equals $p$ for the unregularised projection onto $p$ linearly independent columns, whatever the design, and is smaller for a shrinkage smoother.
+With real linkage disequilibrium the trace must be computed from an empirical Gram matrix with
+strong local correlation, and the effective number of parameters is smaller than $p$ by an amount
+that depends on the population's history. Relating that effective dimension to the inferred
+genealogy of the sample, which tree sequence methods now make available, would connect Part I to
+Part III.
+
+\begin{question}\label{future:q:ld}
+For genotype matrices generated by the coalescent with recombination, with scaled recombination
+rate $\varrho$ per unit length and $p$ sites per unit length, how does the effective dimension
+$p_{\mathrm{eff}}=\mathrm{tr}(H^\top H)$ of Chapter~\ref{ch:mp} behave as $p\to\infty$ and
+$N\to\infty$, and can it be estimated from an inferred tree sequence without forming the Gram
+matrix?
+\end{question}
+
+\section{The sampling theory of neutral alleles}
+
+The problems left by Part II are about extending exact results beyond the families in which they
+were proved, and about second order theory for the rare variant end of the frequency spectrum.
+
+\paragraph{Ascertainment and pool size together.} Chapter~\ref{ch:esf} applies two distinct
+operations to Kingman's paintbox: a Rao weighting for ascertainment, and the two
+parameter family with negative discount for a finite pool of types. Nothing forbids applying both. The resulting three
+parameter model would allow ascertainment effort and pool size to be estimated jointly, but its
+partition probability function has no closed form, so inference must be simulation based, which is
+exactly the setting of Part III.
+
+\begin{question}\label{future:q:three}
+Is the three parameter model obtained by Rao weighting the two parameter paintbox identifiable from
+the partition of a single sample as $n\to\infty$, and if so at what rate can each parameter be
+estimated?
+\end{question}
+
+\paragraph{Rigidity beyond tail sum weights.} Chapter~\ref{ch:py} proves that no sampling density
+acting on the tail sums of the stick breaking construction preserves the Ewens Pitman family when
+$\sigma>0$. Ascertainment schemes that depend on the atom index as well as its position are not
+covered. Whether any of them that charges every interval preserves the family is open, and a negative answer would make the
+rigidity theorem complete.
+
+\begin{conjecture}\label{future:conj:rigid}
+Let $0<\sigma<1$ and $\vartheta>-\sigma$. There is no sampling weight, depending measurably on the
+atom index and the atom's position in the subdivision and charging every interval, that carries $\mathrm{PD}(\sigma,\vartheta)$
+to $\mathrm{PD}(\sigma',\vartheta')$ for any $(\sigma',\vartheta')\ne(\sigma,\vartheta)$.
+\end{conjecture}
+
+\paragraph{Second order theory for the spectrum.} The singleton
+fraction estimates the discount parameter with no normalisation, and its bias under a
+deterministic envelope is negligible. The same calculation with the random frequencies in place
+of the envelope, carried to the order at which the Gamma fluctuations and the zeta function
+correction compete, has not been done. Nor has the second order scale matching between the
+abundance based estimator and Hill's estimator of the tail index. These are the calculations that
+would turn rules of thumb into procedures for the rare variant end of the spectrum, which is where
+the information in very large samples lives.
+
+\begin{example}[How fast does the singleton fraction converge?]\label{future:ex:singleton}
+Under the two parameter Chinese restaurant process with discount $\sigma$ and concentration
+$\vartheta$, the $(n+1)$th gene is a new allele with probability $(\vartheta+\sigma K_n)/(\vartheta+n)$
+and joins a given singleton with probability $(1-\sigma)/(\vartheta+n)$. Taking expectations gives
+two exact linear recursions,
+\begin{align*}
+\E K_{n+1}&=\E K_n+\frac{\vartheta+\sigma\E K_n}{\vartheta+n},\\
+\E K_{n+1,1}&=\E K_{n,1}\Bigl(1-\frac{1-\sigma}{\vartheta+n}\Bigr)+\frac{\vartheta+\sigma\E K_n}{\vartheta+n},
+\end{align*}
+where $K_{n,1}$ is the number of singletons. Table~\ref{future:tab:singleton} shows the ratio
+$\E K_{n,1}/\E K_n$ for $\sigma=\tfrac12$. With $\vartheta=0$ the ratio is within $0.003$ of
+$\sigma$ by $n=100$. With $\vartheta=10$ it is $0.65$ at $n=100$ and still $0.516$ at $n=10^4$;
+the excess decays like $c\,n^{-\sigma}$ with $c\approx1.56$, so a sample of about $6\times10^5$ genes is
+needed to bring it below $0.002$. The concentration parameter, which is invisible in the first
+order theory, controls the bias at every sample size one is likely to meet. A Monte Carlo check
+with $4000$ samples of size $100$ at $\vartheta=1$ agrees with the recursions to within
+simulation error.
+\end{example}
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Ratio $\E K_{n,1}/\E K_n$ of expected singletons to expected alleles under the two
+parameter Chinese restaurant process with $\sigma=1/2$. The limit is $\sigma=0.5$ in every
+column.}\label{future:tab:singleton}
+\begin{tabular}{rccc}
+\toprule
+$n$ & $\vartheta=0$ & $\vartheta=1$ & $\vartheta=10$ \\
+\midrule
+$10^2$ & $0.5025$ & $0.5457$ & $0.6506$ \\
+$10^3$ & $0.5003$ & $0.5142$ & $0.5493$ \\
+$10^4$ & $0.5000$ & $0.5044$ & $0.5156$ \\
+$10^5$ & $0.5000$ & $0.5014$ & $0.5049$ \\
+$10^6$ & $0.5000$ & $0.5004$ & $0.5016$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{question}\label{future:q:second}
+Under $\mathrm{PD}(\sigma,\vartheta)$ find the second order expansion
+\begin{equation*}
+\begin{gathered}\frac{K_{n,1}}{K_n}=\sigma+n^{-\sigma/2}\,Z_n,\\ \E\frac{K_{n,1}}{K_n}=\sigma+c_1(\sigma,\vartheta)\,n^{-\sigma}+o(n^{-\sigma}),\end{gathered}
+\end{equation*}
+identifying $c_1$ and the limit law of $Z_n$, and use it to give a bias corrected estimator of
+$\sigma$ with an interval whose coverage is correct to second order.
+\end{question}
+
+\paragraph{Which functionals identify which parameters?} The de Finetti limit of the two parameter
+family is identified by two functionals of the limiting empirical distribution function: the
+variance of its heights and the growth rate of its jump count (Chapter~\ref{ch:esf}). The Gibbs
+partitions of \citet{future:gnedin2006} are the place to start.
+
+\begin{question}\label{future:q:ident}
+For which families of exchangeable partitions is the directing random measure identified by a
+finite list of functionals of the limiting empirical distribution function, and is there a
+principle that assigns one functional to each parameter?
+\end{question}
+
+\paragraph{Priors for concentration parameters.} Chapters~\ref{ch:pig} and \ref{ch:rc} give two
+exact routes to Bayesian inference for a concentration parameter: P\'olya inverse gamma
+augmentation, which reaches the transcendental factor directly, and rational conjugacy, which works
+whenever the Gamma ratio has an integer shift. The two are complementary, and a conjectural meeting point is the half horseshoe, which is a
+scale mixture of exponentials (Chapter~\ref{ch:rc} uses it both with residues and, through Proposition~\ref{rc:prop:plugin}, with a latent exponential scale that needs no residues; combining that proposition with the augmentation of Chapter~\ref{ch:pig} has not been carried out here). Two questions remain. The residue expansion of rational conjugacy
+is exact but ill conditioned, losing about $n\log_{10}2$ significant digits in a solvable case, or
+thirty digits at $n=100$; a stable algorithm for large samples is needed. And the Bernstein and von
+Mises argument of Chapter~\ref{ch:pig} shows that for the Ewens richness parameter the Bayes and
+classical answers agree to order $1/K$; the interesting cases are therefore the ones where $K$ is
+small or where the shape parameter departs from the logseries limit, and these have not been
+studied systematically in genetic data.
+
+\begin{question}\label{future:q:stable}
+Is there an algorithm that evaluates the normalising constant and posterior moments of a
+Pochhammer posterior after $n$ observations with relative error $\epsilon$ in $O(n\log(1/\epsilon))$
+operations in fixed precision arithmetic?
+\end{question}
+
+\section{Inference without a likelihood}
+
+The problems left by Part III concern what learned summaries can and cannot capture, and how to
+tell whether a learned posterior can be trusted.
+
+\paragraph{The ancestral recombination graph.} With recombination the data are a collection of
+correlated genealogies and even one dimensional summaries lack closed form laws. The bottleneck
+test of Chapter~\ref{ch:suff} applies without change, and its natural output is not another
+estimate of the recombination rate but the dimension at which the held out risk stops falling:
+an estimate of how many numbers a recombining sample is worth.
+
+For a model $\{P_\theta\}$ for data $X$ define the \emph{bottleneck dimension} $d^*$ as the
+smallest $d$ for which some $T:\mathcal X\to\R^d$ from a fixed class of encoders, as in Chapter~\ref{ch:suff}, invariant under the symmetries of the model, is sufficient for $\theta$. The class matters: if $T$ may be any measurable map then $d^*\le1$ for every model on a countable sample space, because the orbit of $X$ under the symmetries is sufficient and can be coded injectively by a single real number.
+
+\begin{question}\label{future:q:arg}
+For a sample of $n$ sequences of fixed length under the coalescent with recombination at scaled
+rate $\varrho>0$ and infinite sites mutation at scaled rate $\vartheta$, is $d^*$ finite? If it is,
+how does it grow with $n$ and with the sequence length?
+\end{question}
+
+\paragraph{Selection in the genealogy.} Tajima's $D$ and its relatives are hand built two
+dimensional summaries designed to detect departures from the neutral frequency spectrum. A learned
+two dimensional bottleneck fitted under models with directional or balancing selection is a direct
+test of how much the classical constructions leave on the table.
+
+\paragraph{Multiple merger coalescents.} For species with high fecundity and sweepstakes
+reproduction the Kingman coalescent is replaced by $\Lambda$ coalescents, for which the sufficiency
+question is genuinely open while simulation remains easy. Here the bottleneck dimension is itself
+the scientific quantity, since it counts the independent features of the spectrum that distinguish
+a multiple merger history from a neutral one.
+
+\begin{question}\label{future:q:beta}
+For the Beta$(2-\alpha,\alpha)$ coalescent with $1<\alpha<2$ and infinite sites mutation, is the
+site frequency spectrum sufficient for $(\alpha,\vartheta)$? If not, what is $d^*$?
+\end{question}
+
+\paragraph{Beyond the permutation invariant ceiling.} Chapter~\ref{ch:coal} proves that any encoder
+built from per site permutation invariant features factors through the site frequency spectrum, and
+that the number of distinct haplotypes is a minimal witness that escapes the ceiling. A small
+case shows what the spectrum loses. With $n=5$ sequences and two segregating sites, each carried
+by two sequences, the spectrum is the same whether both mutations sit on the same pair of
+sequences (haplotypes $11,11,00,00,00$, so two distinct haplotypes) or on disjoint pairs
+($10,10,01,01,00$, three distinct haplotypes). Both are consistent with a single tree, but they
+require different trees, and they have different probabilities under the coalescent.
+
+\begin{question}\label{future:q:minsuff}
+Under the infinite sites model without recombination, with the sample represented as an $n\times S$
+binary matrix modulo permutations of rows and of columns, what is the minimal sufficient statistic
+for $\vartheta$? Which architectures, built from equivariant layers, can represent it?
+\end{question}
+
+\paragraph{Calibration, not just accuracy.} Learned posteriors can match exact posteriors to within
+a few percent and still fail simulation based calibration, and Chapter~\ref{ch:coal} shows that
+standard rank recalibration removes the marginal error but cannot show that the conditional error is gone, and
+a mild conditional residual remains. A theory of conditional calibration for amortised posteriors, with
+diagnostics that a practitioner can run, is perhaps the most important methodological problem in
+likelihood free inference today. The next example shows why marginal checks cannot be enough.
+
+\begin{example}[A marginally calibrated posterior that is conditionally wrong]\label{future:ex:calib}
+Let $\theta\sim N(0,1)$ and $X\mid\theta\sim N(\theta,1)$, so the exact posterior is
+$N(x/2,1/2)$. Suppose a learned method ignores the data and reports the prior $N(0,1)$ as its
+posterior. Simulation based calibration \citep{future:cook2006} draws $\theta$ from the prior,
+data from the model, and computes the rank of $\theta$ in the reported posterior; here the rank
+statistic is $\Phi(\theta)$, which is exactly uniform. The method passes the check perfectly, and
+its $90$ percent interval $(-1.645,1.645)$ covers $\theta$ with marginal probability exactly
+$0.90$. Conditionally it fails badly. Given $X=x$ the coverage is
+$\Prob(|\theta|<1.645\mid x)$ with $\theta\sim N(x/2,1/2)$, which is $0.98$ at $x=0$, $0.82$ at
+$x=2$ and $0.58$ at $x=3$; over the $16$ percent of data sets with $|X|>2$ a simulation gives
+coverage $0.67$. Overcoverage near the centre of the data distribution exactly pays for
+undercoverage in the tails.
+\end{example}
+
+\begin{question}\label{future:q:calib}
+Let $q(\theta\mid x)$ be an amortised posterior and $U=Q(\theta\mid X)$ the probability integral
+transform of the true parameter under it. Simulation based calibration tests whether $U$ is
+uniform. Find a test, computable from simulated pairs $(\theta_i,X_i)$ alone, that is consistent
+against every alternative in which $U$ is not uniform conditionally on $X$ on a set of positive
+probability, and give its rate against alternatives at distance $\delta$ in a suitable metric.
+\end{question}
+
+\paragraph{Misspecification.} Every method in Part III conditions on the simulator being correct.
+When it is not, a learned posterior is confidently wrong, arguably more so than approximate Bayesian
+computation, whose tolerance inadvertently widens the answer. Posterior predictive checks against
+the observed spectrum are a start. Generalised Bayesian updating and the cut models of modular
+inference offer more principled options, and their application to coalescent models has hardly
+begun.
+
+\section{The larger questions}
+
+The problems above are local to the chapters of this book. Several larger ones are reshaping the
+whole field, and they are less sharply posed; for most of them the first task is to find the right
+question.
+
+\paragraph{Samples as large as populations.} The coalescent is an approximation for a small sample
+from a large population. When the sample is comparable to the effective population size, as it now
+is for some human biobanks, multiple and simultaneous mergers appear in the recent past, the
+frequency spectrum at the rare end departs from the Kingman prediction, and estimates of recent
+demography and of selection on rare variants are distorted \citep{future:bhaskar2014}. The exact
+Wright Fisher genealogy is tractable numerically, and replacing the coalescent by it, or by a
+hybrid, is under way.
+
+\begin{example}[The birthday problem in one generation]\label{future:ex:birthday}
+Trace $n$ lineages back one generation in a Wright Fisher population of $2N$ genes. Each lineage
+picks its parent uniformly and independently, so this is the birthday problem with $2N$ days. The
+expected number of pairs that pick the same parent is $\binom n2/(2N)$, and the probability that
+no two do is $\prod_{i=1}^{n-1}(1-i/2N)$. With $2N=20{,}000$ and $n=100$ the expected number of
+merging pairs is $0.25$ and the probability of no merger is $0.78$, so the Kingman picture of at
+most one rare merger per generation is reasonable. With $n=1000$ the expected number is $25$, the
+probability of no merger is $9\times10^{-12}$, and the sample loses on average $24.6$ lineages in
+the first generation, with simultaneous mergers and occasional triple mergers. With $n=5000$ about
+$576$ lineages are lost at once. The Kingman coalescent, which allows exactly one pairwise merger
+at a time, describes none of this, and the errors fall precisely on the recent branches that carry
+the rare variants.
+\end{example}
+
+\begin{question}\label{future:q:finite}
+Let a sample of $n$ genes be drawn without replacement from a Wright Fisher population of $2N$
+genes at stationarity under the infinite alleles model, with $n/(2N)\to c\in(0,1]$ and
+$4N\mu\to\vartheta$. What is the limiting law of the allelic partition of the sample, and how does
+it differ from the Ewens sampling formula in the counts of rare alleles?
+\end{question}
+
+\paragraph{Genealogies as data.} Methods that infer the ancestral recombination graph of hundreds of
+thousands of genomes have turned the genealogy from a latent variable into something close to an
+observation. This changes the statistical questions. Inference about mutation, recombination,
+demography and selection can be conditioned on an estimated genealogy, but the uncertainty in that
+estimate has to be propagated, and the estimated genealogies are themselves the output of
+approximate algorithms whose biases are not well characterised. A Bayesian treatment that is both
+coherent and feasible at this scale does not yet exist.
+
+\paragraph{Time series of genomes.} Ancient DNA has given population genetics what it has rarely had:
+direct observation of allele frequencies through time. Selection can then be measured as a change in
+frequency rather than inferred from a pattern of variation at one time. But ancient samples are
+small, degraded, unevenly spaced, drawn from shifting populations, and subject to strong
+ascertainment. They are, in the language of Part II, a sample drawn with a nonuniform density from
+a moving paintbox, and the theory of Chapters~\ref{ch:esf} and \ref{ch:py} is a beginning, not an
+answer.
+
+\paragraph{Polygenic adaptation and confounding.} Signals of polygenic adaptation for human height,
+detected by combining many small allele frequency differences, were substantially reduced when
+recomputed with association effect sizes estimated in a more homogeneous sample
+\citep{future:berg2019,future:sohail2019}. The lesson is that subtle population stratification in
+the estimated effects aggregates, exactly as the inflation of Chapter~\ref{ch:mp} aggregates, into
+a spurious signal. The methodological problem is to estimate a many parameter functional when the
+errors in the parameters are correlated with the very structure the functional is meant to detect.
+
+\paragraph{Portability of prediction.} Polygenic scores built from samples of predominantly
+European ancestry predict much less accurately in other populations \citep{future:martin2019}. Part
+of the loss is linkage disequilibrium, part is differences in allele frequencies, and part may be
+genuine differences in effect or in environment. Separating these is a problem in transfer learning
+with a known genealogical structure, and the hierarchical models of Part I, with population
+specific local scales sharing a global scale, are a natural starting point.
+
+\paragraph{Learned models of the genome.} Large neural networks trained on genomic sequence are now
+used to predict the functional effects of variants. For population genetics they are potentially a
+source of prior information: an informative prior on which loci are likely to matter, which is
+precisely what the local scales of a global local prior need. Using them responsibly requires
+treating their outputs as priors to be updated, not as answers, and checking the calibration of the
+resulting posteriors. This is the same discipline that Part III asks of learned posteriors, now
+applied to learned priors.
+
+\section{A closing note}
+
+Fisher regarded the Fundamental Theorem as one of his deepest results, and Ewens spent much of a
+long career showing what it does and does not say. The sampling formula that Ewens derived in 1972
+became, through Kingman, Ferguson, Antoniak and Pitman, one of the central objects of modern
+probability and machine learning, far from the electrophoresis gels that motivated it. Both stories
+show the same pattern: a statement about genes becomes a statement about statistics, and the
+statistics then returns, years later, to change how the genetics is done.
+
+The thread that runs through this book is that the questions of population genetics are, at bottom,
+questions of inference: what a sample can tell us about a population, what a prior commits us to,
+and what is lost when we replace a likelihood by a summary or a simulation. Fisher, Haldane, Wright,
+Kimura, Ewens and Kingman answered the first of these questions for the models of their day with
+remarkable completeness. The data we have now are larger and stranger than any of them imagined,
+and the questions are open again.
+
+\section{Exercises}
+
+\begin{enumerate}[label=\arabic*.,ref=\arabic*,leftmargin=*]
+
+\item Show that a one degree of freedom chi square test at level $0.05$ has power $0.8$ when the
+noncentrality parameter is $7.85$, and deduce the sample sizes quoted after
+Question~\ref{future:q:remainder}. \emph{Hint.} Under the alternative $N\hat F^2$ is approximately
+noncentral chi square with noncentrality $NF^2$.
+
+\item Verify that if $\kappa\sim\mathrm{Be}(a,b)$ then $x^{-1}f_\kappa(x)$ is proportional to the
+intensity $x^{-1-\sigma}(1-x)^{\vartheta+\sigma-1}$ of $\mathrm{PD}(\sigma,\vartheta)$ with
+$\sigma=1-a$ and $\vartheta=a+b-1$, and that the first stick breaking weight of
+$\mathrm{GEM}(\sigma,\vartheta)$ is $\mathrm{Be}(1-\sigma,\vartheta+\sigma)=\mathrm{Be}(a,b)$.
+\emph{Hint.} Compare exponents.
+
+\item Show that the limiting proportion of alleles seen $j$ times under $\mathrm{PD}(\sigma,\vartheta)$
+is $\sigma(1-\sigma)_{j-1}/j!$, and check that these proportions sum to one. Evaluate them for
+$\sigma=\tfrac12$ and $j\le5$. \emph{Hint.} Use the generating function $1-(1-z)^\sigma$.
+
+\item In the normal means example after Question~\ref{future:q:quad}, show that
+$\E\sum_iY_i^2=Q+p$ and $\Var\sum_i(Y_i^2-1)=2p+4Q$. \emph{Hint.} $Y_i^2$ is noncentral chi
+square with one degree of freedom.
+
+\item Derive the two recursions of Example~\ref{future:ex:singleton} and reproduce
+Table~\ref{future:tab:singleton}. Then estimate the constant $c$ of that example numerically for $\vartheta=1$ and $\vartheta=10$ from the ratio of
+expectations. \emph{Hint.} $(\E K_{n,1}/\E K_n-\sigma)\,n^{\sigma}$ settles near $0.44$ and $1.56$.
+
+\item In Example~\ref{future:ex:calib} compute the conditional coverage of the exact $90$ percent
+posterior interval $x/2\pm1.645/\sqrt2$, and show that it equals $0.90$ for every $x$. Show also
+that a reported posterior of the form $N(\lambda x,v)$ passes simulation based calibration if
+and only if $v=(1-\lambda)^2+\lambda^2$, so that a whole curve of wrong posteriors passes, with
+the prior ($\lambda=0$) at one end and the exact posterior ($\lambda=\tfrac12$) at its minimum.
+\emph{Hint.} The rank statistic is $\Phi\{(\theta-\lambda X)/\sqrt v\}$, and
+$\theta-\lambda X$ is Gaussian with mean zero and variance $(1-\lambda)^2+\lambda^2$.
+
+\item Using the birthday calculation of Example~\ref{future:ex:birthday}, find the largest $n$ for
+which the probability of at least one merger in the first generation back is below $0.5$ when
+$2N=20{,}000$, and compare with $\sqrt{2N\cdot2\log2}$. \emph{Hint.} The answer is $166$.
+
+\item In Example~\ref{future:ex:birthday} show that the expected number of distinct parents of the
+$n$ lineages is $2N\{1-(1-1/2N)^n\}$, and deduce the losses of $24.6$ lineages at $n=1000$ and
+about $576$ at $n=5000$. Show further that the expected loss is
+$\binom n2/(2N)-\binom n3/(2N)^2+\cdots$, so that it falls short of the expected number of merging
+pairs by about $\binom n3/(2N)^2$, and explain why. \emph{Hint.} Write the number of distinct
+parents as a sum over the $2N$ possible parents of the indicator that at least one lineage picks
+that parent, and expand $(1-1/2N)^n$ by the binomial theorem; a triple merger counts three pairs
+but loses only two lineages.
+
+\item In Example~\ref{future:ex:calib} verify the conditional coverages $0.98$, $0.82$ and $0.58$
+of the reported interval $(-1.645,1.645)$ at $x=0,2,3$, show that $\Prob(|X|>2)=0.157$, and
+compute the coverage over the data sets with $|X|>2$ by numerical integration, confirming the
+simulated value $0.67$. \emph{Hint.} Marginally $X\sim N(0,2)$, and given $X=x$ the coverage is
+$\Phi\{\sqrt2(1.645-x/2)\}-\Phi\{\sqrt2(-1.645-x/2)\}$.
+
+\item Prove the remark before Question~\ref{future:q:arg}: if the sample space is countable and
+every $P_\theta$ is invariant under a group $G$ acting on it, then the orbit $GX$ is sufficient
+for $\theta$, and so is a single real number. \emph{Hint.} Points of one orbit have equal
+probability under every $P_\theta$, so an orbit of positive probability is finite and $X$ is
+uniform on it given $GX$; the orbits form a countable set, which can be numbered.
+
+
+\end{enumerate}
+
+\begin{thebibliography}{9}
+
+\bibitem[Berg et~al.(2019)]{future:berg2019}
+Berg, J.~J., Harpak, A., Sinnott Armstrong, N., Joergensen, A.~M., Mostafavi, H., Field, Y.,
+Boyle, E.~A., Zhang, X., Racimo, F., Pritchard, J.~K. and Coop, G. (2019). Reduced signal for
+polygenic adaptation of height in UK Biobank. \emph{eLife} 8, e39725.
+
+\bibitem[Bhaskar et~al.(2014)]{future:bhaskar2014}
+Bhaskar, A., Clark, A.~G. and Song, Y.~S. (2014). Distortion of genealogical properties when the
+sample is very large. \emph{Proceedings of the National Academy of Sciences} 111, 2385 to 2390.
+
+\bibitem[Cook et~al.(2006)]{future:cook2006}
+Cook, S.~R., Gelman, A. and Rubin, D.~B. (2006). Validation of software for Bayesian models using
+posterior quantiles. \emph{Journal of Computational and Graphical Statistics} 15, 675 to 692.
+
+\bibitem[Gnedin and Pitman(2006)]{future:gnedin2006}
+Gnedin, A. and Pitman, J. (2006). Exchangeable Gibbs partitions and Stirling triangles.
+\emph{Journal of Mathematical Sciences} 138, 5674 to 5685.
+
+\bibitem[Martin et~al.(2019)]{future:martin2019}
+Martin, A.~R., Kanai, M., Kamatani, Y., Okada, Y., Neale, B.~M. and Daly, M.~J. (2019). Clinical
+use of current polygenic risk scores may exacerbate health disparities. \emph{Nature Genetics} 51,
+584 to 591.
+
+\bibitem[Sohail et~al.(2019)]{future:sohail2019}
+Sohail, M., Maier, R.~M., Ganna, A., Bloemendal, A., Martin, A.~R., Turchin, M.~C., Chiang, C.~W.~K., Hirschhorn, J., Daly, M.~J., Patterson, N., Neale, B.~M., Mathieson, I., Reich, D. and Sunyaev, S.~R. (2019). Polygenic adaptation on height is overestimated due to uncorrected
+stratification in genome wide association studies. \emph{eLife} 8, e39702.
+
+\bibitem[van der Pas et~al.(2017)]{future:vanderpas2017}
+van der Pas, S., Szab\'o, B. and van der Vaart, A. (2017). Uncertainty quantification for the
+horseshoe (with discussion). \emph{Bayesian Analysis} 12, 1221 to 1274.
+
+\end{thebibliography}
